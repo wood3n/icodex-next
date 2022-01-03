@@ -12,11 +12,12 @@ const config = {
   tagline: "frontend development cookbook",
   url: "https://icodex.me",
   baseUrl: "/",
+  deploymentBranch: "gh-pages",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
   organizationName: "wood3n",
-  projectName: "icodex",
+  projectName: "icodex-next",
   plugins: [
     "@docusaurus/theme-live-codeblock",
     path.resolve(__dirname, "./src/plugins/webpackConfig.js"),
