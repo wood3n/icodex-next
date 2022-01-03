@@ -1,8 +1,3 @@
----
-title: Hook优化
-
----
-
 ## 心智模型
 
 > 心智模型（mental model）：A **mental model** is an explanation of someone's thought process about how something works in the real world. —— [wikipedia - Mental_model](https://en.wikipedia.org/wiki/Mental_model)
@@ -41,7 +36,7 @@ title: Hook优化
 
 下面来看一个在`class`组件内部注册定时器的方法，组件加载完以后初始化一个定时器，每秒叠加一个数值，看起来工作正常。
 
-```jsx | pure
+```jsx
 export default class extends React.Component {
   state = {
     count: 1,
@@ -89,7 +84,7 @@ export default class extends React.Component {
 
 但是事与愿违，计时器停在了`2`上面，what？不是说`useEffect`第二个参数设置为空数组就相当于`componentDidMount`吗？为什么更新`state`不起作用呢？仔细观察，并不是的，定时器确实在执行，只是`startCount`函数拿到的`count`的值始终是`1`，也就是通过`useState`设定的初始值！！！
 
-```jsx | pure
+```jsx
 export default () => {
   const intervalRef = useRef<number>();
   const [count, setCount] = useState(1);
@@ -197,7 +192,7 @@ useEffect(() => {
 
 至于函数组件，它根本就没有`this`，因为函数组件不是以`new`来调用，而是直接以函数调用的形式获取返回值，每次 rerender 也是直接执行一次函数。
 
-```jsx | pure
+```jsx
 // class组件
 const comp = new ClassComponent();
 
@@ -207,7 +202,7 @@ const comp = FuncComponent();
 
 而在严格模式下的 JS 函数单独调用，**其内部`this`将始终指向`undefined`**，所以在函数组件内部根本不存在`this`，也就不用管那些`this`如何指向，不用`bind`会丢失绑定的问题等等。
 
-```jsx | pure
+```jsx
 export default () => {
   console.log(this); // undefined
 
@@ -237,7 +232,7 @@ React 中虽然使用 virtual DOM 来做 diff，尽管 React 可以对前后两�
 
 现在我们用`useMemo`来缓存`undoList`的计算值，仅当`listData`发生变化时才重新计算`undoList`的值，主要修改代码部分如下：
 
-```jsx | pure
+```jsx
 const memoUndoList = useMemo(() => {
   console.log('计算undoList');
   return listData.filter(item => !item.done);
@@ -252,7 +247,7 @@ const memoUndoList = useMemo(() => {
 
 甚至可以直接将子组件传递到`useMemo`内部缓存下来，避免组件更新时重新渲染
 
-```jsx | pure
+```jsx
 function Parent({ a, b }) {
   // 只在a变化时才更新
   const child1 = useMemo(() => <Child1 a={a} />, [a]);
@@ -273,7 +268,7 @@ function Parent({ a, b }) {
 
 `useCallback`和`useMemo`的写法几乎完全一致，不同的是`useCallback`返回的是一个函数，所以`useCallback`缓存的是函数的实例。从过去经验来看 React 应用优化上一个点是减少内联回调函数的使用，内联函数就是直接在组件的回调`props`中声明函数，例如：
 
-```jsx | pure
+```jsx
 // 引用回调
 const Func = () => {
   const handleClick = () => {};
@@ -349,11 +344,12 @@ React.memo(MyComponent, areEqual);
 现在来看一个`useCallback`和`React.memo`配合使用的例子，这里展示一个`antd/Table`组件，并且将其操作列抽离为单独的组件，普通的写法很简单，但是也可以清楚的看到，每次开关`Drawer`都会导致`OperationColumn`重新渲染，这种渲染完全没有必要的。
 
 <iframe src="https://codesandbox.io/embed/antd484-forked-e3y7p?fontsize=14&hidenavigation=1&theme=dark"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="antd@4.8.4 (forked)"
+        width="100%"
+    	height="500px"
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
+
 
 
 现在使用`useCallback`以及`React.memo`来缓存`open`函数实例，可以看到开关`Drawer`的时候并不会触发`OperationColumn`重新渲染了，这是我希望看到的结果，`useCallback`的使用也达到了目的。
@@ -369,7 +365,8 @@ export default React.memo(OperationColumn);
 ```
 
 <iframe src="https://codesandbox.io/embed/usecallback-antd484-forked-mok5o?fontsize=14&hidenavigation=1&theme=dark"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+                width="100%"
+    	height="500px"
      title="useCallback - antd@4.8.4 (forked)"
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"

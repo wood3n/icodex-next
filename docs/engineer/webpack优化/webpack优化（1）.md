@@ -1,8 +1,3 @@
----
-title: webpack 优化代码生成（1）
-
----
-
 ## tree shaking
 
 tree shaking 这个词，我觉得很有意思，图源自 —— [掘金 - Tree-Shaking 性能优化实践](https://juejin.im/post/6844903544756109319)

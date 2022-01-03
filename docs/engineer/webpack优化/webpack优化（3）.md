@@ -1,8 +1,3 @@
----
-title: webpack优化构建速度
-
----
-
 webpack 文档提供了一些优化构建性能的建议 —— [webpack - 构建性能](https://webpack.docschina.org/guides/build-performance/)，对于一些小型项目来说，这些建议很有用！
 
 ## 优化模块解析规则
@@ -338,14 +333,14 @@ DLL（Dynamic-link library，动态链接库）这个词来源于微软的打包
 
 #### 配置项
 
-| 配置项      | 类型      | <span style="white-space:nowrap">是否必填</span> | 含义                                                         |
-| ----------- | --------- | ------------------------------------------------ | ------------------------------------------------------------ |
-| `context`   | `String`  | no                                               | manifest 文件中请求的 context；默认是 webpack 的`context`配置项，也就是`webpack.config.js`所在的当前目录 |
-| `format`    | `Boolean` | no                                               | 是否格式化`manifest.json`；默认是`false`                     |
-| `name`      | `String`  | yes                                              | 暴露出的 DLL 的函数名                                        |
-| `path`      | `String`  | yes                                              | 输出的`manifest.json`的绝对路径                              |
-| `entryOnly` | `Boolean` | no                                               | 默认是 `true`，仅暴露入口                                    |
-| `type`      | `String`  | no                                               | 生成的 DLL bundle 的类型                                     |
+| 配置项      | 类型      | <是否必填 | 含义                                                         |
+| ----------- | --------- | --------- | ------------------------------------------------------------ |
+| `context`   | `String`  | no        | manifest 文件中请求的 context；默认是 webpack 的`context`配置项，也就是`webpack.config.js`所在的当前目录 |
+| `format`    | `Boolean` | no        | 是否格式化`manifest.json`；默认是`false`                     |
+| `name`      | `String`  | yes       | 暴露出的 DLL 的函数名                                        |
+| `path`      | `String`  | yes       | 输出的`manifest.json`的绝对路径                              |
+| `entryOnly` | `Boolean` | no        | 默认是 `true`，仅暴露入口                                    |
+| `type`      | `String`  | no        | 生成的 DLL bundle 的类型                                     |
 
 #### 使用
 
@@ -405,15 +400,15 @@ module.exports = {
 
 #### 配置项
 
-| 配置项       | 类型     | <span style="white-space:nowrap">是否必填</span> | 含义                                                         |
-| ------------ | -------- | ------------------------------------------------ | ------------------------------------------------------------ |
-| `context`    | `String` | yes                                              | `manifest.json`文件中请求的 context；默认是 webpack 的`context`配置项，也就是`webpack.config.js`所在的当前目录 |
-| `scope`      | `String` | no                                               | DLL 中内容的前缀                                             |
-| `extensions` | `Array`  | no                                               | 用于解析 DLL bundle 中模块的扩展名，仅在使用`scope`时使用    |
-| `content`    | `String` | no                                               | 请求到模块 id 的映射，默认是`manifest.json`文件内部的`content` |
-| `name`       | `String` | no                                               | 暴露出的 DLL 的函数名称，默认是`manifest.json`文件内部的`name` |
-| `manifest`   | `Object` | yes                                              | `String`                                                     |
-| `sourceType` | `String` | no                                               | DLL 是如何暴露自己模块的，见 —— [`output.libraryTarget`](https://webpack.docschina.org/configuration/output/#outputlibrarytarget) |
+| 配置项       | 类型     | 是否必填 | 含义                                                         |
+| ------------ | -------- | -------- | ------------------------------------------------------------ |
+| `context`    | `String` | yes      | `manifest.json`文件中请求的 context；默认是 webpack 的`context`配置项，也就是`webpack.config.js`所在的当前目录 |
+| `scope`      | `String` | no       | DLL 中内容的前缀                                             |
+| `extensions` | `Array`  | no       | 用于解析 DLL bundle 中模块的扩展名，仅在使用`scope`时使用    |
+| `content`    | `String` | no       | 请求到模块 id 的映射，默认是`manifest.json`文件内部的`content` |
+| `name`       | `String` | no       | 暴露出的 DLL 的函数名称，默认是`manifest.json`文件内部的`name` |
+| `manifest`   | `Object` | yes      | `String`                                                     |
+| `sourceType` | `String` | no       | DLL 是如何暴露自己模块的，见 —— [`output.libraryTarget`](https://webpack.docschina.org/configuration/output/#outputlibrarytarget) |
 
 > Note：需要特别注意的一点这里的`context`这个配置项是必填的，并且必须指向`manifest.json`所在的目录的绝对路径。webpack 文档中给的说明`context`的 example 比较模糊，按照[use-dll-without-scope](https://github.com/webpack/webpack/tree/master/test/configCases/dll-plugin/2-use-dll-without-scope)这个例子看比较清楚一点`context`的用法。
 
@@ -556,7 +551,7 @@ module.exports = {
 
 为了能够找到`React`和`ReactDOM`这样的全局变量，需要将 React 库放在 HTML 中通过`<script>`全局引入。
 
-```shell
+```html
 <script crossorigin src="react.production.min.js"></script>
 <script crossorigin src="react-dom.production.min.js"></script>
 ```
@@ -615,7 +610,7 @@ module.exports = {
 
 修改 HTML 页面，ejs 本身很简单，直接在 HTML 里写的每一行 JS 代码用`<% ... %>`包起来就行，如果是变量，用`<%= ... %>`包起来。
 
-```shell
+```html
 <!DOCTYPE html>
 <html lang="zh-hans">
   <head>

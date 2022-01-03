@@ -1,8 +1,3 @@
----
-title: webpack优化（4）
-
----
-
 ## 优化 lodash 打包
 
 ### lodash 为什么不能被 Tree Shaking

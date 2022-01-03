@@ -1,8 +1,3 @@
----
-title: webpack优化代码生成（2）
-
----
-
 ## 优化 babel-loader
 
 `babel-loader`始终是项目处理任务最多的 loader，尤其是 React 开发过程中，有大量的 JSX 需要去解析，编译。从`babel-loader`的配置项入手可以进行一些优化。`babel-loader`使用的插件集合主要是`@babel/preset-env`和`@babel/preset-react`。

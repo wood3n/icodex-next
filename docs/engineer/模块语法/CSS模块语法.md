@@ -129,7 +129,7 @@ import styles from "./styles.css";
 }
 ```
 
-![image-20200916161443996](../../../../icodex/docs/images/image-20200916161443996.png)
+![image-20200916161443996](../../../public/images/image-20200916161443996-16411980234031.png)
 
 同时也支持继承其它文件的`class`规则，但是要注意不要为来自不同文件的多个类名中的同一属性定义不同的值。而且还需要注意避免循环依赖的问题，所以通常一般不建议这么干
 
@@ -277,7 +277,7 @@ export default CSSModules(Table, styles);
 
 ### 配置项
 
-| 配置项                       | 类型      | <span style="white-space:nowrap">默认值</span> | 含义                                                         |
+| 配置项                       | 类型      | 默认值                                         | 含义                                                         |
 | ---------------------------- | --------- | ---------------------------------------------- | ------------------------------------------------------------ |
 | `context`                    | `String`  |                                                | 必须和 webpack 的`context`配置项想匹配                       |
 | `exclude`                    | `String`  |                                                | 排除的文件名，例如`node_modules`                             |
@@ -346,7 +346,7 @@ export default class Table extends React.Component {
 
 如果是同时引入多个 CSS Module，可以使用具体的对象引用`class`
 
-```javascript
+```jsx
 import foo from './foo1.css';
 import bar from './bar1.css';
 
