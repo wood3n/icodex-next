@@ -16,7 +16,7 @@ jobs:
       - name: Build website
         working-directory: website
         run: |
-          yarn install --frozen-lockfile
+          yarn install
           yarn build
 
       - name: Deploy to GitHub Pages
