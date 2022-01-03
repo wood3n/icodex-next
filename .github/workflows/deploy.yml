@@ -12,8 +12,11 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14.x
-      - name: Build website
+          cache: yarn
+      - name: install dependency
         run: yarn install
+
+      - name: build file
         run: yarn build
 
       - name: Deploy to GitHub Pages
