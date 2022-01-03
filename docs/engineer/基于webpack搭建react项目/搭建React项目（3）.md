@@ -898,7 +898,7 @@ export default class extends Component {
 }
 ```
 
-![image-20200830221725641](../../../../icodex/docs/images/image-20200830221725641.png)
+![image-20200830221725641](../../../public/images/image-20200830221725641-16411999239456.png)
 
 如果要执行打包`yarn build`，需要借助一个 webpack 的插件 —— [`copy-webpack-plugin`](https://github.com/webpack-contrib/copy-webpack-plugin#copy-webpack-plugin)，这个插件可以将指定目录的文件复制到另一个目录中，并且复制过程还可以借助一些工具来压缩文件，例如可以使用[SVGO](https://github.com/svg/svgo/)的工具来优化 SVG 文件
 
@@ -993,7 +993,7 @@ export default class extends Component {
 }
 ```
 
-![image-20200830232038373](../../../../icodex/docs/images/image-20200830232038373.png)
+![image-20200830232038373](../../../public/images/image-20200830232038373-16411999150215.png)
 
 > 和 CRA 集成 —— https://github.com/JetBrains/svg-sprite-loader/issues/339
 
