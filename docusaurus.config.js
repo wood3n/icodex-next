@@ -44,8 +44,8 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           remarkPlugins: [math],
           rehypePlugins: [katex],
-          editUrl: ({ locale, docPath }) => {
-            return `https://github.com/wood3n/icodex-next/docs/${docPath}`;
+          editUrl: ({ docPath }) => {
+            return `https://github.com/wood3n/icodex-next/tree/master/docs/${docPath}`;
           },
         },
         blog: {
@@ -55,9 +55,6 @@ const config = {
           showReadingTime: true,
           blogSidebarCount: 5,
           blogSidebarTitle: "Recent posts",
-          editUrl: ({ locale, blogDirPath, blogPath }) => {
-            return `https://github.com/wood3n/icodex-next/${blogDirPath}`;
-          },
           feedOptions: {
             type: "all",
             copyright: `Copyright © ${new Date().getFullYear()} icodex, Inc.`,

@@ -209,7 +209,7 @@ To fix, cancel all subscriptions and asynchronous tasks in the componentWillUnmo
 
 但是还有一种情况是可能因为事件冒泡机制触发了其他事件监听器导致间接去执行`setState`，例如下面的一个业务组件，我在子组件中想通过父组件传递的方法销毁自身，然后因为事件冒泡机制，点击事件冒泡到了上层`Collapse`，触发了`Collapse`的`onChange`，间接调用了`handleExpand`去`setState`，所以也出现了上述错误。
 
-```jsx | pure
+```jsx
 import {Collapse} from "antd";
 
 // 父组件
