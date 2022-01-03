@@ -1,0 +1,25 @@
+.red {
+  width: 100px;
+  height: 100px;
+  background: red;
+  display: inline-block;
+  margin: 5px;
+}
+
+.green {
+  width: 100px;
+  height: 100px;
+  background: green;
+  display: inline-block;
+  margin: 5px;
+}
+
+.top {
+  vertical-align: top;
+}
+
+.img {
+  width: 100px;
+  height: 100px;
+  border: 1px solid;
+}
