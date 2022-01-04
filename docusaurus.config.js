@@ -172,7 +172,7 @@ const config = {
             docId: "tools/git",
           },
           {
-            href: "https://github.com/wood3n/icodex",
+            href: "https://github.com/wood3n/icodex-next",
             position: "right",
             // custom logo in custom.css
             className: "header-github-link",
