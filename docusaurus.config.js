@@ -55,10 +55,6 @@ const config = {
           showReadingTime: true,
           blogSidebarCount: 5,
           blogSidebarTitle: "Recent posts",
-          feedOptions: {
-            type: "all",
-            copyright: `Copyright © ${new Date().getFullYear()} icodex, Inc.`,
-          },
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -82,26 +78,15 @@ const config = {
         },
       ],
       // 开启 algolia
-      // algolia: {
-      //   // If Algolia did not provide you any appId, use 'BH4D9OD16A'
-      //   appId: "YOUR_APP_ID",
+      algolia: {
+        // If Algolia did not provide you any appId, use 'BH4D9OD16A'
+        appId: "BH4D9OD16A",
 
-      //   // Public API key: it is safe to commit it
-      //   apiKey: "YOUR_SEARCH_API_KEY",
+        // Public API key: it is safe to commit it
+        apiKey: "dsdaasdad",
 
-      //   indexName: "YOUR_INDEX_NAME",
-
-      //   // Optional: see doc section below
-      //   contextualSearch: true,
-
-      //   // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-      //   externalUrlRegex: "external\\.com|domain\\.com",
-
-      //   // Optional: Algolia search parameters
-      //   searchParameters: {},
-
-      //   //... other Algolia params
-      // },
+        indexName: "icodex",
+      },
       navbar: {
         title: "icodex",
         hideOnScroll: true,
@@ -110,6 +95,10 @@ const config = {
           src: "img/logo.png",
         },
         items: [
+          {
+            type: "search",
+            position: "right",
+          },
           { to: "/pages/project", label: "My Project", position: "right" },
           {
             type: "dropdown",
@@ -177,16 +166,6 @@ const config = {
             // custom logo in custom.css
             className: "header-github-link",
             "aria-label": "GitHub repository",
-          },
-          // {
-          //   href: "https://icodex.me/blog/rss.xml",
-          //   position: "right",
-          //   // custom logo in custom.css
-          //   className: "header-rss-link",
-          // },
-          {
-            type: "search",
-            position: "right",
           },
         ],
       },

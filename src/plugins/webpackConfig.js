@@ -7,7 +7,8 @@ module.exports = function () {
       return {
         resolve: {
           alias: {
-            "@": path.resolve(process.cwd(), "./src"),
+            "@/demo": path.resolve(process.cwd(), "./src/demo"),
+            "@/components": path.resolve(process.cwd(), "./src/components"),
           },
           extensions: [".js", ".jsx"],
         },
