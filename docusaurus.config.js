@@ -80,10 +80,10 @@ const config = {
       // 开启 algolia
       algolia: {
         // If Algolia did not provide you any appId, use 'BH4D9OD16A'
-        appId: "BH4D9OD16A",
+        appId: "GMKEEJO8X4",
 
         // Public API key: it is safe to commit it
-        apiKey: "dsdaasdad",
+        apiKey: "0ccd259970e3e65b1df2f83c4ddd3e8b",
 
         indexName: "icodex",
       },
