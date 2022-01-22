@@ -1,3 +1,7 @@
+---
+title: babel使用
+---
+
 ## babel 是什么
 
 `babel`就是针对 JavaScript 语言的编译器，它主要负责将`ES6+`的源代码转换成版本向后兼容不同浏览器的 JS 代码。

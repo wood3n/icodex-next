@@ -2,9 +2,6 @@ import React from "react";
 import Layout from "@theme/Layout";
 import GitHubIcon from "@site/static/img/github.svg";
 import MailIcon from "@site/static/img/email.svg";
-import LocationIcon from "@site/static/img/location.svg";
-import CareerIcon from "@site/static/img/center_icon_frontend_n.svg";
-import SkillIcon from "@site/static/img/skill_entity.svg";
 import styles from "./styles.module.css";
 
 export default () => {

@@ -1,3 +1,7 @@
+---
+title: webpack优化（3）
+---
+
 webpack 文档提供了一些优化构建性能的建议 —— [webpack - 构建性能](https://webpack.docschina.org/guides/build-performance/)，对于一些小型项目来说，这些建议很有用！
 
 ## 优化模块解析规则

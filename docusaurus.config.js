@@ -128,7 +128,7 @@ const config = {
               {
                 type: "doc",
                 label: "NodeJS",
-                docId: "nodejs/index",
+                docId: "nodejs/awesome-nodejs",
               },
               {
                 type: "doc",
