@@ -56,6 +56,12 @@
 
 ![image-20220117215927633](../../public/images/image-20220117215927633.png)
 
+### [nvm](https://github.com/nvm-sh/nvm)
+
+[![npm version](https://badge.fury.io/js/nvm.svg)](https://badge.fury.io/js/nvm)
+
+管理 nodejs version 的工具
+
 ## 文件操作
 
 ### [node-glob](https://github.com/isaacs/node-glob)
@@ -93,6 +99,18 @@
 [![npm version](../../public/images/deepmerge.svg)](https://badge.fury.io/js/deepmerge)
 
 深度合并两个或多个对象的可枚举属性
+
+### [dotenv](https://github.com/motdotla/dotenv)
+
+[![npm version](https://badge.fury.io/js/dotenv.svg)](https://badge.fury.io/js/dotenv)
+
+将环境变量从`.env`文件加载到`process.env`中
+
+### [dotenv-expand](https://github.com/motdotla/dotenv-expand)
+
+[![npm version](https://badge.fury.io/js/dotenv-expand.svg)](https://badge.fury.io/js/dotenv-expand)
+
+在已定义的环境变量基础上拓展其他变量，需要配置`dotenv`使用
 
 ## terminal可视化工具
 
