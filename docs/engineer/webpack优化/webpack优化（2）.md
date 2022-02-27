@@ -8,7 +8,7 @@ title: webpack优化（2）
 
 ## @babel/preset-env
 
-`@babel/preset-env`是一个负责将 JS 代码编译成兼容性更强的低版本 JS 代码的插件集合。
+`@babel/preset-env`是一个负责将 JS 代码编译成兼容性更强的低版本 JS 代码的插件集合，同时也会按需为支持目标浏览器引入`polyfill`
 
 ### 配置项
 
@@ -38,21 +38,15 @@ title: webpack优化（2）
 
 ### 配置 targets
 
-早期的 babel 还有一个 preset，叫[`babel-preset-latest`](https://babel.docschina.org/docs/en/babel-preset-latest)，这个 preset 的特点是能自动根据 ES 规范的新特性添加对应的 plugin，这样就避免了开发者去单独配置，但是就这样直接添加进去会导致插件越来越多，并且随着时间推移，大部分 ES6 的语法已经被主流浏览器都支持了，没必要再去使用那些插件编译了，这些无用的插件留在 preset 中会导致 babel 的编译流程也越来越慢，于是推荐使用`@babel/preset-env`去替代这个 preset。
+`targets`这个配置项对应的是`browserlist`的定义的浏览器范围，具体的参考我的这篇文档 —— [browserslist | icodex](https://icodex.me/docs/engineer/Babel/browserslist).
 
-`@babel/preset-env`帮助开发者从`preset-latest`进行过渡，**如果不在`@babel/preset-env`中配置`targets`，那么它就会默认把 ES6+的 JS 代码全部编译成 ES5 的形式**。通过开启`@babel/preset-env`的`debug`配置项可以清楚的在控制台看到`@babel/preset-env`使用的 plugin 有多少，如果不设定`targets`，那么就会像下图这样引入最高兼容到 IE10 的 plugin。
+默认情况下`babel`并不会指定`targets`也不会像`browserslist`那样自动使用`defaults`的配置规则，**如果不在`@babel/preset-env`中配置`targets`，那么它就会默认把 ES6+ 的 JS 代码全部编译成 ES5 的形式**。
+
+通过开启`@babel/preset-env`的`debug`配置项可以清楚的在控制台看到`@babel/preset-env`使用的` plugin `有多少。
 
 ![image-20200917113713934](../../../public/images/image-20200917113713934.png)
 
-在开发环境下，这些 plugin 基本都是不需要的，而`@babel/preset-env`并不会去查找`browserslist`的配置，即使是`browserslist`的默认配置，也必须在`targets`中配置，这个设定可能在 Babel 8 重新讨论。
-
-```javascript
-{
-  "presets": [["@babel/preset-env", { "targets": "defaults" }]]
-}
-```
-
-`targets`字段同样支持上述的`browserslist`配置形式，在开发环境始终使用最新的 Chrome 版本，这样开发环境引入的 plugin 就减少很多了。
+在开发环境配置`targets`始终使用最新的 Chrome 版本，可以减少引入的 plugin 数量，提高编译速度：
 
 ```javascript
 {
@@ -64,80 +58,47 @@ title: webpack优化（2）
 
 ![image-20200917114914492](../../../public/images/image-20200917114914492-1610178763453.png)
 
-`targets`还支持一些特殊字段的配置：
+`targets`还支持配置成一个对象，包含以下属性：
 
-- `esmodules`：默认是`false`，指定目标浏览器支持 ES Modules 语法，如果设置成`true`，那么`browserslist`的配置会失效
+- `esmodules`：默认是`false`，指定目标浏览器支持 ES Modules 语法
 - `node`：`"current" | true`，指定针对当前 node 的版本进行编译
 - `safari`：`"tp"`，指定针对 safari 的技术预览版进行编译
-- `browsers`：指定一个`browserslist`规则数组，不建议使用，因为未来版本可能会删除
+- `browsers`：指定一个`browserslist`规则数组，不过配置项会被直接使用`targets`覆盖。
 
 ### 配置 bugfixes
 
-默认情况下，`@babel/preset-env`或者其他的 Babel plugin 会对 ES 语法特性进行相关分组，例如`function arguments`包含默认参数，剩余参数等内容，如果开启`bugfixes`，`@babel/preset-env`会根据`targets`设定的兼容范围，选择将不同的分组编译到目标浏览器支持的最接近的最新现代语法，这将导致已编译应用程序的大小显着减小，不仅优化 webpack 的构建速度，而且优化了生成的代码。
+在`babel 7`版本中，`bugfixes`的默认值是`false`，在`babel 8`中计划将其默认值改成`false`。
+
+默认情况下，`@babel/preset-env`或者其他的 Babel plugin 会对 ES 语法特性进行相关分组，例如 ES6 中支持对函数参数设置默认值，以及解构剩余参数等语法，如果开启`bugfixes`，`@babel/preset-env`会根据`targets`判定浏览器的兼容范围，选择编译到目标浏览器支持的最接近的最新现代语法，这将导致已编译应用程序的大小显著减小，不仅优化 webpack 的构建速度，而且优化了生成的代码的体积。
 
 ### 配置 polyfill
 
-#### core-js 简介
+#### 安装 core-js
 
 > [core-js#babelpreset-env](https://github.com/zloirock/core-js#babelpreset-env)
 
-`@babel/polyfill`已经在 7.4 版本以后被弃用了，目前主流的 polyfill 方案是使用[`core-js`](https://babeljs.io/docs/en/babel-preset-env#corejs)。
+`polyfill`就是为旧浏览器提供新的 ES 语法的代码块，`@babel/polyfill`已经在 7.4 版本以后被废弃了，因此目前在`@babel/preset-env`中使用的`polyfill`方案是结合[`core-js`](https://babeljs.io/docs/en/babel-preset-env#corejs)，所以使用`polyfill`还需要安装`core-js`，具体的参考我这篇文档 —— [core-js | icodex](https://icodex.me/docs/engineer/Babel/core-js)
 
-`core-js`本身具有三个版本：
-
-- `yarn add core-js@3.6.5`：全局注入版本，使用的时候只需要在代码入口点全局引入`core-js`即可
-- `yarn add core-js-pure@3.6.5`：模块导入版本，需要在使用的时候单独引入对应的 polyfill 模块文件
-- `core-js-bundle`：使用 script 注入版本
-
-此外每个版本还具有包含不同 feature 的模块：
-
-- `core-js(-pure)/es`：`es`表示稳定的 ES 规范内容
-- `core-js(-pure)/stable`：`stable`同时包含稳定的 whatwg 的规范内容以及 ES 规范内容
-- `core-js(-pure)/features`：`features`只包含单独语法的特定模块内容，例如`core-js(-pure)/features/set`表示只包含`Set`数据集合的相关 polyfill
-
-如果使用全局注入版本，可以只在项目入口文件全局引入，全局引入会自动根据目标环境将 polyfill 引入，不会按需引入。也可以使用`features`只注入需要的 polyfill。
-
-```javascript
-//全局注入
-import 'core-js';
-
-Array.from(new Set([1, 2, 3, 2, 1]));
-[1, [2, 3], [4, [5]]].flat(2);
-Promise.resolve(32).then(x => console.log(x));
-
-//通过feature引入需要的模块
-import 'core-js/features/array/from';
-import 'core-js/features/array/flat';
-import 'core-js/features/set';
-import 'core-js/features/promise';
-
-Array.from(new Set([1, 2, 3, 2, 1]));
-[1, [2, 3], [4, [5]]].flat(2);
-Promise.resolve(32).then(x => console.log(x));
+```shell
+yarn add core-js@3
 ```
 
-如果使用`pure`版本，无法使用`import 'core-js-pure';`这种全局注入的方式，需要根据需要导入特定的模块；`pure`版本可以做到按需引入，但是使用很麻烦， 比如需要用到`Set`和`Array.from`两个 feature，需要去找这两个 feature 怎么去引入。
+#### 指定 corejs 版本
 
-```javascript
-import from from 'core-js-pure/features/array/from';
-import flat from 'core-js-pure/features/array/flat';
-import Set from 'core-js-pure/features/set';
-import Promise from 'core-js-pure/features/promise';
+安装完`core-js`后还需要在`@babel-preset-env`中指定其版本，如果开启`useBuiltIns`，默认为`2.0`版本，这里肯定要改成`3.0+`的，因为`3.0`的`core-js`改进很大。
 
-from(new Set([1, 2, 3, 2, 1])); // => [1, 2, 3]
-flat([1, [2, 3], [4, [5]]], 2); // => [1, 2, 3, 4, 5]
-Promise.resolve(32).then(x => console.log(x));
-```
+#### 指定 useBuiltIns
 
-#### useBuiltIns 和 corejs
-
-> Note：如果使用`core-js-pure`是不需要配置`@babel/preset-env`的`useBuiltIns`和`corejs`属性的，可以通过下文介绍的`@babel/plugin-transform-runtime`让代码编写简化一些。
-
-对于全局注入的版本，例如安装`core-js@3`版本以后，需要**首先设置`@babel/preset-env`的`corejs`配置项，并且建议指定较小的`core-js`版本号**，例如使用`3.6`而不是`3`，因为对于`corejs：3`，将不会添加在较小的`core-js`版本中添加的模块。默认情况下，只会采用稳定的 ES feature，对于尚在提案状态的规范内容不会引入 polyfill，不过可以通过`corejs.proposals`开启对提案内容的支持。
-
-然后必须指定`useBuiltIns`，如果不指定不会有任何 polyfill 被添加进来。
+安装完`core-js`后还必须指定`useBuiltIns`，如果不指定不会有任何 polyfill 被添加进来。
 
 ![image-20200917155333438](../../../public/images/image-20200917155333438.png)
+
+`useBuiltIns`主要有两个不同的值：`entry`和`usage`，其不同点为：
+
+- `entry`只针对项目入口文件处全局注入的`core-js`进行优化转换，但是只针对`core-js@3`版本
+- `usage`只会在使用到具体语法的模块顶部为其引入`polyfill`模块，同时保证最终一个`bundle`文件下只会引入一次该模块
+
+看起来好像没什么不同，但是实际使用`usage`的优化更好，下面来看个对比：
 
 以`core-js`的全局注入版本为例，指定`corejs: "3.6"`和`useBuiltIns: "entry"`，配置如下：
 
@@ -179,11 +140,46 @@ import 'core-js';
 console.log(Array.from(new Set([1, 2, 3, 2, 1])));
 ```
 
-当指定`useBuiltIns:"usage"`时，只会根据代码引入需要的 polyfill，相应的打包时间和 chunk 体积就减小很多了，大概只有`20KB`。
+而当指定`useBuiltIns:"usage"`时，只会根据代码引入需要的 polyfill，相应的打包时间和 chunk 体积就减小很多了，大概只有`20KB`。
 
 ![image-20200917163433398](../../../public/images/image-20200917163433398.png)
 
-因为直到 Babel 7.3 版本， `useBuiltIns: usage`还不够稳定，有时候一些需要的 polyfill 并不会自动添加进来，所以可能旧的项目使用会有一点问题。作为兼容性和按需引入更好的选择，可以使用下文`core-js-pure`和`@babel/plugin-transform-runtime`结合的方案。
+因为直到`babel@7.3`版本，`useBuiltIns: usage`还不够稳定，有时候一些需要的`polyfill `并不会自动添加进来，所以可能旧的项目使用会有一点问题。作为兼容性和按需引入更好的选择，可以使用下文`core-js-pure`和`@babel/plugin-transform-runtime`结合的方案。
+
+#### 指定 shippedProposals
+
+`shippedProposals`指定在代码中使用浏览器中已经支持部分`ts39`提案语法，这些语法如果在目标`targets`支持，将不会进行编译转换，具体有以下这些：
+
+- `class`里的`static`成员
+- `class`的[`private`成员](https://github.com/tc39/proposal-class-fields#private-fields)
+- `import xxx assert`语法
+- [大数分隔符](https://github.com/tc39/proposal-numeric-separator)
+
+### 使用 @babel/plugin-transform-runtime
+
+Babel 会使用一些非常小的辅助性的代码插入到需要编译的源代码中，有时候这些代码是重复的，会增加代码体积。通过[`@babel/plugin-transform-runtime`](https://babel.docschina.org/docs/en/babel-plugin-transform-runtime/)这个 plugin 可以禁用 Babel 自动对每个文件的 runtime 注入；然后通过安装`@babel/runtime`将 Babel 的辅助代码作为一个独立的依赖模块来引入，这样就可以避免编译后的代码中重复出现辅助性的代码，减小代码体积。
+
+```shell
+yarn add @babel/plugin-transform-runtime @babel/runtime -D
+```
+
+```javascript
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules)/,
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env'],
+          plugins: ['@babel/plugin-transform-runtime'],
+        },
+      },
+    ],
+  },
+};
+```
 
 ## @babel/preset-react
 
