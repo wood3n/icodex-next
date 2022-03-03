@@ -17,7 +17,7 @@
 
 ## AMD
 
-[AMD](<https://github.com/amdjs/amdjs-api/wiki/AMD-(%E4%B8%AD%E6%96%87%E7%89%88)>) 全名 Asynchronous Module Definition，也就是异步模块规范。它可以使模块和模块的依赖被异步加载，因此用于浏览器环境。
+[AMD](<https://github.com/amdjs/amdjs-api/wiki/AMD-(%E4%B8%AD%E6%96%87%E7%89%88)>) 全名`Asynchronous Module Definition`，也就是异步模块规范。它可以使模块和模块的依赖被异步加载，因此用于浏览器环境。
 
 ### define
 
@@ -101,8 +101,8 @@ exports = { hello: false }; // 未导出，仅在模块中可用
 1. 如果参数字符串以“/”开头，则表示加载的是一个位于绝对路径的模块文件；
 2. 如果参数字符串以“./”开头，则表示加载的是一个位于相对路径（跟当前执行脚本的位置相比）的模块文件，该路径将根据 [`__dirname`](http://nodejs.cn/api/modules.html#modules_dirname)（如果有定义）命名的目录或当前工作目录进行解析；
 3. 如果没有前导 `'/'`、`'./'` 或 `'../'` 来指示文件，则该模块必须是核心模块或从 `node_modules` 文件夹加载；从 `node_modules` 查找时会从当前指定的文件目录开始，一层一层往上，直到到达文件系统的根目录；
-
-4. 如果找不到确切的文件名，Node.js 将尝试加载所需的文件名，并添加扩展名：`.js`、`.json`，最后是 `.node`。
+4. 如果找不到确切的文件名，Node.js 将尝试加载所需的文件名，并添加扩展名：`.js`、`.json`，最后是 `.node`。当加载 JSON 的时候得到的是序列化的字符串文本。
+4. `require`支持目录名称作为模块，虽然目前还只在试验特性阶段 —— [Modules: CommonJS modules | Node.js v17.6.0 Documentation (nodejs.org)](https://nodejs.org/api/modules.html#folders-as-modules)
 
 ### 作用域
 

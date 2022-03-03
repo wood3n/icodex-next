@@ -98,3 +98,5 @@ nodejs 的文档解释了[`require()`的规则](http://nodejs.cn/api/modules.htm
 - 找不到模块就抛出`MODULE_NOT_FOUND`的错误
 
 ### process.cwd
+
+`process.cwd()`始终指向执行`node`程序的目录，在`node`执行的过程中不变，而`__dirname`会随着`node`执行文件模块的路径不断变化。
