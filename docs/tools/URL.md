@@ -379,7 +379,7 @@ a-z
 `encodeURI`不会对 URL 中用于分隔的字符进行编码，而`encodeURIComponent`不编码的字符只有 71 个，其中用于分隔 URI 各部分的字符`/`，`?`，`=`，`&`，`#`等都会进行编码，所以
 
 - **`encodeURIComponent`适合编码 URI 中的一部分内容**，例如`queryString`部分，编码完了再和 URL 串接起来发送到后端去处理，`encodeURIComponent`使用的更多；
-- 如果你希望将整个 URL 放进另一个 URL 中去处理请求，这样就应该使用`encodeURI`了
+- 如果你希望将整个 URL 放进另一个 URL 中去处理请求，这样就应该使用`encodeURIComponent`了
 
 ```javascript
 console.log(
