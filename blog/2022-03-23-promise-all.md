@@ -2,15 +2,16 @@
 title: 实现 Promise.all 有哪些要点
 slug: /promiseall
 authors: oxygen
+
 ---
 
-##Promise.all
+## Promise.all
 
 `Promise.all`是日常使用频率非常高的异步方法，然后面试的事后还老是问，要不然我才懒得看呢:smile:.不过这两天回顾了一下 `Promise`的几个静态方法，还真对`Promise.all`有了一些新的认识。
 
 <!--truncate-->
 
-##Promise.all 的定义
+## Promise.all 的定义
 
 > `Promise.all(iterable)`
 
@@ -21,7 +22,7 @@ authors: oxygen
 3. 当迭代器内部存在一个`Promise`对象状态变为`rejected`或者非`Promise`元素执行出错时，`Promise.all`将立即返回`rejected`状态的`Promise`对象，`reject`参数为`rejected`的`Promise`对象抛出的信息，或者非`Promise`元素执行报错的信息；
 4. `Promise.all`变成`fulfilled`状态时，`resolve`的数组元素按照迭代器元素的顺序，非`Promise`对象会直接放在对应位置返回。
 
-从`Promise.all` API 定义来看，首先需要理解什么是迭代器。
+从`Promise.all` API 定义来看，首先需要理解什么是可迭代对象。
 
 ### 什么是可迭代
 
@@ -75,7 +76,7 @@ TypedArray
 
 :::caution
 
-有个需要注意的点是，无法准取得判断一个对象是否可迭代，因为要同时满足上述说的两个条件有个 hack 的方法。
+有个需要注意的点是，无法准确判断一个对象是否可迭代，因为要同时满足上述说的两个条件有个 hack 的方法。
 
 ```js
 const myIterator = {
@@ -95,10 +96,6 @@ typeof sth[Symbol.iterator] === 'function'
 :::
 
 ## Promise.all 的实现
-
-## Promise.all 的实现
-
-扯完了迭代器，回到`Promise.all`实现上来：
 
 ```js
 Promise._all = function (iterable) {
@@ -130,17 +127,22 @@ Promise._all = function (iterable) {
     }
   });
 };
+```
 
-// 测试
+测试
+
+```js
 const promise1 = Promise.resolve(3);
 const promise2 = 42;
 const promise3 = new Promise((resolve, reject) => {
   setTimeout(resolve, 100, 'foo');
 });
 
-Promise.all([promise1, promise2, promise3]).then((values) => {
+Promise._all([promise1, promise2, promise3]).then((values) => {
   console.log(values);
 });
 // [ 3, 42, 'foo' ]
 ```
+
+
 
