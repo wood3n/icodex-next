@@ -6,7 +6,7 @@ authors: oxygen
 
 ## Promise.all
 
-`Promise.all`是日常使用频率非常高的异步方法，然后面试的事后还老是问，要不然我才懒得看呢:smile:.不过这两天回顾了一下 `Promise`的几个静态方法，还真对`Promise.all`有了一些新的认识。
+`Promise.all`是日常使用频率非常高的异步方法，这两天回顾了一下`Promise`的几个静态方法，对`Promise.all`又有了一些新的认识。
 
 <!--truncate-->
 
