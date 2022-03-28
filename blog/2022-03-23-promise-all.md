@@ -2,7 +2,6 @@
 title: 实现 Promise.all 有哪些要点
 slug: /promiseall
 authors: oxygen
-
 ---
 
 ## Promise.all
