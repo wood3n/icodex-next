@@ -48,6 +48,18 @@
 
 可用端口检测工具
 
+###[npm-run-all](https://github.com/mysticatea/npm-run-all)
+
+[![npm version](https://badge.fury.io/js/npm-run-all.svg)](https://badge.fury.io/js/npm-run-all)
+
+串行或者并行执行`npm`命令
+
+### [latest-version](https://github.com/sindresorhus/latest-version)
+
+[![npm version](https://badge.fury.io/js/latest-version.svg)](https://badge.fury.io/js/latest-version)
+
+获取`npm`包最新版本
+
 ### [nrm](https://github.com/Pana/nrm)
 
 [![npm version](https://badge.fury.io/js/nrm.svg)](https://badge.fury.io/js/nrm)
@@ -69,6 +81,18 @@
 [![npm version](https://badge.fury.io/js/glob.svg)](https://badge.fury.io/js/glob)
 
 `glob`匹配模式工具
+
+### [fs-extra](https://github.com/jprichardson/node-fs-extra)
+
+[![npm version](https://badge.fury.io/js/fs-extra.svg)](https://badge.fury.io/js/fs-extra)
+
+比 Nodejs 的`fs`模块更好用的文件操作库
+
+### [rimraf](https://github.com/isaacs/rimraf)
+
+[![npm version](https://badge.fury.io/js/rimraf.svg)](https://badge.fury.io/js/rimraf)
+
+在 windows 上支持`rm -rf`操作，可用于 Nodejs 中快速移除文件
 
 ### [chokidar](https://github.com/paulmillr/chokidar)
 
@@ -98,19 +122,25 @@
 
 [![npm version](../../public/images/deepmerge.svg)](https://badge.fury.io/js/deepmerge)
 
-深度合并两个或多个对象的可枚举属性
+深度合并两个或多个对象的可枚举属性。
 
 ### [dotenv](https://github.com/motdotla/dotenv)
 
 [![npm version](https://badge.fury.io/js/dotenv.svg)](https://badge.fury.io/js/dotenv)
 
-将环境变量从`.env`文件加载到`process.env`中
+将环境变量从`.env`文件加载到`process.env`中。
 
 ### [dotenv-expand](https://github.com/motdotla/dotenv-expand)
 
 [![npm version](https://badge.fury.io/js/dotenv-expand.svg)](https://badge.fury.io/js/dotenv-expand)
 
-在已定义的环境变量基础上拓展其他变量，需要配置`dotenv`使用
+在已定义的环境变量基础上拓展其他变量，需要配置`dotenv`使用。
+
+### [serve](https://github.com/vercel/serve)
+
+[![npm version](https://badge.fury.io/js/serve.svg)](https://badge.fury.io/js/serve)
+
+基于 Node 在本地快速搭建 Http 服务器，从而打开前端静态资源。
 
 ## terminal可视化工具
 

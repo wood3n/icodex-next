@@ -8,7 +8,7 @@ title: babel原理（1）
 
 所以这里就有一个点：编译得到的语言并不一定都是可执行的机器语言。
 
-### 编译器
+## 编译器-compiler
 
 编译器是从`compiler`翻译过来的名词，它是将程序源代码转换成目标语言的程序，也就是编译器就是负责编译的程序。
 
@@ -104,16 +104,19 @@ function test() {
 
 ![image-20210302224303725](../../../public/images/image-20210302224303725.png)
 
-### 解释器
+## 解释器-interpreter
 
 解释器，`interpreter`，它是负责将源代码直接转换成可执行程序的程序，通过输入程序源代码，最后输出就是程序执行的结果。实际上，很多解释器内部都是由“编译器+虚拟机”组成，即先将源代码程序转换成 AST 或者字节码，然后再由虚拟机去执行。
 
-### 解析器
+## 解析器-parser
 
 解析器是从`parser`翻译过来的名词，它是负责做语法分析的程序，也就是最终生成`AST`。它是编译器或者解释器的组成部分，也可以用在 IDE 内部。
 
-### Other
+### [the-super-tiny-compiler](https://github.com/jamiebuilds/the-super-tiny-compiler/blob/master/the-super-tiny-compiler.js)
 
-关于编译器，GitHub 上有一个开源的[`the-super-tiny-compiler`](https://github.com/jamiebuilds/the-super-tiny-compiler/blob/master/the-super-tiny-compiler.js)项目很有意思。
+最小的编译器项目
 
-关于`AST`，[astexplorer](https://astexplorer.net/)和[JAVASCRIPT AST VISUALIZER](https://resources.jointjs.com/demos/javascript-ast)都可以在线将 JS 代码转成 AST 显示出来，后者还支持图片。
+## 在线解析AST
+
+- [astexplorer](https://astexplorer.net/)
+- [TypeScript AST Viewer (ts-ast-viewer.com)

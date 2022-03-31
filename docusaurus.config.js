@@ -130,11 +130,11 @@ const config = {
                 label: "NodeJS",
                 docId: "nodejs/awesome-nodejs",
               },
-              {
-                type: "doc",
-                label: "Engineer",
-                docId: "engineer/index",
-              },
+              // {
+              //   type: "doc",
+              //   label: "Engineer",
+              //   docId: "engineer/index",
+              // },
             ],
           },
           {
@@ -153,6 +153,12 @@ const config = {
                 docId: "algorithm/算法分析",
               },
             ],
+          },
+          {
+            type: "doc",
+            label: "Engineer",
+            position: "right",
+            docId: "engineer/index",
           },
           {
             type: "doc",
