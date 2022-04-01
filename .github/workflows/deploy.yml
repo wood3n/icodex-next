@@ -1,11 +1,11 @@
-name: Deploy to GitHub Pages
+name: Deploy
 on:
   push:
     branches:
       - master # default branch
 jobs:
   deploy:
-    name: Deploy to GitHub Pages
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -19,7 +19,7 @@ jobs:
       - name: build file
         run: yarn build
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         uses: crazy-max/ghaction-github-pages@v2
         with:
           target_branch: gh-pages
