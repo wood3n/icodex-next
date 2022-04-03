@@ -120,6 +120,12 @@
 
 解析`process.argv`，获取 CLI 命令。
 
+### [minimist](https://github.com/substack/minimist)
+
+[![npm version](https://badge.fury.io/js/minimist.svg)](https://badge.fury.io/js/minimist)
+
+解析`process.argv`，返回对象
+
 ### [Inquirer](https://github.com/SBoudrias/Inquirer.js/)
 
 [![npm version](https://badge.fury.io/js/inquirer.svg)](https://badge.fury.io/js/inquirer)
