@@ -1,5 +1,6 @@
 ---
 title: webpack5 配置项（一）
+slug: /webpack5
 ---
 
 ## [target](https://webpack.docschina.org/configuration/target#target)

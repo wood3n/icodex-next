@@ -1,6 +1,5 @@
 ---
-title: git hook构建代码规范
-
+title: git hooks
 ---
 
 ## git hook
@@ -69,17 +68,17 @@ module.exports = {
     es2020: true,
     node: true,
   },
-  parser: '@typescript-eslint/parser',
-  plugins: ['react', '@typescript-eslint'],
+  parser: "@typescript-eslint/parser",
+  plugins: ["react", "@typescript-eslint"],
   extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
   ],
   settings: {
     react: {
-      version: 'detect',
+      version: "detect",
     },
   },
 };

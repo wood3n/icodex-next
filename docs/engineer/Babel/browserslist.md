@@ -1,8 +1,8 @@
-### 什么是 browserslist
+## 什么是 browserslist
 
-[`browserslist`](https://github.com/browserslist/browserslist)在不同的前端工具之间共享配置目标浏览器环境的第三方工具。
+[`browserslist`](https://github.com/browserslist/browserslist)在不同的前端工具之间共享配置目标浏览器环境的第三方工具。对于`babel`，`postcss-autoprefixer`，`postcss-normalize`这些工具来说都依赖`browserslist`的配置进行浏览器兼容适配。
 
-### 配置
+## 配置方式
 
 - 支持直接在`package.json`的`browserslist`字段中配置；优先级最高
 
@@ -33,9 +33,9 @@ module.exports = {
 };
 ```
 
-### 规则
+## 规则
 
-此外`browserslist`还有以下配置项说明：
+`browserslist`有以下配置项说明：
 
 - `defaults`：也就是`> 0.5%, last 2 versions, Firefox ESR, not dead`
 - `> 5%`：`>`，`>=`, `<` 或 `<=` 这些符号表示基于全球浏览器使用率统计数据进行的选择，例如`> 5%`也就是考虑浏览器市场份额至少在全球`5%`以上
@@ -99,5 +99,15 @@ module.exports = {
 
 ### 最佳实践
 
-- 可以直接使用`defaults`配置，它代表的是指定市场份额大于`0.5%`并且支持最新两个迭代版本的浏览器
-- 建议指定浏览器版本，这样可以使软件本身更好地适应当地的浏览器市场，例如`last 2 Chrome versions`
+一般是设置不同开发环境的`browserlist`配置项，对于使用`chrome`开发，而生产环境需要兼容`<IE 11`的老破旧来说，一般在`package.json`中设置如下规则：
+
+```json
+{
+	"development": ["last 2 Chrome versions"],
+  "production": [
+   	"last 1 version",
+    "> 1%",
+    "ie 10"
+  ]
+}
+```

@@ -113,4 +113,3 @@ nodejs 的文档解释了[`require()`的规则](http://nodejs.cn/api/modules.htm
 当在`C:\\node\\temp`目录下执行`node src/index.js`时，`__dirname`就是`src`的绝对路径，而`process.cwd`则是
 
 `C:\\node\\temp`；如果`src/index.js`中执行`lib/index.js`，其内部`__dirname`则是`lib`的绝对路径。
-
