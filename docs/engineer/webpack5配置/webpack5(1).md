@@ -66,7 +66,7 @@ webpack 默认从`output.filename`生成入口 chunk 的名称，不过也可以
 
 如果指定`filename`为单个的字符串，并且`entry`是单个入口，那么就对应单个 bundle `js`。
 
-但是鉴于大部分情况下都会使用 [**代码分离**](https://webpack.docschina.org/guides/code-splitting/) 的模式，则需要使用以下**可替换模板字符串**模式来为每个 chunk 指定特定的文件名称
+但是鉴于大部分情况下都会使用 [code-splitting](https://webpack.docschina.org/guides/code-splitting/) 的模式，则需要使用以下**可替换模板字符串**模式来为每个 chunk 指定特定的文件名称
 
 ```js
   output: {

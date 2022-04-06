@@ -99,4 +99,17 @@ nodejs 的文档解释了[`require()`的规则](http://nodejs.cn/api/modules.htm
 
 ### process.cwd
 
-`process.cwd()`始终指向执行`node`程序的目录，在`node`执行的过程中不变，而`__dirname`会随着`node`执行文件模块的路径不断变化。
+`process.cwd`是当前 NodeJS 命令工作的绝对路径，和`__dirname`的主要区别是`__dirname`是指向脚本命令所在文件的文件路径，随着程序执行，可能会发生变化，而`process.cwd`则不会在 NodeJS 程序执行过程中发生改变，也就是控制台当前显示的目录路径。
+
+例如下面的文件结构：
+
+```shell
+-src
+	-lib
+		-index.js
+	-index.js
+```
+
+当在`C:\\node\\temp`目录下执行`node src/index.js`时，`__dirname`就是`src`的绝对路径，而`process.cwd`则是
+
+`C:\\node\\temp`；如果`src/index.js`中执行`lib/index.js`，其内部`__dirname`则是`lib`的绝对路径。
