@@ -194,6 +194,14 @@
 
 ![image-20220117220746500](../../public/images/image-20220117220746500.png)
 
+### cli-table
+
+[![npm version](https://badge.fury.io/js/cli-table.svg)](https://badge.fury.io/js/cli-table)
+
+在 CLI 内部画表格，这个库目前对中文表头字符支持的还有点问题，会多算几个字符。
+
+![image-20220401230531772](../../public/images/image-20220401230531772.png)
+
 ## Open API
 
 ### [npms.io API documentation](https://api-docs.npms.io/)
