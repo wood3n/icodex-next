@@ -1,5 +1,5 @@
 ---
-title: DOM 解析的不同
+title: DOM 解析模式
 slug: /domparsemode
 ---
 
@@ -34,8 +34,6 @@ slug: /domparsemode
 
 ## 怪异模式
 
-> [wiki - 怪异模式](<[https://zh.wikipedia.org/wiki/%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F](https://zh.wikipedia.org/wiki/怪异模式)>)
->
 > [wahtwg - Quirks Mode](https://quirks.spec.whatwg.org/)
 
 如果**未使用任何`<!DOCTYPE>`声明**或者`<!DOCTYPE>`声明的方式不符合标准形式，缺少必要属性等，浏览器就会使用怪异模式来渲染网页：
