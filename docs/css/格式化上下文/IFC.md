@@ -1,3 +1,7 @@
+---
+title: IFC
+---
+
 ## 行内元素
 
 ### 行内级元素
@@ -43,7 +47,7 @@ object, q, script, sub, sup
 <p>Some <em>emphasized</em> text</p>
 ```
 
-![image-20200813112148610](../../public/images/image-20200813112148610.png)
+![image-20200813112148610](../../../public/images/image-20200813112148610.png)
 
 ## IFC
 
@@ -68,7 +72,7 @@ object, q, script, sub, sup
 </p>
 ```
 
-![线盒范围](../../public/images/scope_line_box.png)
+![线盒范围](../../../public/images/scope_line_box.png)
 
 当线盒内行内级盒子的总宽度小于线盒的宽度时，它们**在线盒内的排布**取决于块容器盒子的`text-align`属性，`text-align`属性的默认值是`start`，如果书写方向是从左到右，则`start`就和`left`的效果一样，表示所有盒子向左对齐；而如果书写方向是从右向左，则相反。注意`text-align`修改的是行内级盒子在线盒内的对齐方式。
 
@@ -82,7 +86,7 @@ object, q, script, sub, sup
 </p>
 ```
 
-![行内框水平对齐](../../public/images/inline_box_horizontal_align.png)
+![行内框水平对齐](../../../public/images/inline_box_horizontal_align.png)
 
 当行内级盒子的总宽度大于线盒的宽度，它就会被分配在两个或多个垂直堆叠的线盒中。不能分割的行内盒子有以下几种情况：
 
@@ -90,7 +94,7 @@ object, q, script, sub, sup
 - 单个汉字不能拆分
 - 指定行内级盒子或者包含块容器盒子的 CSS 属性为`white-space: nowrap;`或者`white-space: pre;`的不能拆分
 
-![test](../../public/images/test-1597145472700.gif)
+![test](../../../public/images/test-1597145472700.gif)
 
 ### 线盒高度的计算
 
@@ -107,7 +111,7 @@ object, q, script, sub, sup
 
 在英文字体排版中有以下概念：
 
-![image-20200807182002673](../../public/images/image-20200807182002673.png)
+![image-20200807182002673](../../../public/images/image-20200807182002673.png)
 
 - `x`字高，x-height，是指英文字母的基本高度
 - `x`上边顶着的线称为主线（mean line）；`x`下边顶着的线就是**基线（baseline）**；
@@ -116,7 +120,7 @@ object, q, script, sub, sup
 
 中文没有基线的概念，因为中文以前的书写习惯就是从上往下怼的！如果把英文字符和汉字放在一起来看，大致可以看出基线其实比汉字底部要稍微高一点点。
 
-![image-20200807213156930](../../public/images/image-20200807213156930.png)
+![image-20200807213156930](../../../public/images/image-20200807213156930.png)
 
 在 CSS 中，基线用于线盒内元素或者文本垂直方向上的对齐。
 
@@ -149,7 +153,7 @@ object, q, script, sub, sup
 
 - 对于每一个字形，行距（leading）用`L`表示，`L = line-height - (A+D)`。将行距的一半高度值半行距（half leading）`1/2 L`添加到字形的`A`之上，另一半行距添加到`D`的下方，这时候的总高度计算如下：
 
-  ![image-20200812193432155](../../public/images/image-20200812193432155.png)
+  ![image-20200812193432155](../../../public/images/image-20200812193432155.png)
 
   而`L = line-height - (A+D)`，所以这个高度正好等于行高`line-height`—— [_The height of the inline box encloses all glyphs and their half-leading on each side and is thus exactly 'line-height'_](https://www.w3.org/TR/CSS22/visudet.html#inline-box-height)。
 

@@ -1,6 +1,6 @@
 ---
-title: 前端工程化
-slug: /engineer/guides
+title: React
+slug: /react/guides
 ---
 
 ```mdx-code-block

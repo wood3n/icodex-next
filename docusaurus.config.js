@@ -53,6 +53,8 @@ const config = {
           routeBasePath: "/",
           path: "./blog",
           showReadingTime: true,
+          readingTime: ({ content, defaultReadingTime }) =>
+            defaultReadingTime({ content, options: { wordsPerMinute: 100 } }),
           blogSidebarCount: 5,
           blogSidebarTitle: "Recent posts",
         },
@@ -108,22 +110,22 @@ const config = {
               {
                 type: "doc",
                 label: "JavaScript",
-                docId: "javascript/类型/类型定义",
+                docId: "javascript/index",
               },
               {
                 type: "doc",
                 label: "CSS",
-                docId: "css/CSS代码规范",
+                docId: "css/index",
               },
               {
-                type: "doc",
+                // type: "doc",
                 label: "TypeScript",
-                docId: "typescript/tsconfig",
+                to: "docs/typescript",
               },
               {
                 type: "doc",
                 label: "React",
-                docId: "react/hooks/常用hooks",
+                docId: "react/index",
               },
               {
                 type: "doc",
@@ -145,7 +147,7 @@ const config = {
               {
                 type: "doc",
                 label: "Network",
-                docId: "network/网速与带宽",
+                docId: "network/index",
               },
               {
                 type: "doc",

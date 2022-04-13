@@ -1,6 +1,6 @@
 ---
-title: 前端工程化
-slug: /engineer/guides
+title: JavaScript
+slug: /javascript/guides
 ---
 
 ```mdx-code-block
