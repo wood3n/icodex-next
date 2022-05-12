@@ -78,3 +78,4 @@ title: tsconfig.json 文件配置
 ### forceConsistentCasingInFileNames
 
 `forceConsistentCasingInFileNames`是否强制代码中使用的模块文件名必须和文件系统中的文件名保持大小写一致，例如`import fileManager.ts`查找指定的`fileManager.ts`文件而不是`FileManager.ts`文件。
+

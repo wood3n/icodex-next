@@ -279,26 +279,33 @@ yarn add eslint-plugin-react -D
 
 ### TypeScript 配置
 
-TypeScript 团队从 2019 年 1 月开始就采用 ESLint 作为代码检查工具，提供了 TypeScript 文件的解析器 `@typescript-eslint/parser` 和相关的配置选项 `@typescript-eslint/eslint-plugin`；之前的[typescript-eslint-parser](https://github.com/eslint/typescript-eslint-parser)和 TSLint 都已经停止维护。
-
-> [`@typescript-eslint/parser`](https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md#getting-started---linting-your-typescript-codebase)
+TypeScript 团队从 2019 年 1 月开始就采用 ESLint 作为代码检查工具，提供了 TypeScript 文件的解析器 [`@typescript-eslint/parser`](https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md#getting-started---linting-your-typescript-codebase) 和相关的 ESLint 插件 `@typescript-eslint/eslint-plugin`，其[文档](https://typescript-eslint.io/docs/linting/)也很完善，按照文档提示安装配置就可以使用了。
 
 ```shell
-yarn add @typescript-eslint/parser @typescript-eslint/eslint-plugin -D
+yarn add eslint typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin -D
 ```
 
+在项目根目录写下配置文件`.eslintrc.js`，需要注意`tsconfig.json`配置要支持`"module": "commonjs"`和`"moduleResolution": "node"`，否则这里的 cjs 语法会报错。
+
 ```javascript
-// 配置
-{
+module.exports = {
+  root: true,
+  env: {
+    browser: true,
+    es2020: true,
+    node: true,
+  },
   parser: '@typescript-eslint/parser',
-  plugins: [
-      "@typescript-eslint",
-  ],
-  extends: [
-     "plugin:@typescript-eslint/eslint-recommended",
-     "plugin:@typescript-eslint/recommended",
-  ],
+  plugins: ['@typescript-eslint'],
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+  rules: {
+    '@typescript-eslint/prefer-namespace-keyword': 'error',
+    '@typescript-eslint/no-unused-vars': 'error',
+    '@typescript-eslint/no-non-null-assertion': 0,
+    '@typescript-eslint/no-var-requires': 0,
+  },
 };
+
 ```
 
 ### 结合 Prettier 使用

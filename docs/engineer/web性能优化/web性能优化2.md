@@ -1,10 +1,17 @@
 ---
-title: web性能优化（2）
+title: 优化网络传输
 slug: /enhancedweb2
+
 ---
 
-## 预加载资源
 
-### preload
 
-[Link types: preload - HTML: HyperText Markup Language | MDN (mozilla.org)](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preload#what_types_of_content_can_be_preloaded)
+## 网络传输的复杂性
+
+### RTT
+
+
+
+## TCP 传输的必要性
+
+所有网络资源的传输，一开始都要经过 TCP 连接，而 TCP 连接必然经过三次握手。

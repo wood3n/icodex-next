@@ -153,21 +153,22 @@ npx husky add pre-commit "lint"
 
 ```shell
 yarn add husky lint-staged -D
-
-// 然后执行
-npx mrm lint-staged
+// 或
+pnpm add husky lint-staged -D
+pnpm add mrm@2 -g
 ```
 
-![image-20201123231405977](../../public/images/image-20201123231405977.png)
+```shell
+// 然后执行
+npx mrm lint-staged
 
-`lint-staged`下属性名是 glob 匹配模式的文件路径，属性值是要执行的命令。
+// 或
+pnpm exec mrm lint-staged
+```
+
+该命令会执行`lint-staged`的程序，自动配置`husky`和`lint-staged`，在项目目录下生成`husky`的配置文件，以及在`package.json`中写入`lint-staged`关联`eslint`的配置。
 
 ```json
-"husky": {
-  "hooks": {
-    "pre-commit": "lint-staged"
-  }
-},
 "lint-staged": {
   "*.{jsx,js,ts,tsx}": "eslint --fix"
 }
