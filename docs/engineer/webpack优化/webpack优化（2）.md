@@ -67,7 +67,7 @@ title: webpack优化（2）
 
 ### 配置 bugfixes
 
-在`babel 7`版本中，`bugfixes`的默认值是`false`，在`babel 8`中计划将其默认值改成`false`。
+在`babel 7`版本中，`bugfixes`的默认值是`false`，在`babel 8`中计划将其默认值改成`true`。
 
 默认情况下，`@babel/preset-env`或者其他的 Babel plugin 会对 ES 语法特性进行相关分组，例如 ES6 中支持对函数参数设置默认值，以及解构剩余参数等语法，如果开启`bugfixes`，`@babel/preset-env`会根据`targets`判定浏览器的兼容范围，选择编译到目标浏览器支持的最接近的最新现代语法，这将导致已编译应用程序的大小显著减小，不仅优化 webpack 的构建速度，而且优化了生成的代码的体积。
 
