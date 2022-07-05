@@ -54,8 +54,8 @@ const config = {
           path: "./blog",
           showReadingTime: true,
           readingTime: ({ content, defaultReadingTime }) =>
-            defaultReadingTime({ content, options: { wordsPerMinute: 100 } }),
-//           blogSidebarCount: 5,
+          defaultReadingTime({ content, options: { wordsPerMinute: 100 } }),
+          blogSidebarCount: 20,
           blogSidebarTitle: "Recent posts",
         },
         theme: {
