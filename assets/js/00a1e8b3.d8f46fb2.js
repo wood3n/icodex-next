@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkicodex_next=self.webpackChunkicodex_next||[]).push([[6085],{80221:function(e){e.exports=JSON.parse('{"title":"TypeScript","slug":"/typescript","permalink":"/docs/typescript","navigation":{"next":{"title":"React \u4e2d\u7684\u7c7b\u578b","permalink":"/docs/typescript/React\u4e2d\u7684\u7c7b\u578b"}}}')}}]);
