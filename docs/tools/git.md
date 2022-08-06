@@ -468,6 +468,15 @@ git branch --set-upstream-to=origin/<remote branch> <local branch>
 git push -u origin branch1
 ```
 
+## 代理
+
+```shell
+git config --global https.proxy http://127.0.0.1:8080
+git config --global http.proxy http://127.0.0.1:8080
+```
+
+注意 HTTP 的端口要和代理端口保持一致。
+
 ## QA
 
 ### windows CRLF
