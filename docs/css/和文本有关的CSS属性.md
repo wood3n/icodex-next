@@ -110,7 +110,7 @@ CJK 文本不进行换行，非 CJK 文本表现同`word-break:normal`
 
 ## overflow-wrap/word-wrap
 
-`overflow-wrap`和`word-wrap`是一样的属性，word-wrap 属性原本属于微软的一个私有属性，在 CSS3 现在的文本规范草案中已经被重名为 [`overflow-wrap`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/overflow-wrap) 。 稳定的谷歌 Chrome 和 Opera 浏览器版本支持这种新语法。
+`overflow-wrap`和`word-wrap`是一样的属性，`word-wrap`属性原本属于微软的一个私有属性，在 CSS3 现在的文本规范草案中已经被重名为[`overflow-wrap`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/overflow-wrap) 。 稳定的谷歌 Chrome 和 Opera 浏览器版本支持这种新语法。
 
 ### normal
 
@@ -221,6 +221,25 @@ CJK 文本不进行换行，非 CJK 文本表现同`word-break:normal`
 ### text-decoration-thickness
 
 `text-decoration-thickness`设置线的粗细，可以使用 CSS 里的长度值`<length>`，百分比值，当设置百分比值的时候，相对于当前元素字体的`1em`（`1em`也就是`1`倍字体大小）。
+
+## line-clamp
+
+`line-clamp`是 CSS3 规范定义的属性，用来指定块级元素内部显示的文本行数，超出指定行数的内容会被浏览器处理折叠，既不渲染也不纳入父元素文本内容的计算（某些情况例如富文本编辑需要计算编辑内容）。
+
+### 兼容性问题
+
+![image-20220803175629880](../../public/images/image-20220803175629880.png)
+
+目前主流的浏览器都已支持`line-clamp`属性，但是该属性最初是在 webkit 引擎上以`-webkit-line-clamp`属性名来实现，所以其他渲染引擎的浏览器要使用`line-clamp`都需要添加`-webkit`前缀，同时还必须满足以下两个条件：
+
+:::caution
+
+- 指定：`display:-webkit-box`或`display:-webkit-inline-box`
+- 指定：`webkit-box-orient:vertical`
+
+:::
+
+其中`-webkit-box`和`-webkit-inline-box`是`flex`[最早定义](https://www.w3.org/TR/2009/WD-css3-flexbox-20090723/)的属性值，相当于现在的`display:flex`，而`box-orient`则是指定`flex`主轴方向，相当于`flex-direction`。
 
 ## writing-mode
 
