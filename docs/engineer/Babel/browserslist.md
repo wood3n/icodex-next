@@ -103,7 +103,7 @@ module.exports = {
 
 ```json
 {
-	"development": ["last 2 Chrome versions"],
+  "development": ["last 2 Chrome versions"],
   "production": [
    	"last 1 version",
     "> 1%",
@@ -111,3 +111,18 @@ module.exports = {
   ]
 }
 ```
+## browserlist 更新
+
+`browserlist`在[`2022-05-21`更新](https://github.com/browserslist/browserslist/commit/37a3847e81a4dccc93b3af2d781e51c04a54224d)中，将`IE11`列入不再维护的浏览器版本中，因为微软在`2022-06-15`起将正式不再维护 IE 浏览器，所以`ie is dead`.
+
+那么此后使用`browserlist`设置`> 0.5%, last 2 versions, not dead`或者`defaults`的浏览器版本，将不再兼容`IE11`，这意味着部分依赖`browserlist`的开源工具，例如`babel`，`webpack`等可能会将代码编译成`ES6`版本。如果仍然要兼容`IE11`，那么需要明确指定`IE11`.
+
+```js
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "IE 11"
+  ]
+```
+
+
