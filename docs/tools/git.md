@@ -436,11 +436,21 @@ git reset --hard 3c8j0wrwjrw0824m2...
 
 ```shell
 git revert [HEAD]
+git revert [commit-id]
 ```
 
 如果使用`git revert`也能做到重置提交的目的，例如使用`git revert HEAD`是重置到上一版本，**同时会创建一个新的提交记录**。注意这点是和`git reset`主要的区别，`git reset`是连提交记录都会重置，也就是说你**滚回去以后就别想滚回来了**，`git revert`是创建一个新的提交去覆盖之前的提交记录。
 
 ![image-20200922143003078](../../public/images/image-20200922143003078.png)
+
+### 主分支revert后无法重新提交合并的问题
+
+当回滚主分支`master`以后，已经合并的其余分支如果想重新合并到`master`会无法提交 MR，这时候需要在待合并的本地分支执行以下操作：
+
+1. 重新`git merge origin/master`，会丢失本地分支代码
+2. 执行`git revert [revert-hash]`，将本地分支回滚到之前的状态
+
+执行完这两步以后就可以重新提交了。
 
 ## 关联
 
