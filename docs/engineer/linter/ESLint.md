@@ -1,6 +1,6 @@
 ---
 title: ESLint的使用
-
+slug: /eslintconfig
 ---
 
 ## 什么是 ESLint
