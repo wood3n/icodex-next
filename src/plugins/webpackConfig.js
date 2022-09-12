@@ -3,7 +3,7 @@ const path = require("path");
 module.exports = function () {
   return {
     name: "webpack-config-plugin",
-    configureWebpack(config, isServer, utils, content) {
+    configureWebpack() {
       return {
         resolve: {
           alias: {

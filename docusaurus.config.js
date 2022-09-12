@@ -71,7 +71,11 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     {
-      hideableSidebar: false,
+      docs: {
+        sidebar: {
+          hideable: true,
+        },
+      },
       metadata: [
         {
           name: "keywords",
