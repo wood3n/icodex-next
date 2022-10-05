@@ -80,7 +80,13 @@
 1. `node`：普通 Node 模块路径；
 1. `import`：ESM 模块入口路径；
 1. `require`：CJS 模块入口路径;
-1. `default`：备选入口模块路径，当按照上述顺序无法匹配时，选择`default`指定的模块作为入口。
+1. `default`：备选入口模块路径，当按照上述顺序无法匹配时，选择`default`指定的模块作为入口
+
+:::caution
+
+`default`应该总是添加到`exports`对象字段的结尾，避免当仅定义`require`或者`import`时找不到指定模块而报`[ERR_PACKAGE_PATH_NOT_EXPORTED]`的错误。
+
+:::
 
 例如兼容 ESM 和 CJS 语法，需要在`exports`内部定义`import`和`require`来分别指定 ESM 和 CJS 模块入口文件路径：
 
