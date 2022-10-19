@@ -448,9 +448,9 @@ git revert [commit-id]
 当回滚主分支`master`以后，已经合并的其余分支如果想重新合并到`master`会无法提交 MR，这时候需要在待合并的本地分支执行以下操作：
 
 1. 重新`git merge origin/master`，会丢失本地分支代码
-2. 执行`git revert [revert-hash]`，将本地分支回滚到之前的状态
+2. 执行`git revert [revert-hash]`，这里`revert-hash`是提交 revert mr 之前提交的 revert 的那条记录的 hash；这样执行完会将本地分支回滚到 mr 之前的状态
 
-执行完这两步以后就可以重新提交了。
+执行完这两步以后就可以重新提交 mr 了。
 
 ## 关联
 
