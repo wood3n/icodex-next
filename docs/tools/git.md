@@ -483,6 +483,10 @@ git push -u origin branch1
 ```shell
 git config --global https.proxy http://127.0.0.1:8080
 git config --global http.proxy http://127.0.0.1:8080
+  
+// 取消代理
+git config --global --unset https.proxy
+git config --global --unset http.proxy
 ```
 
 注意 HTTP 的端口要和代理端口保持一致。
