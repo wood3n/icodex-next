@@ -44,7 +44,7 @@ export default function BlogPostItemWrapper(props) {
   return (
     <>
       <BlogPostItem {...props} />
-      <div ref={commentContainerRef}></div>
+      {isBlogPostPage && <div ref={commentContainerRef}></div>}
     </>
   );
 }
