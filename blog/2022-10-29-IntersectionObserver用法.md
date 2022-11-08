@@ -176,17 +176,20 @@ interface IntersectionObserverEntry {
 1. 在`document`的`viewport`内部是否可见，此时元素相对于浏览器窗口或者`iframe`定位
 
 <iframe src="https://codesandbox.io/embed/ancient-sound-l3vbju?fontsize=14&hidenavigation=1&theme=dark"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     width="100%"
+     height="500"
      title="ancient-sound-l3vbju"
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
      loading="lazy"
    ></iframe>
 
+
 2. 在祖先元素内部是否可见
 
 <iframe src="https://codesandbox.io/embed/nervous-tristan-k630cf?fontsize=14&hidenavigation=1&theme=dark"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     width="100%"
+     height="500"
      title="nervous-tristan-k630cf"
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
@@ -195,31 +198,37 @@ interface IntersectionObserverEntry {
 
 
 
+
 # IntersectionObserver用例
 
 ## Image Lazyload
 
 <iframe src="https://codesandbox.io/embed/hopeful-poincare-uuhiob?fontsize=14&hidenavigation=1&theme=dark"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+          width="100%"
+     height="500"
      title="hopeful-poincare-uuhiob"
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
      loading="lazy"
    ></iframe>
 
+
 ## Sticky Header BoxShadow
 
 <iframe src="https://codesandbox.io/embed/angry-taussig-e07ysx?fontsize=14&hidenavigation=1&theme=dark"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+          width="100%"
+     height="500"
      title="angry-taussig-e07ysx"
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
      loading="lazy"
    ></iframe>
+
 ## Infinite Scroll
 
 <iframe src="https://codesandbox.io/embed/intelligent-albattani-yrujgn?fontsize=14&hidenavigation=1&theme=dark"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+          width="100%"
+     height="500"
      title="intelligent-albattani-yrujgn"
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
