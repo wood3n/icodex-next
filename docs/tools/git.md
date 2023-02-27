@@ -30,6 +30,14 @@ git config --global user.name "icodex"
 git config --global user.email xxx@163.com
 ```
 
+Git 配置使用`git push`时自动关联远程分支：
+
+```shell
+git config --global --add push.default current
+
+git config --global --add push.autoSetupRemote true
+```
+
 如果要获取所有 git 的配置，可以使用：
 
 ```shell
