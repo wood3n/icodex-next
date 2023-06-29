@@ -38,6 +38,12 @@ git config --global --add push.default current
 git config --global --add push.autoSetupRemote true
 ```
 
+Git 配置大小写敏感
+
+```shell
+git config core.ignorecase false
+```
+
 如果要获取所有 git 的配置，可以使用：
 
 ```shell
