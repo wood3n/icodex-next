@@ -20,6 +20,33 @@
 在现代浏览器中，所有事件的注册都默认会执行冒泡过程。当然了，如果在事件注册时设置禁止冒泡的选项，这个冒泡过程就不会发生。
 可以通过事件对象的实例属性[Event.bubbles](https://developer.mozilla.org/en-US/docs/Web/API/Event/bubbles)来判断事件是否处于冒泡阶段。
 
+### currentTarget vs target
+
+事件接口对象`Event`上存在两种目标对象：[target](https://developer.mozilla.org/en-US/docs/Web/API/Event/target)和[currentTarget](https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget)；在了解了事件的捕获和冒泡阶段后就能区分这两种对象：
+
+- `target`：指向实际触发事件的元素
+- `currentTarget`：指向`addEventListener`添加事件时绑定的元素
+
+用事件委托可以清楚的解释这种区别，例如在`ul`设置事件监听子元素`li`
+
+```js
+const ul = document.createElement("ul");
+document.body.appendChild(ul);
+
+const li1 = document.createElement("li");
+const li2 = document.createElement("li");
+ul.appendChild(li1);
+ul.appendChild(li2);
+
+function hide(evt) {
+  // evt.target 指向 <li> 
+  // 而 evt.currentTarget 指向 <ul>
+  evt.target.style.visibility = "hidden";
+}
+
+ul.addEventListener("click", hide, false);
+```
+
 ## 事件注册
 
 事件监听的注册方式具有以下几种方式：
