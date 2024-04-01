@@ -163,3 +163,92 @@ declare module '*.module.sass' {
   ]
 }
 ```
+
+## 全局类型定义
+
+使用`d.ts`文件来声明全局变量，函数，类型等，通常有以下两种方式
+
+### 使用`declare global`
+
+在项目内部任意位置创建类型声明文件`xxx.d.ts`，然后使用[`declare global`](https://www.typescriptlang.org/docs/handbook/declaration-files/templates/global-modifying-module-d-ts.html#global-modifying-modules)可以定义全局变量，全局方法，或者**覆盖**一些 JS 方法以及第三方类库的全局类型定义。
+
+:::caution
+
+需要注意的是如果该文件没有任何`export`，必须加上`export {}`。
+
+:::
+
+```typescript
+// global.d.ts
+declare global {
+  let timeout: number;
+  const version: string;
+  
+  class Cat {
+    constructor(n: number);
+    readonly age: number;
+    purr(): void;
+  }
+  
+  interface CatSettings {
+    weight: number;
+    name: string;
+    tailLength?: number;
+  }
+  
+  // 在 String 类型上定义一个实例方法，全局覆盖 String 的类型定义
+  interface String {
+    fancyFormat(opts: StringFormatOptions): string;
+  }
+}
+
+// 必须包含 export
+export {}
+```
+
+### 全局声明
+
+在 TypeScript 项目中，如果一份类型声明文件没有任何的`export`和`import`，则默认其为全局模块，在项目内部可以不需要`import`直接使用，参考[TypeScript: Documentation - Global .d.ts (typescriptlang.org)](https://www.typescriptlang.org/docs/handbook/declaration-files/templates/global-d-ts.html#global-library-template)
+
+```typescript
+// 直接使用 declare 定义类型
+declare function myLib(a: string): string;
+declare function myLib(a: number): number;
+
+// 定义全局 Lib 类型，其他模块可以直接使用
+interface Lib {
+  name: string;
+  length: number;
+  extras?: string[];
+}
+
+// 定义全局命名空间 Lib，其内部声明的类型都可以用 Lib 命名空间访问
+declare namespace Lib {
+  //~ We can write 'Lib.timeout = 50;'
+  let timeout: number;
+  //~ We can access 'Lib.version', but not change it
+  const version: string;
+  //~ There's some class we can create via 'let c = new Lib.Cat(42)'
+  //~ Or reference e.g. 'function f(c: myLib.Cat) { ... }
+  class Cat {
+    constructor(n: number);
+    //~ We can read 'c.age' from a 'Cat' instance
+    readonly age: number;
+    //~ We can invoke 'c.purr()' from a 'Cat' instance
+    purr(): void;
+  }
+  //~ We can declare a variable as
+  //~   'var s: Lib.CatSettings = { weight: 5, name: "Maru" };'
+  interface CatSettings {
+    weight: number;
+    name: string;
+    tailLength?: number;
+  }
+  //~ We can write 'const v: Lib.VetID = 42;'
+  //~  or 'const v: Lib.VetID = "bob";'
+  type VetID = string | number;
+  //~ We can invoke 'Lib.checkCat(c)' or 'Lib.checkCat(c, v);'
+  function checkCat(c: Cat, s?: VetID);
+}
+```
+

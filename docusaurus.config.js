@@ -158,6 +158,11 @@ const config = {
                 label: "Algorithm",
                 docId: "algorithm/算法分析",
               },
+              {
+                type: "doc",
+                label: "Interview",
+                docId: "interview/index",
+              },
             ],
           },
           {
