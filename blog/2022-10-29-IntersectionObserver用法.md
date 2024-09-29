@@ -195,7 +195,11 @@ interface IntersectionObserverEntry {
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
      loading="lazy"
    ></iframe>
+
+
 ### Image Lazyload
+
+
 
 <iframe src="https://codesandbox.io/embed/hopeful-poincare-uuhiob?fontsize=14&hidenavigation=1&theme=dark"
           width="100%"
@@ -205,7 +209,11 @@ interface IntersectionObserverEntry {
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
      loading="lazy"
    ></iframe>
+
+
 ### Sticky Header BoxShadow
+
+
 
 <iframe src="https://codesandbox.io/embed/angry-taussig-e07ysx?fontsize=14&hidenavigation=1&theme=dark"
           width="100%"
@@ -215,7 +223,11 @@ interface IntersectionObserverEntry {
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
      loading="lazy"
    ></iframe>
+
+
 ### Infinite Scroll
+
+
 
 <iframe src="https://codesandbox.io/embed/intelligent-albattani-yrujgn?fontsize=14&hidenavigation=1&theme=dark"
           width="100%"
