@@ -169,7 +169,7 @@ interface IntersectionObserverEntry {
 
 :::
 
-## 元素是否可见的判断
+## 判断元素是否可见
 
 通过`IntersectionObserver`我们可以判断元素是否可见的两种情况：
 
@@ -195,13 +195,9 @@ interface IntersectionObserverEntry {
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
      loading="lazy"
    ></iframe>
+## IntersectionObserver用例
 
-
-
-
-# IntersectionObserver用例
-
-## Image Lazyload
+### Image Lazyload
 
 <iframe src="https://codesandbox.io/embed/hopeful-poincare-uuhiob?fontsize=14&hidenavigation=1&theme=dark"
           width="100%"
@@ -211,9 +207,7 @@ interface IntersectionObserverEntry {
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
      loading="lazy"
    ></iframe>
-
-
-## Sticky Header BoxShadow
+### Sticky Header BoxShadow
 
 <iframe src="https://codesandbox.io/embed/angry-taussig-e07ysx?fontsize=14&hidenavigation=1&theme=dark"
           width="100%"
@@ -223,8 +217,7 @@ interface IntersectionObserverEntry {
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
      loading="lazy"
    ></iframe>
-
-## Infinite Scroll
+### Infinite Scroll
 
 <iframe src="https://codesandbox.io/embed/intelligent-albattani-yrujgn?fontsize=14&hidenavigation=1&theme=dark"
           width="100%"
