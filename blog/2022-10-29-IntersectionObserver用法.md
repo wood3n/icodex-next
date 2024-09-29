@@ -12,8 +12,6 @@ authors: oxygen
 
 <!--truncate-->
 
-# IntersectionObserver 介绍
-
 W3C 在 [2017-09-14](https://www.w3.org/standards/history/intersection-observer) 正式发布了`IntersectionObserver` API 草案，其功能上提供了检测目标元素在祖先元素或 [viewport](https://developer.mozilla.org/zh-CN/docs/Glossary/Viewport) 内可视情况变化的方式，这种观测是异步的，保证了开发上的便捷和性能上的高效。
 
 ## IntersectionObserver类型定义
@@ -169,7 +167,9 @@ interface IntersectionObserverEntry {
 
 :::
 
-## 判断元素是否可见
+## IntersectionObserver用例
+
+### 判断元素是否可见
 
 通过`IntersectionObserver`我们可以判断元素是否可见的两种情况：
 
@@ -195,8 +195,6 @@ interface IntersectionObserverEntry {
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
      loading="lazy"
    ></iframe>
-## IntersectionObserver用例
-
 ### Image Lazyload
 
 <iframe src="https://codesandbox.io/embed/hopeful-poincare-uuhiob?fontsize=14&hidenavigation=1&theme=dark"
