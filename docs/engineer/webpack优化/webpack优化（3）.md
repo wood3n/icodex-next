@@ -19,20 +19,20 @@ module.exports = {
       {
         test: /\.m?jsx?$/,
         exclude: /(node_modules)/, //剔除node_modules
-        loader: 'babel-loader',
+        loader: "babel-loader",
         options: {
           presets: [
             [
-              '@babel/preset-env',
+              "@babel/preset-env",
               {
                 modules: false,
               },
             ],
-            ['@babel/preset-react'],
+            ["@babel/preset-react"],
           ],
           plugins: [
-            '@babel/plugin-proposal-class-properties',
-            isDevelopment && require.resolve('react-refresh/babel'),
+            "@babel/plugin-proposal-class-properties",
+            isDevelopment && require.resolve("react-refresh/babel"),
           ].filter(Boolean),
         },
       },
@@ -49,17 +49,17 @@ module.exports = {
     rules: [
       {
         test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/i],
-        include: path.resolve(__dirname, 'src/assets/images'), //仅包含图片文件夹
+        include: path.resolve(__dirname, "src/assets/images"), //仅包含图片文件夹
         use: [
           {
-            loader: 'url-loader',
+            loader: "url-loader",
             options: {
               limit: 10 * 1024,
-              name: 'static/images/[name].[contenthash:8].[ext]',
+              name: "static/images/[name].[contenthash:8].[ext]",
             },
           },
           {
-            loader: 'image-webpack-loader',
+            loader: "image-webpack-loader",
             options: {
               disable: isDevelopment,
             },
@@ -81,9 +81,9 @@ module.exports = {
 module.exports = {
   resolve: {
     modules: [
-      path.resolve(__dirname, './src/components'),
-      path.resolve(__dirname, './src'),
-      path.resolve(__dirname, 'node_modules'),
+      path.resolve(__dirname, "./src/components"),
+      path.resolve(__dirname, "./src"),
+      path.resolve(__dirname, "node_modules"),
     ],
   },
 };
@@ -92,13 +92,13 @@ module.exports = {
 这时候在编写页面的时候，如果`import`一个`src/components`下里面的组件，就不用带任何路径前缀直接写文件夹就行了，nice！不过这时候的弊端就是如果你的组件和第三方库的组件同名，就会把第三方库的组件覆盖掉了。
 
 ```javascript
-import { Button } from 'Button/index.jsx';
+import { Button } from "Button/index.jsx";
 ```
 
 这个配置加上上文提到的`rule.resolve.extensions`，结合在一起就是神器，对于`src/components`的组件，例如`src/components/Button`，直接一句话就搞定，webpack 会自动查找`src/components/Button`文件夹下的`index`文件。
 
 ```javascript
-import { Button } from 'Button';
+import { Button } from "Button";
 ```
 
 ### resolve.symlinks
@@ -145,7 +145,7 @@ module.exports = {
     rules: [
       {
         test: /\.m?jsx?$/,
-        loader: 'babel-loader',
+        loader: "babel-loader",
         options: {
           //...
           cacheDirectory: true,
@@ -176,17 +176,17 @@ module.exports = {
 
 `cache-loader`虽然已经接近一年没有更新过了，但是它是 webpack 团队维护的，所以还是值得信赖的。
 
-| 配置项                | 类型                                             | 默认值                                                  | 含义                                                         |
-| --------------------- | ------------------------------------------------ | ------------------------------------------------------- | ------------------------------------------------------------ |
-| **`cacheContext`**    | `{String}`                                       | `undefined`                                             | 相对于设置的路径生成缓存                                     |
-| **`cacheKey`**        | `{Function(options, request) -> {String}}`       | `undefined`                                             | 重写生成缓存项的键的函数                                     |
-| **`cacheDirectory`**  | `{String}`                                       | `findCacheDir({ name: 'cache-loader' }) or os.tmpdir()` | 设置缓存写入和读取的目录                                     |
-| **`cacheIdentifier`** | `{String}`                                       | `cache-loader:{version} {process.env.NODE_ENV}`         | 设置一个用于生成 hash 的标识符                               |
-| **`compare`**         | `{Function(stats, dep) -> {Boolean}}`            | `undefined`                                             | 修改缓存比较的函数，如果返回`true`就表示使用缓存而不是去执行 loader 生成新资源 |
+| 配置项                | 类型                                             | 默认值                                                  | 含义                                                                                                                          |
+| --------------------- | ------------------------------------------------ | ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| **`cacheContext`**    | `{String}`                                       | `undefined`                                             | 相对于设置的路径生成缓存                                                                                                      |
+| **`cacheKey`**        | `{Function(options, request) -> {String}}`       | `undefined`                                             | 重写生成缓存项的键的函数                                                                                                      |
+| **`cacheDirectory`**  | `{String}`                                       | `findCacheDir({ name: 'cache-loader' }) or os.tmpdir()` | 设置缓存写入和读取的目录                                                                                                      |
+| **`cacheIdentifier`** | `{String}`                                       | `cache-loader:{version} {process.env.NODE_ENV}`         | 设置一个用于生成 hash 的标识符                                                                                                |
+| **`compare`**         | `{Function(stats, dep) -> {Boolean}}`            | `undefined`                                             | 修改缓存比较的函数，如果返回`true`就表示使用缓存而不是去执行 loader 生成新资源                                                |
 | **`precision`**       | `{Number}`                                       | `0`                                                     | Round `mtime` by this number of milliseconds both for `stats` and `dep` before passing those params to the comparing function |
-| **`read`**            | `{Function(cacheKey, callback) -> {void}}`       | `undefined`                                             | 使用函数生成一个新的内容来覆盖缓存的内容                     |
-| **`readOnly`**        | `{Boolean}`                                      | `false`                                                 | 如果不希望更新缓存，只是读取它可以将这个配置项设为`true`     |
-| **`write`**           | `{Function(cacheKey, data, callback) -> {void}}` | `undefined`                                             | 使用函数生成新资源来替换缓存内容                             |
+| **`read`**            | `{Function(cacheKey, callback) -> {void}}`       | `undefined`                                             | 使用函数生成一个新的内容来覆盖缓存的内容                                                                                      |
+| **`readOnly`**        | `{Boolean}`                                      | `false`                                                 | 如果不希望更新缓存，只是读取它可以将这个配置项设为`true`                                                                      |
+| **`write`**           | `{Function(cacheKey, data, callback) -> {void}}` | `undefined`                                             | 使用函数生成新资源来替换缓存内容                                                                                              |
 
 #### 使用
 
@@ -204,18 +204,18 @@ module.exports = {
     rules: [
       {
         test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/i],
-        include: path.resolve(__dirname, 'src/assets/images'),
+        include: path.resolve(__dirname, "src/assets/images"),
         use: [
           {
-            loader: 'url-loader',
+            loader: "url-loader",
             options: {
               limit: 10 * 1024, //10KB
-              name: 'static/images/[name].[contenthash:8].[ext]',
+              name: "static/images/[name].[contenthash:8].[ext]",
             },
           },
-          'cache-loader', //引入cache-loader
+          "cache-loader", //引入cache-loader
           {
-            loader: 'image-webpack-loader',
+            loader: "image-webpack-loader",
             options: {
               disable: isDevelopment, //开发环境下禁用压缩图片
             },
@@ -245,15 +245,15 @@ module.exports = {
 
 #### 配置项
 
-| 配置项               | 类型      | 含义                                                         |
-| -------------------- | --------- | ------------------------------------------------------------ |
-| `workers`            | `Number`  | 产生的 worker 的数量，默认是`cpu 核心数 - 1`                 |
-| `workerParallelJobs` | `Number`  | 一个 worker 进程中并行执行工作的数量；默认是`20`             |
-| `workerNodeArgs`     | `Array`   | 额外的 node.js 参数，例如`['--max-old-space-size=1024']`     |
-| `poolRespawn`        | `Boolean` | 允许重新开启一个死掉的 work 池；重新开启会减慢整个编译速度，并且开发环境应该设置为`false` |
+| 配置项               | 类型      | 含义                                                                                                   |
+| -------------------- | --------- | ------------------------------------------------------------------------------------------------------ |
+| `workers`            | `Number`  | 产生的 worker 的数量，默认是`cpu 核心数 - 1`                                                           |
+| `workerParallelJobs` | `Number`  | 一个 worker 进程中并行执行工作的数量；默认是`20`                                                       |
+| `workerNodeArgs`     | `Array`   | 额外的 node.js 参数，例如`['--max-old-space-size=1024']`                                               |
+| `poolRespawn`        | `Boolean` | 允许重新开启一个死掉的 work 池；重新开启会减慢整个编译速度，并且开发环境应该设置为`false`              |
 | `poolTimeout`        | `Number`  | 设置超过一定时间自动终止 worker，默认是`500ms`，可以设置为`Infinity`，这样会让 worker 一直处于活跃状态 |
-| `poolParallelJobs`   | `Number`  | 池分配给 worker 的工作数量，默认是`200`，减少的话会降低效率但是会使分配更加合理 |
-| `name`               | `String`  | worker 池的名称，可用于创建具有其他相同选项的不同 worker pool |
+| `poolParallelJobs`   | `Number`  | 池分配给 worker 的工作数量，默认是`200`，减少的话会降低效率但是会使分配更加合理                        |
+| `name`               | `String`  | worker 池的名称，可用于创建具有其他相同选项的不同 worker pool                                          |
 
 `max-old-space-size`这个额外的 nodejs 参数，在 nodejs 文档中介绍的有，这个 CLI 参数是配置 V8 引擎在执行 JS 时候最大可以使用的系统内存的，单位是`MB`，默认值是`512MB`。在 nodejs 执行的时候，如果内存限制太小，V8 就不得不频繁执行 GC 来释放哪些用不到的变量占用的内存，当程序需要的内存太大时，有时候 V8 会直接终止程序执行。stack overflow 上有一个相关问题 —— [Node.js recommended “max-old-space-size”](https://stackoverflow.com/questions/48387040/node-js-recommended-max-old-space-size/48392705#48392705)。
 
@@ -289,10 +289,10 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        include: path.resolve('src'),
+        include: path.resolve("src"),
         use: [
-          'thread-loader',
-          'babel-loader', //在babel-loader前使用
+          "thread-loader",
+          "babel-loader", //在babel-loader前使用
         ],
       },
     ],
@@ -303,7 +303,7 @@ module.exports = {
 为了避免开启 worker 前耗时过长，可以预热 worker pool，例如对于要使用的 loader，提前将其加载到 node.js 模块高速缓存中。
 
 ```javascript
-const threadLoader = require('thread-loader');
+const threadLoader = require("thread-loader");
 
 threadLoader.warmup(
   {
@@ -311,9 +311,9 @@ threadLoader.warmup(
   },
   [
     // loader
-    'babel-loader',
-    'sass-loader',
-  ],
+    "babel-loader",
+    "sass-loader",
+  ]
 );
 ```
 
@@ -337,40 +337,40 @@ DLL（Dynamic-link library，动态链接库）这个词来源于微软的打包
 
 #### 配置项
 
-| 配置项      | 类型      | <是否必填 | 含义                                                         |
-| ----------- | --------- | --------- | ------------------------------------------------------------ |
-| `context`   | `String`  | no        | manifest 文件中请求的 context；默认是 webpack 的`context`配置项，也就是`webpack.config.js`所在的当前目录 |
-| `format`    | `Boolean` | no        | 是否格式化`manifest.json`；默认是`false`                     |
-| `name`      | `String`  | yes       | 暴露出的 DLL 的函数名                                        |
-| `path`      | `String`  | yes       | 输出的`manifest.json`的绝对路径                              |
-| `entryOnly` | `Boolean` | no        | 默认是 `true`，仅暴露入口                                    |
-| `type`      | `String`  | no        | 生成的 DLL bundle 的类型                                     |
+| 配置项      | 类型      | 是否必填 | 含义                                                                                                     |
+| ----------- | --------- | -------- | -------------------------------------------------------------------------------------------------------- |
+| `context`   | `String`  | no       | manifest 文件中请求的 context；默认是 webpack 的`context`配置项，也就是`webpack.config.js`所在的当前目录 |
+| `format`    | `Boolean` | no       | 是否格式化`manifest.json`；默认是`false`                                                                 |
+| `name`      | `String`  | yes      | 暴露出的 DLL 的函数名                                                                                    |
+| `path`      | `String`  | yes      | 输出的`manifest.json`的绝对路径                                                                          |
+| `entryOnly` | `Boolean` | no       | 默认是 `true`，仅暴露入口                                                                                |
+| `type`      | `String`  | no       | 生成的 DLL bundle 的类型                                                                                 |
 
 #### 使用
 
 现在尝试配置`DllPlugin`把`react`的库文件从打包流程中抽取出来，在项目根目录新建一个`webpack.dll.config.js`的配置文件，使用`DllPlugin`。
 
 ```javascript
-const path = require('path');
-const webpack = require('webpack');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin'); //清理build文件夹
+const path = require("path");
+const webpack = require("webpack");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin"); //清理build文件夹
 
 module.exports = {
-  mode: 'production',
+  mode: "production",
   entry: {
-    react: ['react', 'react-dom'],
+    react: ["react", "react-dom"],
   },
   output: {
-    path: path.resolve(__dirname, 'dll'),
-    filename: '[name].[contenthash].dll.js',
-    library: '_[name]_dll',
+    path: path.resolve(__dirname, "dll"),
+    filename: "[name].[contenthash].dll.js",
+    library: "_[name]_dll",
   },
   plugins: [
     new CleanWebpackPlugin(),
     new webpack.DllPlugin({
       context: __dirname,
-      path: path.resolve(__dirname, 'dll/[name]-manifest.json'),
-      name: '_[name]_dll',
+      path: path.resolve(__dirname, "dll/[name]-manifest.json"),
+      name: "_[name]_dll",
     }),
   ],
 };
@@ -404,14 +404,14 @@ module.exports = {
 
 #### 配置项
 
-| 配置项       | 类型     | 是否必填 | 含义                                                         |
-| ------------ | -------- | -------- | ------------------------------------------------------------ |
-| `context`    | `String` | yes      | `manifest.json`文件中请求的 context；默认是 webpack 的`context`配置项，也就是`webpack.config.js`所在的当前目录 |
-| `scope`      | `String` | no       | DLL 中内容的前缀                                             |
-| `extensions` | `Array`  | no       | 用于解析 DLL bundle 中模块的扩展名，仅在使用`scope`时使用    |
-| `content`    | `String` | no       | 请求到模块 id 的映射，默认是`manifest.json`文件内部的`content` |
-| `name`       | `String` | no       | 暴露出的 DLL 的函数名称，默认是`manifest.json`文件内部的`name` |
-| `manifest`   | `Object` | yes      | `String`                                                     |
+| 配置项       | 类型     | 是否必填 | 含义                                                                                                                              |
+| ------------ | -------- | -------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `context`    | `String` | yes      | `manifest.json`文件中请求的 context；默认是 webpack 的`context`配置项，也就是`webpack.config.js`所在的当前目录                    |
+| `scope`      | `String` | no       | DLL 中内容的前缀                                                                                                                  |
+| `extensions` | `Array`  | no       | 用于解析 DLL bundle 中模块的扩展名，仅在使用`scope`时使用                                                                         |
+| `content`    | `String` | no       | 请求到模块 id 的映射，默认是`manifest.json`文件内部的`content`                                                                    |
+| `name`       | `String` | no       | 暴露出的 DLL 的函数名称，默认是`manifest.json`文件内部的`name`                                                                    |
+| `manifest`   | `Object` | yes      | `String`                                                                                                                          |
 | `sourceType` | `String` | no       | DLL 是如何暴露自己模块的，见 —— [`output.libraryTarget`](https://webpack.docschina.org/configuration/output/#outputlibrarytarget) |
 
 > Note：需要特别注意的一点这里的`context`这个配置项是必填的，并且必须指向`manifest.json`所在的目录的绝对路径。webpack 文档中给的说明`context`的 example 比较模糊，按照[use-dll-without-scope](https://github.com/webpack/webpack/tree/master/test/configCases/dll-plugin/2-use-dll-without-scope)这个例子看比较清楚一点`context`的用法。
@@ -424,12 +424,12 @@ module.exports = {
 module.exports = {
   plugin: [
     new webpack.DllReferencePlugin({
-      context: path.resolve(__dirname, './dll'),
-      manifest: require('./dll/react-manifest.json'),
+      context: path.resolve(__dirname, "./dll"),
+      manifest: require("./dll/react-manifest.json"),
     }),
     new webpack.DllReferencePlugin({
-      context: path.resolve(__dirname, './dll'),
-      manifest: require('./dll/other-manifest.json'),
+      context: path.resolve(__dirname, "./dll"),
+      manifest: require("./dll/other-manifest.json"),
     }),
     //...
   ],
@@ -459,18 +459,18 @@ module.exports = {
   plugin: [
     new CopyWebpackPlugin({
       patterns: [
-        { from: './dll/react.dffd2b4e9672e773b9c9.dll.js', to: 'static/js' },
+        { from: "./dll/react.dffd2b4e9672e773b9c9.dll.js", to: "static/js" },
       ],
     }),
     new HtmlWebpackPlugin({
       inject: true,
-      template: './public/index.html',
-      favicon: './public/favicon.ico',
+      template: "./public/index.html",
+      favicon: "./public/favicon.ico",
     }),
     new HtmlWebpackTagsPlugin({
       append: true,
-      publicPath: 'static/js', //dll.js文件的路径前缀
-      tags: ['react.dffd2b4e9672e773b9c9.dll.js'],
+      publicPath: "static/js", //dll.js文件的路径前缀
+      tags: ["react.dffd2b4e9672e773b9c9.dll.js"],
     }),
   ],
 };
@@ -491,8 +491,8 @@ module.exports = {
       cacheGroups: {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all',
+          name: "vendors",
+          chunks: "all",
         },
       },
     },
@@ -503,7 +503,7 @@ module.exports = {
 module.exports = {
   optimization: {
     splitChunks: {
-      chunks: 'all',
+      chunks: "all",
     },
   },
 };
@@ -534,8 +534,8 @@ module.exports = {
 可以为`externals`指定一个对象形式，属性的键表示忽略的模块名，属性的名称表示`library`暴露的全局变量，例如使用 React 会去这样导入其内部的`React`和`ReactDOM` API
 
 ```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 ```
 
 那么通过`externals`就可以像下面这样去配置，`react`和`"react-dom"`表示 webpack 打包要排除上面`import`中`from`的模块，为了替换这些模块，需要使用`React`和`ReactDOM`这样的全局变量。
@@ -543,8 +543,8 @@ import ReactDOM from 'react-dom';
 ```javascript
 module.exports = {
   externals: {
-    react: 'React',
-    'react-dom': 'ReactDOM',
+    react: "React",
+    "react-dom": "ReactDOM",
   },
 };
 ```
@@ -566,7 +566,7 @@ module.exports = {
 module.exports = {
   //...
   externals: {
-    subtract: ['./math', 'other'],
+    subtract: ["./math", "other"],
   },
 };
 ```
@@ -595,16 +595,16 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       inject: true,
-      template: './public/index.html',
-      favicon: './public/favicon.ico',
+      template: "./public/index.html",
+      favicon: "./public/favicon.ico",
       cdn: {
         script: [
           isDevelopment
-            ? 'https://cdn.jsdelivr.net/npm/react@16.12.0/umd/react.development.js'
-            : 'https://cdn.jsdelivr.net/npm/react@16.12.0/umd/react.production.min.js',
+            ? "https://cdn.jsdelivr.net/npm/react@16.12.0/umd/react.development.js"
+            : "https://cdn.jsdelivr.net/npm/react@16.12.0/umd/react.production.min.js",
           isDevelopment
-            ? 'https://cdn.jsdelivr.net/npm/react-dom@16.12.0/umd/react-dom.development.js'
-            : 'https://cdn.jsdelivr.net/npm/react-dom@16.12.0/umd/react-dom.production.min.js',
+            ? "https://cdn.jsdelivr.net/npm/react-dom@16.12.0/umd/react-dom.development.js"
+            : "https://cdn.jsdelivr.net/npm/react-dom@16.12.0/umd/react-dom.production.min.js",
         ],
       },
     }),
@@ -624,11 +624,10 @@ module.exports = {
   <body>
     <div id="root"></div>
     <!--CDN-->
-    <% if (htmlWebpackPlugin.options.cdn) { %>
-      <% for(let src of htmlWebpackPlugin.options.cdn.script) { %>
-        <script crossorigin="anonymous" src="<%=src%>"></script>
-      <% } %>
-    <% } %>
+    <% if (htmlWebpackPlugin.options.cdn) { %> <% for(let src of
+    htmlWebpackPlugin.options.cdn.script) { %>
+    <script crossorigin="anonymous" src="<%=src%>"></script>
+    <% } %> <% } %>
   </body>
 </html>
 ```

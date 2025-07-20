@@ -1,12 +1,12 @@
-import React, { useEffect, useRef } from 'react';
-import BlogPostItem from '@theme-original/BlogPostItem';
-import { useColorMode } from '@docusaurus/theme-common';
-import { useBlogPost } from '@docusaurus/theme-common/internal'
+import React, { useEffect, useRef } from "react";
+import BlogPostItem from "@theme-original/BlogPostItem";
+import { useColorMode } from "@docusaurus/theme-common";
+import { useBlogPost } from "@docusaurus/plugin-content-blog/client";
 
 export default function BlogPostItemWrapper(props) {
   const { isBlogPostPage } = useBlogPost();
   const { isDarkTheme } = useColorMode();
-  const commentContainerRef = useRef();
+  const commentContainerRef = useRef(null);
 
   const injectScript = () => {
     const script = document.createElement("script");
@@ -17,29 +17,34 @@ export default function BlogPostItemWrapper(props) {
     script.setAttribute("label", "comment");
     script.setAttribute("theme", isDarkTheme ? "github-dark" : "github-light");
     script.crossOrigin = "anonymous";
-    script.async = true;    
+    script.async = true;
 
     commentContainerRef.current.appendChild(script);
-  }
+  };
 
   const changeCommentTheme = () => {
-    const utterancesEl = commentContainerRef.current.querySelector("iframe.utterances-frame");
+    const utterancesEl = commentContainerRef.current.querySelector(
+      "iframe.utterances-frame"
+    );
 
-    if(utterancesEl) {
-      utterancesEl.contentWindow.postMessage({
-        type: "set-theme",
-        theme: isDarkTheme ? "github-dark" : "github-light",
-      }, "https://utteranc.es");
+    if (utterancesEl) {
+      utterancesEl.contentWindow?.postMessage(
+        {
+          type: "set-theme",
+          theme: isDarkTheme ? "github-dark" : "github-light",
+        },
+        "https://utteranc.es"
+      );
     }
-  }
+  };
 
   useEffect(() => {
     isBlogPostPage && injectScript();
-  }, [])
+  }, []);
 
   useEffect(() => {
     isBlogPostPage && changeCommentTheme();
-  }, [isDarkTheme])
+  }, [isDarkTheme]);
 
   return (
     <>
