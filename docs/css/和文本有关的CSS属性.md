@@ -27,6 +27,12 @@ white-space: nowrap;
 
 <iframe width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/text-overflow.html" loading="lazy"></iframe>
 
+## text-wrap
+
+设置文本是否换行显示，以及换行的样式。设置`balance`和`pretty`会让文本显示更为优雅。
+
+<iframe height="400" src="https://interactive-examples.mdn.mozilla.net/pages/css/text-wrap.html" title="MDN Web Docs Interactive Example" allow="clipboard-write" loading="lazy" data-readystate="complete"></iframe>
+
 ## white-space
 
 `white-space`属性用来处理文本中的空白。通常用于处理一段文本是否进行换行。
@@ -63,19 +69,9 @@ white-space: nowrap;
 
 ### pre-line
 
-连续的空白符会被**合并**，**在遇到换行符或者[`br`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/br)元素**，或者需要为了填充「行框盒子([line boxes](https://www.w3.org/TR/CSS2/visuren.html#inline-formatting))」时才会换行。
+**在遇到换行符或者[`br`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/br)元素**，或者需要为了填充「行框盒子([line boxes](https://www.w3.org/TR/CSS2/visuren.html#inline-formatting))」时才会换行。
 
-`white-space:pre-line`这个属性很强大，尤其是在处理换行文本的时候，说到这里，又得说起不同换行符的处理情况：
-
-| 系统    | 常见        | 换行符          |
-| ------- | ----------- | --------------- |
-| Unix    | Linux服务器 | `\n`            |
-| Windows |             | `\r\n`          |
-| HTML    |             | `<br/>`或`<br>` |
-
-`\n`或者`\r\n`，如果放在字符串里然后再放到 HTML 的标签中，HTML只会将它们都处理成空格。你可能会想到将`\n`或者  `\r\n`转换成`<br>`来期望 HTML 生成换行的效果，不幸的是，如果转成`<br>`，`<br>`会被直接保留下来显示出来！
-
-这时候最简单的处理方式就是使用`white-space:pre-line`，就可让 HTML 遇到换行符或者`<br>`自动换行了。
+`white-space:pre-line`这个属性在自动处理换行的情况很强大，当文本中包含`\n`、`\r\n`、以及`<br/>`或`<br>`时会自动换行。
 
 ### break-spaces
 
@@ -221,6 +217,12 @@ CJK 文本不进行换行，非 CJK 文本表现同`word-break:normal`
 ### text-decoration-thickness
 
 `text-decoration-thickness`设置线的粗细，可以使用 CSS 里的长度值`<length>`，百分比值，当设置百分比值的时候，相对于当前元素字体的`1em`（`1em`也就是`1`倍字体大小）。
+
+## text-underline-offset
+
+设置文本下划线距离文本的偏移量。
+
+<iframe height="360" width="100%" src="https://interactive-examples.mdn.mozilla.net/pages/css/text-underline-offset.html" title="MDN Web Docs Interactive Example" allow="clipboard-write" loading="lazy" data-readystate="complete"></iframe>
 
 ## line-clamp
 
