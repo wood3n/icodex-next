@@ -44,6 +44,12 @@ Git 配置大小写敏感
 git config core.ignorecase false
 ```
 
+Git 设置本地初始化分支的名称
+
+```shell
+git config --global init.defaultBranch main
+```
+
 如果要获取所有 git 的配置，可以使用：
 
 ```shell
