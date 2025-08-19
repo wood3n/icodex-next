@@ -54,6 +54,18 @@ const config: Config = {
             defaultReadingTime({ content, options: { wordsPerMinute: 100 } }),
           blogSidebarCount: 20,
           blogSidebarTitle: "Recent posts",
+          feedOptions: {
+            type: "all",
+            copyright: `Copyright © ${new Date().getFullYear()} icodex`,
+            createFeedItems: async (params) => {
+              const { blogPosts, defaultCreateFeedItems, ...rest } = params;
+              return defaultCreateFeedItems({
+                // keep only the 20 most recent blog posts in the feed
+                blogPosts: blogPosts.filter((_, index) => index < 20),
+                ...rest,
+              });
+            },
+          },
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
