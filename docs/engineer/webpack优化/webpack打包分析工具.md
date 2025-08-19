@@ -74,23 +74,6 @@ CRA 内部是直接禁用了`performance`这个配置项，使用它们自己开
 
 [`webpack-bundle-analyzer`](https://github.com/webpack-contrib/webpack-bundle-analyzer)是一个 plugin 和 CLI 工具，它将 bundle 内容展示为一个便捷的、交互式、可缩放的树状图形式。
 
-### 配置项
-
-| 属性 | 类型 | 介绍 |
-| ----------------------- | ---------------------------------------------------- | ----------------------------------| 
-| **`analyzerMode`**      | 默认是`server`, 其它可选`static`, `json`, `disabled` | `server`模式会开启一个服务器展示打包结果；<br />`static`模式会生成一个 HTML 页面；<br />`json`模式会生成一个 JSON 文件；<br />`disabled`模式需要同时设置`generateStatsFile:true`，只会生成一个 JSON 文件                     |
-| **`analyzerHost`**      | `String`                                             | Default: `127.0.0.1`. Host that will be used in `server` mode to start HTTP server.                                                                                                                                          |
-| **`analyzerPort`**      | `Number` or `auto`                                   | Default: `8888`. Port that will be used in `server` mode to start HTTP server.                                                                                                                                               |
-| **`reportFilename`**    | `String`                                             | Default: `report.html`. Path to bundle report file that will be generated in `static` mode. It can be either an absolute path or a path relative to a bundle output directory (which is output.path in webpack config).      |
-| **`reportTitle`**       | `String                                              | function`                                                                                                                                                                                                                    | Default: function that returns pretty printed current date and time. Content of the HTML `title` element; or a function of the form `() => string` that provides the content. |
-| **`defaultSizes`**      | One of: `stat`, `parsed`, `gzip`                     | Default: `parsed`. Module sizes to show in report by default. [Size definitions](https://github.com/webpack-contrib/webpack-bundle-analyzer#size-definitions) section describes what these values mean.                      |
-| **`openAnalyzer`**      | `{Boolean}`                                          | 默认是`true`，是否默认在浏览器打开打包结果页面                                                                                                                                                                               |
-| **`generateStatsFile`** | `{Boolean}`                                          | 默认是`false`，是否生成打包结果的 JSON 文件                                                                                                                                                                                  |
-| **`statsFilename`**     | `{String}`                                           | 默认是`stats.json`，生成打包结果的 JSON 文件的文件名                                                                                                                                                                         |
-| **`statsOptions`**      | `null` or `{Object}`                                 | Default: `null`. Options for `stats.toJson()` method. For example you can exclude sources of your modules from stats file with `source: false` option. [See more options here](https://webpack.js.org/configuration/stats/). |
-| **`excludeAssets`**     | `{null                                               | pattern                                                                                                                                                                                                                      | pattern[]}`where`pattern`equals to`{String                                                                                                                                    | RegExp | function}` | Default: `null`. Patterns that will be used to match against asset names to exclude them from the report. If pattern is a string it will be converted to RegExp via `new RegExp(str)`. If pattern is a function it should have the following signature `(assetName: string) => boolean` and should return `true` to _exclude_ matching asset. If multiple patterns are provided asset should match at least one of them to be excluded. |
-| **`logLevel`**          | One of: `info`, `warn`, `error`, `silent`            | Default: `info`. Used to control how much details the plugin outputs.                                                                                                                                                        |
-
 ### 使用
 
 ```shell
