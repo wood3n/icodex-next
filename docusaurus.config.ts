@@ -193,6 +193,12 @@ const config: Config = {
           docId: "tools/git",
         },
         {
+          href: "https://icodex.me/rss.xml",
+          position: "right",
+          className: "header-feed-link",
+          "aria-label": "RSS link",
+        },
+        {
           href: "https://github.com/wood3n/icodex-next",
           position: "right",
           // custom logo in custom.css

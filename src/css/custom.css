@@ -50,6 +50,25 @@ html[data-theme="dark"] .header-github-link:before {
     no-repeat;
 }
 
+/* GitHub Link */
+.header-feed-link:hover {
+  opacity: 0.6;
+}
+
+.header-feed-link:before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXJzcy1pY29uIGx1Y2lkZS1yc3MiPjxwYXRoIGQ9Ik00IDExYTkgOSAwIDAgMSA5IDkiLz48cGF0aCBkPSJNNCA0YTE2IDE2IDAgMCAxIDE2IDE2Ii8+PGNpcmNsZSBjeD0iNSIgY3k9IjE5IiByPSIxIi8+PC9zdmc+")
+    no-repeat;
+}
+
+html[data-theme="dark"] .header-feed-link:before {
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1yc3MtaWNvbiBsdWNpZGUtcnNzIj48cGF0aCBkPSJNNCAxMWE5IDkgMCAwIDEgOSA5Ii8+PHBhdGggZD0iTTQgNGExNiAxNiAwIDAgMSAxNiAxNiIvPjxjaXJjbGUgY3g9IjUiIGN5PSIxOSIgcj0iMSIvPjwvc3ZnPg==)
+    no-repeat;
+}
+
 code {
   color: #a90d91;
 }
