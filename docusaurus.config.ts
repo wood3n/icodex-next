@@ -7,7 +7,7 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 
 const config: Config = {
-  title: "icodex",
+  title: "icodex | 前端技术博客 | 专注 React、TypeScript、AI 与性能优化",
   tagline: "前端不止于界面，更是用户体验的艺术",
   url: "https://icodex.me",
   baseUrl: "/",
