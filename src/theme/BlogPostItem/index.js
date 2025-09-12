@@ -2,54 +2,34 @@ import React, { useEffect, useRef } from "react";
 import BlogPostItem from "@theme-original/BlogPostItem";
 import { useColorMode } from "@docusaurus/theme-common";
 import { useBlogPost } from "@docusaurus/plugin-content-blog/client";
+import Giscus from "@giscus/react";
 
 export default function BlogPostItemWrapper(props) {
   const { isBlogPostPage } = useBlogPost();
-  const { isDarkTheme } = useColorMode();
-  const commentContainerRef = useRef(null);
-
-  const injectScript = () => {
-    const script = document.createElement("script");
-
-    script.src = "https://utteranc.es/client.js";
-    script.setAttribute("repo", "wood3n/icodex-next");
-    script.setAttribute("issue-term", "pathname");
-    script.setAttribute("label", "comment");
-    script.setAttribute("theme", isDarkTheme ? "github-dark" : "github-light");
-    script.crossOrigin = "anonymous";
-    script.async = true;
-
-    commentContainerRef.current.appendChild(script);
-  };
-
-  const changeCommentTheme = () => {
-    const utterancesEl = commentContainerRef.current.querySelector(
-      "iframe.utterances-frame"
-    );
-
-    if (utterancesEl) {
-      utterancesEl.contentWindow?.postMessage(
-        {
-          type: "set-theme",
-          theme: isDarkTheme ? "github-dark" : "github-light",
-        },
-        "https://utteranc.es"
-      );
-    }
-  };
-
-  useEffect(() => {
-    isBlogPostPage && injectScript();
-  }, []);
-
-  useEffect(() => {
-    isBlogPostPage && changeCommentTheme();
-  }, [isDarkTheme]);
+  const { colorMode } = useColorMode();
 
   return (
     <>
       <BlogPostItem {...props} />
-      {isBlogPostPage && <div ref={commentContainerRef}></div>}
+      {isBlogPostPage && (
+        <div style={{ marginTop: 24 }}>
+          <Giscus
+            id="comments"
+            repo="wood3n/icodex-next"
+            repoId="R_kgDOGmTCog"
+            category="Q&A"
+            categoryId="DIC_kwDOGmTCos4CRMD5"
+            mapping="pathname"
+            term="请留言"
+            reactionsEnabled="1"
+            emitMetadata="0"
+            inputPosition="top"
+            theme={colorMode === "dark" ? "dark" : "light"}
+            lang="zh-CN"
+            loading="lazy"
+          />
+        </div>
+      )}
     </>
   );
 }

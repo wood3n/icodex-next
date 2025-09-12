@@ -81,6 +81,9 @@ const config: Config = {
     ],
   ],
   themeConfig: {
+    colorMode: {
+      defaultMode: "dark",
+    },
     docs: {
       sidebar: {
         hideable: true,
