@@ -30,12 +30,10 @@ jobs:
         run: pnpm install
       - name: Build website
         run: pnpm build
-      - name: IndexNow
-        run: node scripts/index.js
-
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          name: build-artifact
           path: build
 
   deploy:
@@ -57,3 +55,19 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  indexnow:
+    name: Submit IndexNow after deploy
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifact
+          path: ./build
+      - name: Submit IndexNow Urls
+        run: node scripts/index.js
+        env:
+          BUILD_DIR: ./build
