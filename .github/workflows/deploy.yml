@@ -30,6 +30,8 @@ jobs:
         run: pnpm install
       - name: Build website
         run: pnpm build
+      - name: IndexNow
+        run: node scripts/index.js
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
