@@ -30,6 +30,8 @@ jobs:
         run: pnpm install
       - name: Build website
         run: pnpm build
+      - name: IndexNow
+        run: node scripts/index.js
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -54,36 +56,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-  indexnow:
-    name: Submit IndexNow after deploy
-    needs: deploy
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [22]
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: "pnpm"
-      - name: Install dependencies
-        run: pnpm install
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: github-pages
-          path: ./build
-      - name: Submit IndexNow Urls
-        run: node scripts/index.js
-        env:
-          BUILD_DIR: ./build
