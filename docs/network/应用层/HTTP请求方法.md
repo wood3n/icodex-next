@@ -1,3 +1,10 @@
+---
+title: "HTTP请求方法"
+description: "**幂等性**：idempotent，同样的请求被执行一次与连续执行多次的效果是一样的，服务器的状态也是一样的。例如 GET 方法多次请求资源肯定是幂等的，但是 POST 就不一定，POST 可能在请求装载数据发送到服务器，来修改数据库的数据。"
+keywords: ["方法的特性", "get", "post", "head", "put", "delete", "options", "patch"]
+tags: ["方法的特性", "get", "post", "head", "put"]
+---
+
 ### 方法的特性
 
 HTTP 请求方法是包含在 HTTP 请求报文的信息，用来表示如何传递请求数据，以及如何获取服务器资源的方式。

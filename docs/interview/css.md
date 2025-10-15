@@ -1,3 +1,9 @@
+---
+title: "CSS三大特性"
+keywords: ["css三大特性", "css权重和优先级", "css", "选择器有哪些", "什么是css盒模型如何计算盒模型的宽度和高度", "行内元素的margin和padding特点", "bfc", "visibility和display和opacity的区别"]
+tags: ["css三大特性", "css权重和优先级", "css", "选择器有哪些", "什么是css盒模型如何计算盒模型的宽度和高度"]
+---
+
 # CSS三大特性
 
 1. **层叠性 (Cascading)**：层叠性允许多个样式规则应用于同一元素。当多个规则冲突时，CSS 根据特定的规则和权重来决定哪个规则将优先应用。

@@ -3,7 +3,9 @@ title: RegExp类型
 order: 1
 nav:
   order: 6
-
+description: 'javascript //下面三种方式都可以 var re = new RegExp(/\w+/, [''ig'']); var re = new RegExp(/\w+/, ''ig''); var re = new RegExp(''w+'', ''ig'');'
+keywords: ["js", "regexp", "构造函数", "创建正则表达式", "实例属性", "实例方法", "正则表达式匹配的几种方法", "regexpprototypeexec"]
+tags: ["js", "regexp", "构造函数", "创建正则表达式", "实例属性"]
 ---
 
 ## JS - RegExp

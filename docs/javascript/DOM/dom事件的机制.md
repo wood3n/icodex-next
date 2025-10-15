@@ -1,3 +1,10 @@
+---
+title: "DOM 事件的捕获和冒泡机制"
+description: '根据 w3 规范中的描述，DOM 事件在触发过程是从根元素开始调度，直到到达目标事件元素。在这个过程中会发生捕获，触发，冒泡三个阶段。 捕获阶段中，DOM 事件会从根元素开始，检测其是否具有相同的事件监听机制，例如在内部上设置的事件，如果在上也设置了，那么同样会涉及调度。 这个过程会从开始逐层向目标事件元素的祖先元素调'
+keywords: ["dom", "事件的捕获和冒泡机制", "捕获阶段capture", "触发阶段", "冒泡阶段bubble", "currenttarget", "vs", "target"]
+tags: ["dom", "事件的捕获和冒泡机制", "捕获阶段capture", "触发阶段", "冒泡阶段bubble"]
+---
+
 ## DOM 事件的捕获和冒泡机制
 
 图源 - [w3 - events](https://www.w3.org/TR/2003/NOTE-DOM-Level-3-Events-20031107/events.html)

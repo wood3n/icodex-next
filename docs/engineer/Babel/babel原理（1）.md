@@ -1,5 +1,8 @@
 ---
 title: babel原理（1）
+description: "高级语言在处理成可执行代码之前都要经过编译这一个阶段。编译的定义就是**将一种语言（转换）成另一种语言**的过程，这里的另一种语言可以是汇编语言，机器语言或者其它任何一种语言。"
+keywords: ["编译器-compiler", "解释器-interpreter", "解析器-parser", "the-super-tiny-compilerhttps", "githubcom", "jamiebuilds", "the-super-tiny-compiler", "blob"]
+tags: ["编译器-compiler", "解释器-interpreter", "解析器-parser", "the-super-tiny-compilerhttps", "githubcom"]
 ---
 
 有关编译原理的知识，这里粗略的理解一下。

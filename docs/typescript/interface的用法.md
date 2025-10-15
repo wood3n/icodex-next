@@ -1,6 +1,8 @@
 ---
 title: Interface
-
+description: "> One of TypeScript’s core principles is that type checking focuses on the _shape_ that values have. This is sometimes called “duck typing” or “structural subty"
+keywords: ["声明类型", "定义对象", "定义函数", "定义数组", "定义", "class", "继承", "实现"]
+tags: ["声明类型", "定义对象", "定义函数", "定义数组", "定义"]
 ---
 
 ## 声明类型

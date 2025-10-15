@@ -1,5 +1,8 @@
 ---
 title: babel原理（2）
+description: "是用于 AST 节点的 Lodash 式实用程序库，其内部包含创建，验证，转换 AST 节点的方法。对每种单一类型的节点都有定义，包括节点包含的属性，值，以及如何创建该节点等。"
+keywords: ["概览", "babel", "parser", "types", "traverse", "visitors", "paths", "path"]
+tags: ["概览", "babel", "parser", "types", "traverse"]
 ---
 
 ## 概览

@@ -3,7 +3,9 @@ title: String类型
 order: 2
 nav:
   order: 4
-
+description: "严格来说，JS 编码字符的格式其实是 UCS-2，也就是 UTF-16 的前身，后来 UTF-16 经过完善才支持使用 2 个 16 位二进制表示超过 U+FFFF 的 Unicode 码点字符，但是 JS 诞生之初的 UCS-2 并不支持使用 2 个 16 位二进制编码，所以现在的 JS 在遇到某些超过 U+FFFF"
+keywords: ["string", "类型的特点", "定长的", "16", "位二进制编码", "不可变", "构造函数", "new"]
+tags: ["string", "类型的特点", "定长的", "16", "位二进制编码"]
 ---
 
 ## String 类型的特点

@@ -2,8 +2,10 @@
 title: 实现 Promise.all 有哪些要点
 slug: /promiseall
 authors: oxygen
+description: promise-all 的使用与实践总结。
+keywords: ["promiseall", "的定义", "什么是可迭代", "的实现", "2022", "03", "23", "promise"]
+tags: ["promiseall", "的定义", "什么是可迭代", "的实现", "2022"]
 ---
-
 ## Promise.all
 
 `Promise.all`是日常使用频率非常高的异步方法，这两天回顾了一下`Promise`的几个静态方法，对`Promise.all`又有了一些新的认识。

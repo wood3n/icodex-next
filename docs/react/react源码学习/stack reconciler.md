@@ -1,5 +1,8 @@
 ---
 title: stack reconciler
+description: "翻译过来是协调器的意思，其实就是负责找出 React virtual dom 更新的部分，尽可能复用现有实例来保留 DOM 和状态，以及如何协调去处理该部分更新。"
+keywords: ["专有名词", "renderer", "渲染器", "reconcilers", "stack", "reconciler", "fiber", "virtual"]
+tags: ["专有名词", "renderer", "渲染器", "reconcilers", "stack"]
 ---
 
 ## 专有名词

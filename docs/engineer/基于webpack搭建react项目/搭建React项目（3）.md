@@ -1,6 +1,8 @@
 ---
 title: 搭建 React 项目（3）
-
+description: "在 webpack 中，每个文件都是一个模块，除了 webpack 认识的 JS 和 JSON 文件，CSS，图片等都是模块，模块之间通过不同方式的语法会产生依赖关系，例如："
+keywords: ["管理模块", "module", "处理", "html", "htmlwebpackplugin", "模板配置", "css", "style-loader"]
+tags: ["管理模块", "module", "处理", "html", "htmlwebpackplugin"]
 ---
 
 ## 管理模块

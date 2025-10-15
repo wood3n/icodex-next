@@ -1,6 +1,9 @@
 ---
 title: rollup 插件开发一
 slug: /rollupplugin1
+description: "![Xnip2022-09-19_16-45-52](../../../public/images/Xnip2022-09-19_16-45-52.png)"
+keywords: ["plugin", "插件可以包含一些rollup内部提供的hook函数", "这些hook在rollup编译打包过程的不同生命周期阶段执行", "有以下几种hook", "options", "rollup插件开发1"]
+tags: ["plugin", "插件可以包含一些rollup内部提供的hook函数", "这些hook在rollup编译打包过程的不同生命周期阶段执行", "有以下几种hook", "options"]
 ---
 
 ## plugin

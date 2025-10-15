@@ -1,6 +1,8 @@
 ---
 title: CSS里的length
-
+description: "通常被认为是数字图像的最小组成元素，但是这个定义是上下文相关的，因为图像可能用于印刷，或者显示设备表示的图像，或者数码相机中的图像，因为根据像素衍生了很多其他度量单位。"
+keywords: ["像素", "devicepixelratio", "绝对长度单位", "px", "pt", "其他", "相对字体单位", "em"]
+tags: ["像素", "devicepixelratio", "绝对长度单位", "px", "pt"]
 ---
 
 ## 像素

@@ -1,5 +1,7 @@
 ---
 title: vscode 插件开发（2）
+keywords: ["代码位置类", "position", "range", "location", "插件编写流程", "配置激活事件", "注册hover方法", "如何获取"]
+tags: ["代码位置类", "position", "range", "location", "插件编写流程"]
 ---
 
 ## 代码位置类

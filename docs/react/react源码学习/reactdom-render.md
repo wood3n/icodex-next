@@ -1,6 +1,9 @@
 ---
 title: ReactDOM-render渲染过程
 slug: /reactdom-render
+description: 'js /**  * React.createElement  */ function createElementWithValidation(type, props, children) {   // 校验组件   var validType = isValidElementType(type);      // 创建'
+keywords: ["reactdomrender", "api用法", "jsx", "createelement", "使用", "创建", "react", "元素"]
+tags: ["reactdomrender", "api用法", "jsx", "createelement", "使用"]
 ---
 
 ## ReactDOM.render API用法

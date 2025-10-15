@@ -1,3 +1,10 @@
+---
+title: "nrm"
+description: "[`nrm`](https://www.npmjs.com/package/nrm)是一个 npm 源管理工具，本地安装以后，可以通过`nrm`十分方便的切换 npm 源地址。"
+keywords: ["nrm"]
+tags: ["nrm"]
+---
+
 ## nrm
 
 [`nrm`](https://www.npmjs.com/package/nrm)是一个 npm 源管理工具，本地安装以后，可以通过`nrm`十分方便的切换 npm 源地址。

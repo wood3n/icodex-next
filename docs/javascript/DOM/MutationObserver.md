@@ -1,3 +1,10 @@
+---
+title: "MutationObserver"
+description: 'javascript // 创建一个MutationObserver对象 function createMutationObserver(handler, targetNode, options) {   const observer = new MutationObserver(handler);   observe'
+keywords: ["mutationobserver"]
+tags: ["mutationobserver"]
+---
+
 ## MutationObserver
 
 > [MutationObserver](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver)

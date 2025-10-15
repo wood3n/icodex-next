@@ -1,3 +1,10 @@
+---
+title: "@import"
+description: "根据的介绍，一个 CSS Module 就是一个 CSS 文件，在当前文件中的，会被限制在当前模块作用域内。所有在和设置的路径也会是相当于 CSS Module 文件所在路径。"
+keywords: ["import", "什么是", "css", "modules", "语法", "对象", "驼峰命名", "local"]
+tags: ["import", "什么是", "css", "modules", "语法"]
+---
+
 ## @import
 
 > `@import url list-of-media-queries`

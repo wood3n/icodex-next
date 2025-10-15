@@ -1,5 +1,7 @@
 ---
 title: web 性能指标
+keywords: ["web性能指标", "performance", "timingshttps", "developermozillaorg", "en-us", "docs", "web", "navigationandresourcetimingsperformancetimings"]
+tags: ["web性能指标", "performance", "timingshttps", "developermozillaorg", "en-us"]
 ---
 
 ## web性能指标

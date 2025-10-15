@@ -1,3 +1,10 @@
+---
+title: "sticky footer"
+description: '- 设置高度，使子元素继承高度 - 设置主体区域最小高度为 - 通过主体区域的拉开与之间的间距，防止在内容超过视口高度时与发生重叠 - 通过负值在区域高度 - 保证主体区域外层需要有一层容器包裹，要和主体区域完全分离，并且需要固定高度'
+keywords: ["sticky", "footer", "flex", "margin", "实现", "利用", "absolute", "定位"]
+tags: ["sticky", "footer", "flex", "margin", "实现"]
+---
+
 ## sticky footer
 
 粘连布局，特点是主题区域`main`跟随一个`footer`，当`main`足够高时，`footer`会跟随滚动；当`main`高度小于视口高度时，`footer`自动粘连在页面底部

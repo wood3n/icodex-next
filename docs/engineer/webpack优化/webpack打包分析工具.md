@@ -1,5 +1,8 @@
 ---
 title: webpack打包分析工具
+description: '| 预设                | 描述                                              | | :------------------ | :------------------------------------------------ | |'
+keywords: ["stats", "devserverinfo", "performance", "配置项", "filesizereporter", "webpack-bundle-analyzer", "使用", "树状图怎么看"]
+tags: ["stats", "devserverinfo", "performance", "配置项", "filesizereporter"]
 ---
 
 ## stats

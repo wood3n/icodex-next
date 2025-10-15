@@ -1,3 +1,10 @@
+---
+title: "Browsers that we support"
+description: '- ：也就是 - ：，,  或  这些符号表示基于全球浏览器使用率统计数据进行的选择，例如也就是考虑浏览器市场份额至少在全球以上 - ：浏览器的市场覆盖率达到 - ：浏览器官方更新已经停滞个月以上，例如,  - ：永远支持浏览器最新的两个迭代版本，可以指定对应的浏览器，例如 - ：nodejs 版本 - 特定浏览器:'
+keywords: ["什么是", "browserslist", "配置方式", "browsers", "that", "we", "support", "规则"]
+tags: ["什么是", "browserslist", "配置方式", "browsers", "that"]
+---
+
 ## 什么是 browserslist
 
 [`browserslist`](https://github.com/browserslist/browserslist)在不同的前端工具之间共享配置目标浏览器环境的第三方工具。对于`babel`，`postcss-autoprefixer`，`postcss-normalize`这些工具来说都依赖`browserslist`的配置进行浏览器兼容适配。

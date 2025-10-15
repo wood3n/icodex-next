@@ -1,3 +1,10 @@
+---
+title: "TCP报文"
+description: "TCP 报文由首部和数据两部分组成，数据部分如果是 HTTP 协议就是 HTTP 报文，所以主要看 TCP 首部，TCP 首部中的各个字段指示决定 TCP 的工作原理。"
+keywords: ["源端口和目的端口", "序号", "seq", "确认号", "ack", "数据偏移", "保留", "控制位"]
+tags: ["源端口和目的端口", "序号", "seq", "确认号", "ack"]
+---
+
 TCP 报文由首部和数据两部分组成，数据部分如果是 HTTP 协议就是 HTTP 报文，所以主要看 TCP 首部，TCP 首部中的各个字段指示决定 TCP 的工作原理。
 
 ![9rzlJf](../../../public/images/9rzlJf.png)

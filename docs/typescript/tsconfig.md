@@ -1,5 +1,8 @@
 ---
 title: tsconfig.json 文件配置
+description: "根据 TypeScript 官方文档的介绍，tsconfig.json 用于指定 TypeScript 项目的根目录以及指定编译选项。TypeScript 本身提供了一些基于不同运行时环境的 tsconfig.json 的配置项 —— 。"
+keywords: ["什么是", "tsconfig", "配置项", "顶级配置", "compileroptions", "target", "lib", "module"]
+tags: ["什么是", "tsconfig", "配置项", "顶级配置", "compileroptions"]
 ---
 
 ## 什么是 tsconfig

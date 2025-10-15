@@ -1,6 +1,9 @@
 ---
 title: vite 插件开发一
 slug: /viteplugin1
+description: '- 插件函数调用后，返回一个对象，包含属性（也就是插件名），以及一些 vite 特定的 hook 方法或者 rollup hook 等方法，该对象通过 vite 配置的属性传入 vite 内部影响 vite 构建； - 可以通过指定属性来调整插件执行的顺序； - 插件可以是异步的，也可以是同步的。'
+keywords: ["vite", "插件定义", "自定义", "hook", "最佳实践", "minify", "html", "inline"]
+tags: ["vite", "插件定义", "自定义", "hook", "最佳实践"]
 ---
 
 ## vite 插件定义

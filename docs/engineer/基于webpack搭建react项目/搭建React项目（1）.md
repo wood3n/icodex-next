@@ -1,6 +1,8 @@
 ---
 title: 搭建 React 项目（1）
-
+description: "根据 webpack 官网的解释来说，它是一个现代 JS 应用的 bundler，翻译过来就是打包器。webpack 会根据模块之间的依赖最终合并模块形成一个或者多个 bundles。"
+keywords: ["配置", "webpack", "介绍", "修改项目目录", "修改", "测试", "打包", "react"]
+tags: ["配置", "webpack", "介绍", "修改项目目录", "修改"]
 ---
 
 ## 配置 webpack

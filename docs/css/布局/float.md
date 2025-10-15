@@ -1,3 +1,10 @@
+---
+title: "float的机制"
+description: 'p::first-letter {   font-size: 3em;   border: 1px solid black;   background: red;   float: left;   padding: 2px;   margin-right: 4px; }'
+keywords: ["float的机制", "float常见应用", "实现文字环绕图片", "实现首字母突出特效", "创建多列布局", "浮动影响", "消除浮动带来的影响", "float"]
+tags: ["float的机制", "float常见应用", "实现文字环绕图片", "实现首字母突出特效", "创建多列布局"]
+---
+
 ## float的机制
 
 - `float`元素会脱离正常的文档布局流，并吸附在其父容器的左边；在正常布局中位于该浮动元素下的内容，此时会围绕着浮动元素，填满其右侧空间

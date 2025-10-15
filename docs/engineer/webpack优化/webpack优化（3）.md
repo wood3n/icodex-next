@@ -1,5 +1,8 @@
 ---
 title: webpack优化（3）
+description: "指定 webpack 解析模块时应该搜索的目录，默认是，也就是 webpack 会首先查找项目根目录的文件夹去寻找模块，如果找不到就往上一级目录  中去找，实际上这种查找是不需要的，毕竟项目一般也不会使用层层嵌套的结构。"
+keywords: ["优化模块解析规则", "ruleinclude", "ruleexclude", "resolvemodules", "resolvesymlinks", "modulenoparse", "利用缓存", "优化"]
+tags: ["优化模块解析规则", "ruleinclude", "ruleexclude", "resolvemodules", "resolvesymlinks"]
 ---
 
 webpack 文档提供了一些优化构建性能的建议 —— [webpack - 构建性能](https://webpack.docschina.org/guides/build-performance/)，对于一些小型项目来说，这些建议很有用！

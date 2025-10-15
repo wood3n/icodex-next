@@ -1,6 +1,9 @@
 ---
 title: webpack5 配置项（一）
 slug: /webpack5
+description: "如果指定为一个具体的文件路径字符串或者一个字符串数组，则 webpack 会从解析这个模块开始构建依赖树，生成单独的 chunk 并命名为。对于 SPA 应用来说一般采取这种配置。"
+keywords: ["targethttps", "webpackdocschinaorg", "configuration", "targettarget", "entryhttps", "entry-context", "entry", "string"]
+tags: ["targethttps", "webpackdocschinaorg", "configuration", "targettarget", "entryhttps"]
 ---
 
 ## [target](https://webpack.docschina.org/configuration/target#target)

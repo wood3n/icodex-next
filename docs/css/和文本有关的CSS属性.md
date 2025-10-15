@@ -1,3 +1,10 @@
+---
+title: "text-overflow"
+description: '- ：以 tab 键入的制表符，放在字符串中会显示成 - ：Carriage Return，回车键入，也就是 - ：，Line Feed，换行符，用于 Unix 系统，例如 Mac OS，Linux 等换行输入，也就是 - ：，用于非 Unix 系统，例如 Windows 的换行输入，也就是 - ：Form Feed，'
+keywords: ["text-overflow", "clip", "ellipsis", "string", "fade", "text-wrap", "white-space", "空格"]
+tags: ["text-overflow", "clip", "ellipsis", "string", "fade"]
+---
+
 ## text-overflow
 
 `text-overflow`，指定如何处理行内溢出容器元素的文本。

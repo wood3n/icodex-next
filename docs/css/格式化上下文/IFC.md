@@ -1,5 +1,8 @@
 ---
 title: IFC
+description: 'abbr, acronym, cite, dfn, em, kbd, strong, samp, var b, big, small, tt bdo, br, object, q, script, sub, sup'
+keywords: ["行内元素", "行内级元素", "行盒", "匿名行盒", "ifc", "线盒的宽度计算", "线盒高度的计算", "baseline-基线"]
+tags: ["行内元素", "行内级元素", "行盒", "匿名行盒", "ifc"]
 ---
 
 ## 行内元素

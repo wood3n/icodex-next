@@ -1,6 +1,9 @@
 ---
 title: 优化图片资源
 slug: /enhancedweb3
+description: "| 格式 | 后缀                                       | MIME            | 压缩方式           | 是否可动态 | 色彩深度                  | 最大像素                  | 图像体积 | 兼容性"
+keywords: ["web图像格式", "webp", "avif", "选择合适的图像格式", "图像压缩", "imagemin", "svgo", "web性能优化3"]
+tags: ["web图像格式", "webp", "avif", "选择合适的图像格式", "图像压缩"]
 ---
 
 

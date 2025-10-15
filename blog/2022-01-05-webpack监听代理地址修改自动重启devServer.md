@@ -1,8 +1,12 @@
 ---
 tltle: webpack监听代理地址修改自动重启devServer
 authors: oxygen
+title: webpack监听代理地址修改自动重启devServer
+description: webpack监听代理地址修改自动重启devServer 的使用与实践总结。
+slug: /blog/2022-01-05-webpack监听代理地址修改自动重启devServer
+keywords: ["背景", "什么是chokidar", "fswatchfile", "fswatch", "chokidarwatchpaths", "options", "api", "配置项"]
+tags: ["背景", "什么是chokidar", "fswatchfile", "fswatch", "chokidarwatchpaths"]
 ---
-
 ![image-20220105213328676](../public/images/image-20220105213328676.png)
 
 本文介绍解决监听开发环境代理地址更改后自动重启`webpack-dev-server`的问题。

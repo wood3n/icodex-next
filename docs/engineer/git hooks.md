@@ -1,5 +1,8 @@
 ---
 title: git hooks
+description: '- 客户端，主要是本地执行等命令时执行的 hook； - 服务端，主要用于服务器接收到等命令推送的代码以后执行的命令，比较常见的就是 CI/CD 的自动化工作流；'
+keywords: ["git", "hook", "如何使用", "客户端", "服务端", "eslint", "安装", "pre-commit"]
+tags: ["git", "hook", "如何使用", "客户端", "服务端"]
 ---
 
 ## git hook

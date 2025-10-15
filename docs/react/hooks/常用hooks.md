@@ -1,6 +1,8 @@
 ---
 title: Hook API学习
-
+description: '// 函数组件-hook export default () => {   let [person, setPerson] = useState  { name: ''oxygen'', age: 23 };'
+keywords: ["使用", "usestate", "永远不要直接修改state", "usestate是覆盖更新", "usestate是异步更新", "useeffect", "模拟", "componentdidmount"]
+tags: ["使用", "usestate", "永远不要直接修改state", "usestate是覆盖更新", "usestate是异步更新"]
 ---
 
 ## 使用

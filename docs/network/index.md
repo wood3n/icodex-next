@@ -1,6 +1,9 @@
 ---
 title: Network
 slug: /network/guides
+description: '```mdx-code-block import DocCardList from ''@theme/DocCardList'';'
+keywords: ["index"]
+tags: ["index"]
 ---
 
 ```mdx-code-block

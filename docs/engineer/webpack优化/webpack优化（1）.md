@@ -1,5 +1,8 @@
 ---
 title: webpack优化（1）
+description: "tree shaking 是 webpack 里的术语，**用于移除 JS 上下文中未引用过的代码，以减小代码体积，间接减少代码在网络请求过程中的耗时**。我把这个称为代码清洁工。"
+keywords: ["tree", "shaking", "sideeffects", "原理", "如何使用", "optimization", "optimizationminimize", "optimizationminimizer"]
+tags: ["tree", "shaking", "sideeffects", "原理", "如何使用"]
 ---
 
 ## tree shaking

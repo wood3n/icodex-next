@@ -1,6 +1,9 @@
 ---
 title: stylelint 配置
 slug: /stylelintconfig
+description: '其实和配置都差不多，只是有些需要注意的地方  ## 安装 stylelint  在项目内安装，这里以提供的标准拓展为例    如果需要格式化，这些 CSS 预处理器语言，还需要安装其他语言解析工具    ## 配置 stylelint  配置，可以使用，等文件放在项目根目录，例如'
+keywords: ["安装", "stylelint", "配置", "vscode-stylelint"]
+tags: ["安装", "stylelint", "配置", "vscode-stylelint"]
 ---
 
 其实`stylelint`和`eslint`配置都差不多，只是有些需要注意的地方

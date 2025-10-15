@@ -1,3 +1,10 @@
+---
+title: "属性"
+description: 'javascript Object instanceof Function; // true Function instanceof Object; // true'
+keywords: ["属性", "prototype", "proto", "name", "length", "arguments", "caller", "scope"]
+tags: ["属性", "prototype", "proto", "name", "length"]
+---
+
 ## 属性
 
 ### prototype

@@ -2,8 +2,10 @@
 title: IntersectionObserver API 用法
 slug: /intersection
 authors: oxygen
+description: IntersectionObserver用法 的使用与实践总结。
+keywords: ["intersectionobserver类型定义", "root", "threshold", "intersectionobserver用例", "判断元素是否可见", "image", "lazyload", "sticky"]
+tags: ["intersectionobserver类型定义", "root", "threshold", "intersectionobserver用例", "判断元素是否可见"]
 ---
-
 当我们说到图片懒加载、页面数据的滚动加载这些体验设计时，一般能够想到基于[`scroll`](https://developer.mozilla.org/en-US/docs/Web/API/Document/scroll_event)事件，通过`getBoundingClientRect`方法获取元素相对于视口偏移量`top`，来判断元素是否可见，demo 如下
 
 [![Edit jovial-snowflake-e42869](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/jovial-snowflake-e42869?fontsize=14&hidenavigation=1&theme=dark)

@@ -1,3 +1,10 @@
+---
+title: "awesome nodejs"
+description: "[![npm version](https://badge.fury.io/js/pnpm.svg)](https://badge.fury.io/js/pnpm)"
+keywords: ["cli", "工具", "pnpmhttps", "pnpmio", "zh", "installation", "please-upgrade-nodehttps", "githubcom"]
+tags: ["cli", "工具", "pnpmhttps", "pnpmio", "zh"]
+---
+
 ## CLI 工具
 
 ### [pnpm](https://pnpm.io/zh/installation)

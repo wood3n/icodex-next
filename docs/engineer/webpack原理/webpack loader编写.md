@@ -1,6 +1,8 @@
 ---
 title: 编写 webpack loader
 slug: /webpackloader
+keywords: ["webpack", "loader", "是什么", "为什么需要", "运行模式", "的链式调用", "辅助工具", "loader-utilshttps"]
+tags: ["webpack", "loader", "是什么", "为什么需要", "运行模式"]
 ---
 
 ## webpack loader 是什么

@@ -1,7 +1,8 @@
 ---
 title: 优化网络传输
 slug: /enhancedweb2
-
+keywords: ["网络传输的复杂性", "rtt", "tcp", "传输的必要性", "web性能优化2"]
+tags: ["网络传输的复杂性", "rtt", "tcp", "传输的必要性", "web性能优化2"]
 ---
 
 

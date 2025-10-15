@@ -1,5 +1,7 @@
 ---
 title: rust 开发环境设置Q&A
+keywords: ["windows", "cmd", "macos", "更新和卸载", "更新", "卸载", "vscode插件", "rust-analyzer"]
+tags: ["windows", "cmd", "macos", "更新和卸载", "更新"]
 ---
 
 

@@ -1,3 +1,10 @@
+---
+title: "什么是模块"
+description: '- AMD：ES6 之前的，大概 2013 年提出的异步加载模块的规范；最初由实现 - CommonJS：为 Node.js 服务器创建的模块系统；最早于 2009 年提出 - UMD：通用模块语法，兼容 AMD 和 CommonJS - ESM：ES Modules，ES6 提出的模块化语法，主要在浏览器中使用，No'
+keywords: ["什么是模块", "为什么需要模块化", "amd", "define", "require", "commonjs", "moduleexports", "作用域"]
+tags: ["什么是模块", "为什么需要模块化", "amd", "define", "require"]
+---
+
 ## 什么是模块
 
 模块可以简单理解为一个文件或者一段程序，一个 JS 函数，一个 js，css，img 等都可以称为一个模块。

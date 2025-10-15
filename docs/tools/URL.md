@@ -1,6 +1,8 @@
 ---
 title: URL
-
+description: "URI，Uniform Recource Identifier，统一资源标识符，用一串字符明确标识一个特定的资源，URI 使用分层命名的方案来标识资源，这样的标识使得能够使用特定的协议通过网络与资源进行交互。URI 最常见的形式是 URL。"
+keywords: ["uri", "格式", "url-http", "url", "编码", "百分号编码", "保留字符的编码", "ascii"]
+tags: ["uri", "格式", "url-http", "url", "编码"]
 ---
 
 ## URI

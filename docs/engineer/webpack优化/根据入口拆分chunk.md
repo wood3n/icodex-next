@@ -1,6 +1,8 @@
 ---
 title: webpack分入口打包
-
+description: '- 字符串，字符串数组：需要传入每个入口文件的路径，生成的 chunk 会被命名为 - 对象：对象的每个属性就是 chunk 的名称，属性值就是该入口文件的路径 - 函数：根据函数的返回值动态修改的入口，返回入口文件的路径，该函数会在启动或者在监视文件更改以后触发'
+keywords: ["思路", "entry", "v4-entry", "v5-entry", "output", "html-webpack-plugin", "根据入口拆分chunk"]
+tags: ["思路", "entry", "v4-entry", "v5-entry", "output"]
 ---
 
 ## 思路

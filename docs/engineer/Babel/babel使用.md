@@ -1,5 +1,8 @@
 ---
 title: babel使用
+description: "还为那些尚未发布的 TC39（Technical Committee No.39，技术委员会）提案开发了。TC39（Technical Committee No.39）是推动 JS 现代化发展最重要的成员（没有之一），它是由各个主流浏览器厂商的代表构成的一个组织，负责提案并起草 ECMAScript 标准。JS 对应的"
+keywords: ["babel", "是什么", "plugins", "presets", "polyfill", "用法", "配置方式", "配置项"]
+tags: ["babel", "是什么", "plugins", "presets", "polyfill"]
 ---
 
 ## babel 是什么

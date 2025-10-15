@@ -1,3 +1,10 @@
+---
+title: "什么是 context"
+description: 'module.exports = {   //...   context: path.resolve(__dirname, ''src''),   entry: ''./main.js'', };'
+keywords: ["什么是", "context", "requirecontext", "实践", "配置环境目录", "查看", "返回了什么", "生成"]
+tags: ["什么是", "context", "requirecontext", "实践", "配置环境目录"]
+---
+
 ## 什么是 context
 
 在`webpack`中有基础目录`context`的配置项，`webpack`默认使用`webpack.config.js`所在的目录，也就是`webpack`执行的路径。

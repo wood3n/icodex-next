@@ -1,6 +1,8 @@
 ---
 title: packagejson的配置项
-
+description: '- 不要使用与核心 Node 模块相同的名称 - 不要在名称中添加或者 - 这个名称可能会作为参数传递给或者，简洁一点比较好 - 可以使用限定 package 所属的组织，例如'
+keywords: ["name", "version", "description", "keywords", "homepage", "repository", "bugs", "license"]
+tags: ["name", "version", "description", "keywords", "homepage"]
 ---
 
 ## name

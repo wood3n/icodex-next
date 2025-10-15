@@ -1,6 +1,8 @@
 ---
 title: 搭建 React 项目（5）
-
+description: "使用可以配置文件的默认后缀名，默认是。当省略文件后缀名时，webpack 会尝试对文件名依次添加后缀名并解析，如果找到相关后缀的文件就停止解析。例如，那么 webpack 首先会去找文件夹是否存在的文件，找不到就换下一个后缀名，就这样依次解析，如果最后都找不到就会报错。"
+keywords: ["resolve", "resolvealias", "resolveenforceextension", "resolveextensions", "resolvemainfiles", "resolvemainfields", "resolvemodules", "resolveplugins"]
+tags: ["resolve", "resolvealias", "resolveenforceextension", "resolveextensions", "resolvemainfiles"]
 ---
 
 ## resolve

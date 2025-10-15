@@ -1,3 +1,10 @@
+---
+title: "this 的传递"
+description: "> JavaScript 的 this 原理是什么？ - Lucas HC 的回答 - 知乎 https://www.zhihu.com/question/353757734/answer/964557747"
+keywords: ["全局环境", "函数体内", "箭头函数内部的", "this", "class", "内部的", "dom", "回调函数"]
+tags: ["全局环境", "函数体内", "箭头函数内部的", "this", "class"]
+---
+
 > JavaScript 的 this 原理是什么？ - Lucas HC 的回答 - 知乎 https://www.zhihu.com/question/353757734/answer/964557747
 
 `this`是一个关键字，因此不能在 JS 中为其赋值，它用来指向一个对象，使得可以在代码中使用`this`指向的对象的属性和方法；`this`可以在脚本范围内使用，也可以在函数体内使用，但是严格模式下禁止函数体内的`this`指向全局对象，它的值有可能是`undefined`，因此函数内使用`this`要十分小心。

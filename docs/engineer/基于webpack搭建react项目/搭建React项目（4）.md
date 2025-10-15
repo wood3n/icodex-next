@@ -1,6 +1,8 @@
 ---
 title: 搭建 React 项目（4）
-
+description: "经常让人摸不着头脑的是 chunk 和 bundle 这两个概念。chunk，翻译过来就是大块，也就是代码块；而 bundle 则是束，包的意思。从 webpack 给出的中是这么解释的："
+keywords: ["chunk", "bundle", "output", "filename", "chunkfilename", "clean-webpack-plugin", "搭建react项目（4）"]
+tags: ["chunk", "bundle", "output", "filename", "chunkfilename"]
 ---
 
 ## chunk 和 bundle

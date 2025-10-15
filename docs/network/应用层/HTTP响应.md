@@ -1,3 +1,10 @@
+---
+title: "HTTP响应"
+description: '| code | 状态文本           | 含义                                                         | | ---- | ----------------------------- | --------------------------------'
+keywords: ["状态码https", "developermozillaorg", "zh-cn", "docs", "web", "http", "status", "重定向状态码的区别"]
+tags: ["状态码https", "developermozillaorg", "zh-cn", "docs", "web"]
+---
+
 ### [状态码](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status)
 
 HTTP 响应状态码通常是`100`到`600`之间的整数，用来表示当前请求服务器的结果。

@@ -1,3 +1,10 @@
+---
+title: "优化 lodash 打包"
+description: 'javascript const path = require(''path''); const BundleAnalyzerPlugin = require(''webpack-bundle-analyzer'')   .BundleAnalyzerPlugin;'
+keywords: ["优化", "lodash", "打包", "为什么不能被", "tree", "shaking", "这种写法有用吗", "如何优化"]
+tags: ["优化", "lodash", "打包", "为什么不能被", "tree"]
+---
+
 ## 优化 lodash 打包
 
 ### lodash 为什么不能被 Tree Shaking

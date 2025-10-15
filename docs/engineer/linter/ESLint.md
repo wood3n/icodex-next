@@ -1,6 +1,9 @@
 ---
 title: ESLint的使用
 slug: /eslintconfig
+description: '- 约束团队开发的代码风格 - 代码质量检查，帮助减少 BUG - 最强大的功能，还是配合 git hook 强约束代码的提交规范，不符合规范的代码别想提交上去了'
+keywords: ["什么是", "eslint", "的作用", "使用", "安装", "配置方式", "配置项", "env"]
+tags: ["什么是", "eslint", "的作用", "使用", "安装"]
 ---
 
 ## 什么是 ESLint

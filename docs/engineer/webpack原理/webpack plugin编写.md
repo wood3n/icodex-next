@@ -1,6 +1,8 @@
 ---
 title: webpack plugin编写
 slug: /webpackplugin
+keywords: ["什么是", "plugin", "tapable", "生命周期", "hook", "写一个输出打包产物大小的plugin", "webpack", "plugin编写"]
+tags: ["什么是", "plugin", "tapable", "生命周期", "hook"]
 ---
 
 ## 什么是 plugin

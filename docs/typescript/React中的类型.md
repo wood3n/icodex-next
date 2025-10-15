@@ -1,5 +1,8 @@
 ---
 title: React 中的类型
+description: 'typescript type ReactText = string | number; type ReactChild = ReactElement | ReactText;'
+keywords: ["react", "中的类型", "html", "元素类型", "合成事件类型", "常见的合成事件", "使用类型断言", "特定的类型"]
+tags: ["react", "中的类型", "html", "元素类型", "合成事件类型"]
 ---
 
 ## React 中的类型

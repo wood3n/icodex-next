@@ -1,3 +1,10 @@
+---
+title: "Number 类型"
+description: "JS 里的类型值，没有 Int 整数，全都是浮点数，并且以 IEEE 二进制浮点算术标准中所指定的双精度 64 位格式来进行表示，也就是上文介绍的 64 位双精度浮点数。"
+keywords: ["number", "类型", "直接量形式", "构造函数", "静态属性", "精度丢失的问题", "精度取舍的问题", "number类型"]
+tags: ["number", "类型", "直接量形式", "构造函数", "静态属性"]
+---
+
 ## Number 类型
 
 > [The Number Type](https://tc39.es/ecma262/#sec-ecmascript-language-types-number-type)

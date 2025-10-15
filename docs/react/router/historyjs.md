@@ -1,3 +1,10 @@
+---
+title: "historyjs"
+description: 'typescript interface History {   // 历史会话数目，包含当前页面   readonly length: number;   // 当前页面缓存的状态值，一个对象   readonly state: any;   // 获取或控制浏览器是否自动恢复页面滚动位置，默认 auto，也就是自动'
+keywords: ["historyjs", "history", "api", "historypushstate", "historyreplacestate", "historyback", "historyforward", "historygo"]
+tags: ["historyjs", "history", "api", "historypushstate", "historyreplacestate"]
+---
+
 ## historyjs
 
 [![npm version](https://badge.fury.io/js/history.svg?style=flat-square&logo=appveyor)](https://badge.fury.io/js/history)

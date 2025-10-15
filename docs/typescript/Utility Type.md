@@ -1,5 +1,8 @@
 ---
 title: Utility Type
+description: "这玩意 TS 的官网介绍的有点坑，其实就是用来构造一个对象的，就是作为对象的一系列属性的类型，所以只能是或者字面量类型，就是属性值的类型，这就很多了，只要是 ES 规范定义的类型都能往里扔。"
+keywords: ["引言", "partial", "required", "readonly", "record", "pick", "exclude", "omit"]
+tags: ["引言", "partial", "required", "readonly", "record"]
 ---
 
 ## 引言

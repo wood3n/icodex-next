@@ -1,6 +1,8 @@
 ---
 title: react router简介
-
+description: '- 基础路由组件，用于全局处理路由转发任务，包括和 - 路由匹配组件，用于根据 URL 匹配指定的页面组件，包括和 - 页面跳转组件，包括、和，最终会转换成标签嵌入页面'
+keywords: ["api", "分类", "browserrouter", "hashrouter", "switch", "route", "component", "render"]
+tags: ["api", "分类", "browserrouter", "hashrouter", "switch"]
 ---
 
 ## API 分类

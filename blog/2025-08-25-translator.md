@@ -3,6 +3,8 @@ title: 如何使用 Translator Web API
 slug: /use-translator-webapi
 authors: oxygen
 description: 探索如何使用最新的 Translator 和 Language Detector API 来翻译网页中的文本
+keywords: ["api", "介绍", "languagedetector", "translator", "为什么需要", "使用", "typescript", "类型"]
+tags: ["api", "介绍", "languagedetector", "translator", "为什么需要"]
 ---
 
 LanguageDetector 和 Translator 是分别基于 AI 来检测和翻译 Web 文本的 API，由 W3C 的机器学习社区组（[Web Machine Learning Community Group](https://www.w3.org/community/webmachinelearning/)）于 2025/02/17 日发布的[草案](https://github.com/webmachinelearning/translation-api)定义。该草案由 Chrome 内置 AI 团队的开发者 [Domenic Denicola](https://domenic.me/) 提出，目前也仅在 `Chrome >= 138` 版本才稳定支持（ `Chrome 131~137` 版本实验性支持）。下面就来探索下该 API 的使用。

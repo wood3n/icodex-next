@@ -3,6 +3,8 @@ title: POML 一种管理 Prompt 的工具
 slug: /prompt-tool
 authors: oxygen
 description: 介绍微软开发的 POML 这款管理 Prompt 的工具
+keywords: ["poml", "什么是", "的语法", "vscode", "插件", "typescript", "sdk", "2025"]
+tags: ["poml", "什么是", "的语法", "vscode", "插件"]
 ---
 
 POML 是微软团队开源的一款管理 prompt 的工具，下面一起来探索下使用方式。

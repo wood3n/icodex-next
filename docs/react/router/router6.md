@@ -1,3 +1,10 @@
+---
+title: "react-router-dom v6"
+description: 'typescript declare function BrowserRouter(   props: BrowserRouterProps ): React.ReactElement;'
+keywords: ["react-router-dom", "v6", "jsx", "组件", "browserrouter", "hashrouter", "routes", "route"]
+tags: ["react-router-dom", "v6", "jsx", "组件", "browserrouter"]
+---
+
 ## react-router-dom v6
 
 `react-router`早前发布了`v6`版本，改动了许多内容，现在的 API 真的好用挺多的。话不多说，直接看 API。

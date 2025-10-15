@@ -1,6 +1,8 @@
 ---
 title: Redux入门
-
+description: "Redux 是一个 JavaScript 状态容器，提供可预测化的状态管理。不光能用于 React，也能用于其它 JS 库。它的大小只有 2KB 左右，非常得轻量。"
+keywords: ["什么是", "redux", "action", "reducer", "store", "middleware", "react-redux", "安装"]
+tags: ["什么是", "redux", "action", "reducer", "store"]
 ---
 
 ## 什么是 Redux

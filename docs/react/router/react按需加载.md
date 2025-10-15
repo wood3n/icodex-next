@@ -1,3 +1,10 @@
+---
+title: "react按需加载"
+description: "属于体验优化上的组件，其接受返回的组件作为子组件，同时可以接受一个的属性作为在组件加载过程中显示的组件，例如加载 loading 效果等。同时支持包裹多个懒加载的子组件。"
+keywords: ["什么是按需加载", "reactlazy", "reactsuspense", "react", "router", "结合", "react按需加载"]
+tags: ["什么是按需加载", "reactlazy", "reactsuspense", "react", "router"]
+---
+
 ### 什么是按需加载
 
 按需加载（或者叫懒加载）就是通过 ES2020 的动态加载语法[`import(path)`](https://es6.ruanyifeng.com/?search=import&x=0&y=0#docs/module#import)传入指定的组件路径作为参数，使得该部分代码仅在需要用到的时候才会去请求并加载。

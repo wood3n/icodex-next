@@ -1,3 +1,10 @@
+---
+title: "心智模型"
+description: '> 心智模型（mental model）：A **mental model** is an explanation of someone''s thought process about how something works in the real world. ——  > > 心智模型是对某人关于某物在现实世界中如何'
+keywords: ["心智模型", "函数组件的特点", "函数组件没有生命周期", "this", "useref", "usememo", "usecallback", "reactmemo"]
+tags: ["心智模型", "函数组件的特点", "函数组件没有生命周期", "this", "useref"]
+---
+
 ## 心智模型
 
 > 心智模型（mental model）：A **mental model** is an explanation of someone's thought process about how something works in the real world. —— [wikipedia - Mental_model](https://en.wikipedia.org/wiki/Mental_model)

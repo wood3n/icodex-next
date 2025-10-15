@@ -1,5 +1,8 @@
 ---
 title: webpack优化（2）
+description: "始终是项目处理任务最多的 loader，尤其是 React 开发过程中，有大量的 JSX 需要去解析，编译。从的配置项入手可以进行一些优化。使用的插件集合主要是和。"
+keywords: ["优化", "babel-loader", "babel", "preset-env", "配置项", "配置", "modules", "targets"]
+tags: ["优化", "babel-loader", "babel", "preset-env", "配置项"]
 ---
 
 ## 优化 babel-loader

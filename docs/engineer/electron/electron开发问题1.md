@@ -1,6 +1,8 @@
 ---
 title: electron 开发问题
 slug: /electron1
+keywords: ["eletronvite开发遇到的问题", "electron开发问题1"]
+tags: ["eletronvite开发遇到的问题", "electron开发问题1"]
 ---
 
 ## eletron+vite开发遇到的问题
