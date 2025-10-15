@@ -161,28 +161,28 @@ const config: Config = {
             // },
           ],
         },
-        {
-          type: "dropdown",
-          label: "Learn",
-          position: "right",
-          items: [
-            {
-              type: "doc",
-              label: "Network",
-              docId: "network/index",
-            },
-            {
-              type: "doc",
-              label: "Algorithm",
-              docId: "algorithm/算法分析",
-            },
-            {
-              type: "doc",
-              label: "Interview",
-              docId: "interview/index",
-            },
-          ],
-        },
+        // {
+        //   type: "dropdown",
+        //   label: "Learn",
+        //   position: "right",
+        //   items: [
+        //     {
+        //       type: "doc",
+        //       label: "Network",
+        //       docId: "network/index",
+        //     },
+        //     {
+        //       type: "doc",
+        //       label: "Algorithm",
+        //       docId: "algorithm/算法分析",
+        //     },
+        //     {
+        //       type: "doc",
+        //       label: "Interview",
+        //       docId: "interview/index",
+        //     },
+        //   ],
+        // },
         {
           type: "doc",
           label: "Engineer",
