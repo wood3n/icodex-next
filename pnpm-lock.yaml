@@ -51,6 +51,9 @@ importers:
       '@docusaurus/module-type-aliases':
         specifier: ^3.8.1
         version: 3.8.1(acorn@8.15.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@docusaurus/plugin-content-docs':
+        specifier: 3.8.1
+        version: 3.8.1(@mdx-js/react@3.1.0(@types/react@19.1.8)(react@19.1.0))(acorn@8.15.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.8.3)
       '@docusaurus/tsconfig':
         specifier: ^3.8.1
         version: 3.8.1

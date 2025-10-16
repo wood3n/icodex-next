@@ -130,35 +130,25 @@ const config: Config = {
           position: "right",
           items: [
             {
-              type: "doc",
-              label: "JavaScript",
-              docId: "javascript/index",
-            },
-            {
-              type: "doc",
-              label: "CSS",
-              docId: "css/index",
-            },
-            {
-              // type: "doc",
               label: "TypeScript",
               to: "docs/typescript",
             },
             {
-              type: "doc",
               label: "React",
-              docId: "react/index",
+              to: "docs/category/react",
             },
             {
-              type: "doc",
-              label: "NodeJS",
-              docId: "nodejs/awesome-nodejs",
+              label: "JavaScript",
+              to: "docs/category/javascript",
             },
-            // {
-            //   type: "doc",
-            //   label: "Engineer",
-            //   docId: "engineer/index",
-            // },
+            {
+              label: "CSS",
+              to: "docs/category/css",
+            },
+            {
+              label: "NodeJS",
+              to: "docs/category/node",
+            },
           ],
         },
         // {
@@ -183,17 +173,20 @@ const config: Config = {
         //     },
         //   ],
         // },
+        // {
+        //   label: "提示词",
+        //   position: "right",
+        //   to: "docs/category/prompt",
+        // },
         {
-          type: "doc",
           label: "Engineer",
           position: "right",
-          docId: "engineer/index",
+          to: "docs/category/前端工程化体系",
         },
         {
-          type: "doc",
           label: "Tool",
           position: "right",
-          docId: "tools/git",
+          to: "docs/category/tool",
         },
         {
           href: "https://icodex.me/rss.xml",

@@ -1,7 +1,17 @@
 ---
-title: "Browsers that we support"
-description: '- ：也就是 - ：，,  或  这些符号表示基于全球浏览器使用率统计数据进行的选择，例如也就是考虑浏览器市场份额至少在全球以上 - ：浏览器的市场覆盖率达到 - ：浏览器官方更新已经停滞个月以上，例如,  - ：永远支持浏览器最新的两个迭代版本，可以指定对应的浏览器，例如 - ：nodejs 版本 - 特定浏览器:'
-keywords: ["什么是", "browserslist", "配置方式", "browsers", "that", "we", "support", "规则"]
+title: "Browserslist"
+description: Browserslist 介绍、配置方式、规则
+keywords:
+  [
+    "什么是",
+    "browserslist",
+    "配置方式",
+    "browsers",
+    "that",
+    "we",
+    "support",
+    "规则",
+  ]
 tags: ["什么是", "browserslist", "配置方式", "browsers", "that"]
 ---
 
@@ -35,8 +45,8 @@ maintained node versions
 
 ```javascript
 module.exports = {
-  development: ['last 1 version'],
-  production: ['last 1 version', '> 1%', 'ie 10'],
+  development: ["last 1 version"],
+  production: ["last 1 version", "> 1%", "ie 10"],
 };
 ```
 
@@ -72,8 +82,8 @@ module.exports = {
 
 `browserslist`的配置项支持使用以下形式的符号或者单词进行组合，它们之间的关系类似于集合
 
-| 符号     | 描述                                                         | 适用范围                               | 示例                                                     |
-| -------- | ------------------------------------------------------------ | -------------------------------------- | -------------------------------------------------------- |
+| 符号     | 描述                                                                           | 适用范围                               | 示例                                                     |
+| -------- | ------------------------------------------------------------------------------ | -------------------------------------- | -------------------------------------------------------- |
 | `or`/`,` | ![image-20220103003340852](../../../public/images/image-20220103003340852.png) |                                        | `> .5% or last 2 versions`<br />`> .5%, last 2 versions` |
 | `and`    | ![image-20220103003346469](../../../public/images/image-20220103003346469.png) |                                        | `> .5% and last 2 versions`                              |
 | `not`    | ![image-20220103003352962](../../../public/images/image-20220103003352962.png) | 可用于任意规则，但是不能用于配置项开头 | `> .5% and not last 2 versions`                          |
@@ -111,13 +121,10 @@ module.exports = {
 ```json
 {
   "development": ["last 2 Chrome versions"],
-  "production": [
-   	"last 1 version",
-    "> 1%",
-    "ie 10"
-  ]
+  "production": ["last 1 version", "> 1%", "ie 10"]
 }
 ```
+
 ## browserlist 更新
 
 `browserlist`在[`2022-05-21`更新](https://github.com/browserslist/browserslist/commit/37a3847e81a4dccc93b3af2d781e51c04a54224d)中，将`IE11`列入不再维护的浏览器版本中，因为微软在`2022-06-15`起将正式不再维护 IE 浏览器，所以`ie is dead`.
@@ -131,5 +138,3 @@ module.exports = {
     "IE 11"
   ]
 ```
-
-
