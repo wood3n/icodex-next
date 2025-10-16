@@ -19,6 +19,7 @@ const config: Config = {
   plugins: [
     "@docusaurus/theme-live-codeblock",
     path.resolve(__dirname, "./src/plugins/webpackConfig.js"),
+    path.resolve(__dirname, "./src/plugins/plugin-tailwind.js"),
   ],
   stylesheets: [
     {
@@ -55,7 +56,7 @@ const config: Config = {
           blogTitle: "前端技术博客 | 专注 React、TypeScript、AI 与性能优化",
           blogDescription:
             "一个专注于前端开发的技术博客，系统记录与分享 JavaScript、React、Vue、TypeScript 等框架与语言的学习与实践经验。从性能优化、工程化到前端架构设计，涵盖现代 Web 开发中的核心问题与最佳实践。无论你是刚入门的新手，还是追求进阶的工程师，都能在这里找到有价值的文章与灵感。",
-          blogSidebarCount: 20,
+          blogSidebarCount: "ALL",
           blogSidebarTitle: "Recent posts",
           feedOptions: {
             type: "all",
@@ -88,6 +89,15 @@ const config: Config = {
       sidebar: {
         hideable: true,
       },
+    },
+    blog: {
+      sidebar: {
+        groupByYear: false,
+      },
+    },
+    tableOfContents: {
+      minHeadingLevel: 2,
+      maxHeadingLevel: 5,
     },
     metadata: [
       {
@@ -173,11 +183,11 @@ const config: Config = {
         //     },
         //   ],
         // },
-        // {
-        //   label: "提示词",
-        //   position: "right",
-        //   to: "docs/category/prompt",
-        // },
+        {
+          label: "提示词",
+          position: "right",
+          to: "docs/category/prompt",
+        },
         {
           label: "Engineer",
           position: "right",
