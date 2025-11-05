@@ -19,7 +19,6 @@ const config: Config = {
   plugins: [
     "@docusaurus/theme-live-codeblock",
     path.resolve(__dirname, "./src/plugins/webpackConfig.js"),
-    path.resolve(__dirname, "./src/plugins/plugin-tailwind.js"),
   ],
   stylesheets: [
     {
@@ -122,7 +121,7 @@ const config: Config = {
       indexName: "icodex",
     },
     navbar: {
-      title: "icodex",
+      title: "博客",
       hideOnScroll: true,
       logo: {
         alt: "icodex",
@@ -133,10 +132,10 @@ const config: Config = {
           type: "search",
           position: "right",
         },
-        { to: "/pages/project", label: "My Project", position: "right" },
+        { to: "/pages/project", label: "项目", position: "right" },
         {
           type: "dropdown",
-          label: "Skill",
+          label: "技术栈",
           position: "right",
           items: [
             {
@@ -189,12 +188,12 @@ const config: Config = {
           to: "docs/category/prompt",
         },
         {
-          label: "Engineer",
+          label: "工程化",
           position: "right",
           to: "docs/category/前端工程化体系",
         },
         {
-          label: "Tool",
+          label: "工具",
           position: "right",
           to: "docs/category/tool",
         },

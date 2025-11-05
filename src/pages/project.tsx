@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import Layout from "@theme/Layout";
+import styles from "./project.module.css";
 
 import {
   RiGithubFill,
@@ -19,6 +20,13 @@ type Repo = {
 };
 
 const repos: Repo[] = [
+  {
+    name: "biu",
+    description: "B站音乐播放器",
+    language: "TypeScript",
+    html_url: "https://github.com/wood3n/biu",
+    topics: ["bilibili", "music player"],
+  },
   {
     name: "i18n-parser",
     description: "基于 babel 的 i18n 解析器，提取项目中的 i18n 资源",
@@ -60,11 +68,11 @@ const skills = [
   {
     label: "TypeScript",
     icon: RiCodeSSlashLine as any,
-    color: "text-blue-600",
+    color: "blue600",
   },
-  { label: "React", icon: RiReactjsFill, color: "text-sky-500" },
-  { label: "Vue.js", icon: RiVuejsFill, color: "text-green-500" },
-  { label: "Node.js", icon: RiNodejsFill, color: "text-emerald-600" },
+  { label: "React", icon: RiReactjsFill, color: "sky500" },
+  { label: "Vue.js", icon: RiVuejsFill, color: "green500" },
+  { label: "Node.js", icon: RiNodejsFill, color: "emerald600" },
 ];
 
 export default function ProjectPage() {
@@ -85,66 +93,61 @@ export default function ProjectPage() {
     return () => obs.disconnect();
   }, []);
 
-  const headlineGradient = useMemo(
-    () =>
-      "bg-gradient-to-r from-brand dark:from-brand-dark via-purple-500 to-pink-500 bg-clip-text text-transparent",
-    []
-  );
+  const headlineGradient = useMemo(() => styles.headlineGradient, []);
+
+  const colorClassMap: Record<string, string> = {
+    blue600: styles.iconBlue600,
+    sky500: styles.iconSky500,
+    green500: styles.iconGreen500,
+    emerald600: styles.iconEmerald600,
+  };
 
   return (
     <div className={isDark ? "dark" : ""}>
       <Layout>
-        <main className="mx-auto max-w-6xl px-4 py-12">
+        <main className={styles.main}>
           {/* Header */}
-          <section className="mb-12">
-            <div className="flex flex-col-reverse items-center justify-between gap-8 md:flex-row">
-              <div className="text-center md:text-left">
-                <h1
-                  className={`text-3xl font-extrabold md:text-4xl ${headlineGradient}`}
-                >
+          <section className={styles.section}>
+            <div className={styles.headerRow}>
+              <div className={styles.textContainer}>
+                <h1 className={`${styles.headline} ${headlineGradient}`}>
                   前端开发工程师
                 </h1>
-                <p className="mt-3 text-neutral-700 dark:text-neutral-300">
+                <p className={styles.subtitle}>
                   专注于 React/TypeScript
                   技术栈，热爱工程化与性能优化，持续维护开源项目。
                 </p>
-                <div className="mt-4 flex flex-wrap items-center justify-center gap-2 md:justify-start">
-                  <span className="badge">可视化与交互</span>
-                  <span className="badge">组件工程</span>
-                  <span className="badge">测试与质量</span>
-                  <span className="badge">性能优化</span>
+                <div className={styles.badgeRow}>
+                  <span className={styles.badge}>可视化与交互</span>
+                  <span className={styles.badge}>组件工程</span>
+                  <span className={styles.badge}>测试与质量</span>
+                  <span className={styles.badge}>性能优化</span>
                 </div>
               </div>
 
               <img
                 src="/img/avatar.png"
                 alt="avatar"
-                className="h-28 w-28 rounded-full border border-neutral-200 object-cover shadow-soft dark:border-neutral-700"
+                className={styles.avatar}
               />
             </div>
           </section>
 
           {/* Skills */}
-          <section className="mb-12">
-            <div className="mb-4 flex items-center gap-2">
-              <RiCodeSSlashLine className="h-6 w-6 text-brand dark:text-brand-dark" />
-              <h2
-                className="text-xl mb-0 font-semibold text-neutral-900 dark:text-neutral-100"
-                style={{ margin: 0 }}
-              >
+          <section className={styles.section}>
+            <div className={styles.sectionTitleRow}>
+              <RiCodeSSlashLine
+                className={`${styles.icon} ${styles.iconBrand}`}
+              />
+              <h2 className={styles.sectionTitle} style={{ margin: 0 }}>
                 技能栈
               </h2>
             </div>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
+            <div className={styles.skillsGrid}>
               {skills.map(({ label, icon: Icon, color }) => (
-                <div
-                  key={label}
-                  className="card flex items-center gap-3 p-4 transition-colors hover:border-brand/50"
-                >
-                  <Icon className={`h-6 w-6 ${color}`} />
-                  <span className="text-sm font-medium text-neutral-800 dark:text-neutral-200">
-                    {label}
-                  </span>
+                <div key={label} className={styles.skillCard}>
+                  <Icon className={`${styles.icon} ${colorClassMap[color]}`} />
+                  <span className={styles.skillLabel}>{label}</span>
                 </div>
               ))}
             </div>
@@ -152,45 +155,40 @@ export default function ProjectPage() {
 
           {/* GitHub Projects */}
           <section>
-            <div className="mb-4 flex items-center gap-2">
-              <RiGithubFill className="h-6 w-6 text-neutral-900 dark:text-neutral-100" />
-              <h2
-                className="text-xl font-semibold text-neutral-900 dark:text-neutral-100"
-                style={{ margin: 0 }}
-              >
+            <div className={styles.sectionTitleRow}>
+              <RiGithubFill className={styles.icon} />
+              <h2 className={styles.sectionTitle} style={{ margin: 0 }}>
                 GitHub 开源项目
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+            <div className={styles.projectsGrid}>
               {repos.map((repo, id) => (
-                <article key={id} className="card p-5">
-                  <div className="space-y-2 flex-1">
-                    <div className="flex items-start justify-between gap-2">
+                <article key={id} className={styles.projectCard}>
+                  <div className={styles.projectCardBody}>
+                    <div className={styles.projectTitleRow}>
                       <a
                         href={repo.html_url}
                         target="_blank"
                         rel="noreferrer"
-                        className="group inline-flex items-center gap-1 text-base font-semibold text-neutral-900 hover:text-brand dark:text-neutral-100 dark:hover:text-brand-dark"
+                        className={styles.projectLink}
                       >
                         {repo.name}
-                        <RiExternalLinkLine className="h-4 w-4 opacity-50 transition-opacity group-hover:opacity-100" />
+                        <RiExternalLinkLine className={styles.externalIcon} />
                       </a>
                     </div>
 
                     {repo.description && (
-                      <p className="mt-2 line-clamp-3 text-sm text-neutral-700 dark:text-neutral-300">
-                        {repo.description}
-                      </p>
+                      <p className={styles.projectDesc}>{repo.description}</p>
                     )}
                   </div>
 
-                  <div className="mt-4 flex flex-wrap items-center gap-2 justify-self-end">
+                  <div className={styles.tagsRow}>
                     {repo.language && (
-                      <span className="badge">{repo.language}</span>
+                      <span className={styles.badge}>{repo.language}</span>
                     )}
                     {(repo.topics || []).slice(0, 3).map((t) => (
-                      <span key={t} className="badge">
+                      <span key={t} className={styles.badge}>
                         {t}
                       </span>
                     ))}

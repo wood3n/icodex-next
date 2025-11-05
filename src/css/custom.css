@@ -1,7 +1,3 @@
-@import "tailwindcss";
-
-@custom-variant dark (&:is([data-theme="dark"] *));
-
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #25c2a0;
@@ -16,6 +12,7 @@
   --ifm-blockquote-padding-vertical: 14px;
   --ifm-blockquote-padding-horizontal: 14px;
   --ifm-blockquote-border-left-width: 3px;
+  text-autospace: normal;
 }
 
 .docusaurus-highlight-code-line {
