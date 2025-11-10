@@ -1,9 +1,55 @@
 ---
-title: "text-overflow"
-description: '- ：以 tab 键入的制表符，放在字符串中会显示成 - ：Carriage Return，回车键入，也就是 - ：，Line Feed，换行符，用于 Unix 系统，例如 Mac OS，Linux 等换行输入，也就是 - ：，用于非 Unix 系统，例如 Windows 的换行输入，也就是 - ：Form Feed，'
-keywords: ["text-overflow", "clip", "ellipsis", "string", "fade", "text-wrap", "white-space", "空格"]
-tags: ["text-overflow", "clip", "ellipsis", "string", "fade"]
+title: 和文本有关的CSS属性
+description: 和文本有关的CSS属性
+keywords: ["text-overflow", "css"]
+tags: ["css"]
 ---
+
+## text-autospace
+
+`text-autospace` 是 CSS4 的最新属性，用来指定中日韩（CJK）字符和非中日韩字符之间的间距行为，比如在英文和中文之间自动添加空格。
+
+### normal
+
+创建默认行为，自动在 CJK 字符与非 CJK 字符之间以及标点符号周围添加间距。
+
+### auto
+
+允许浏览器选择符合排版规范的间距。不同浏览器和平台间的间距可能存在差异。
+
+### no-autospace
+
+禁用 CJK 和非 CJK 字符间的自动间距行为。
+
+### ideograph-alpha
+
+仅在表意文字（如片假名和汉字）与非表意字母（如拉丁字母）之间添加间距。不会在表意文字与非表意数字之间添加间距。
+
+### ideograph-numeric
+
+仅在表意文字（如片假名和汉字）与非表意数字（如拉丁数字）之间添加间距。不会在表意文字与非表意字母之间添加间距。
+
+### punctuation
+
+根据特定语言的排版规范，在标点符号周围添加不可分割的间距。
+
+### insert
+
+仅当表意文字与非表意文字之间不存在现有空格时，才添加指定的间距。
+
+### replace
+
+将表意文字与非表意文字之间的现有间距（例如 [U+0020](https://developer.mozilla.org/zh-CN/docs/Glossary/Whitespace)）替换为指定的间距。
+
+### 表意和非表意
+
+表意：字形直接对应意义，不依赖发音。常见的如**汉字**、**日本汉字 (Kanji**；
+
+非表意：字形主要记录发音，意义依靠词语组合表达。常见的有以拉丁文字母为基础发展的如英语、法语、德语，以及希腊语、俄语、保加利亚语、韩语等。
+
+### demo
+
+参考 https://sb1-eqzt9rsm.stackblitz.io
 
 ## text-overflow
 
