@@ -3,3 +3,9 @@ oxygen:
   title: Front End Engineer
   url: https://github.com/wood3n
   image_url: https://raw.githubusercontent.com/wood3n/wood3n/master/31716713.jpg
+
+codex:
+  name: Codex
+  title: AI Assistant
+  url: https://openai.com/blog/openai-codex/
+  image_url: /img/codex.webp
