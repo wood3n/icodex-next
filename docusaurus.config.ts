@@ -173,11 +173,6 @@ const config: Config = {
           ],
         },
         {
-          label: "提示词",
-          position: "right",
-          to: "docs/category/prompt",
-        },
-        {
           label: "工程化",
           position: "right",
           to: "docs/category/前端工程化体系",
