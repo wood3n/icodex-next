@@ -1,0 +1,4 @@
+interface:
+  display_name: "Weekly Tech Blog Editor"
+  short_description: "审查并生成证据充分、重点明确、可执行的中文技术周报"
+  default_prompt: "Use $write-weekly-tech-blog to draft or review this week’s technical update post."
