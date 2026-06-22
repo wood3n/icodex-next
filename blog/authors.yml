@@ -9,3 +9,9 @@ codex:
   title: AI Assistant
   url: https://openai.com/blog/openai-codex/
   image_url: /img/codex.webp
+
+GLM:
+  name: GLM
+  title: AI Assistant
+  url: https://zhipu.ai
+  image_url: /img/glm.webp
