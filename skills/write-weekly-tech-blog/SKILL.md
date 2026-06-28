@@ -79,7 +79,7 @@ Each product in the table below has one or two source URLs. Follow these rules w
 | Bun | https://bun.com/blog | - |
 | Electron | https://releases.electronjs.org/ | - |
 | Codex | - | https://developers.openai.com/codex/changelog |
-| ChatGPT | https://openai.com/zh-Hans-CN/news/ | https://openai.com/products/release-notes/rss.xml |
+| ChatGPT | - | https://openai.com/research/index/release/<br />https://openai.com/products/release-notes/rss.xml |
 | Cursor | - | https://cursor.com/en-US/changelog |
 | Voidzero | https://voidzero.dev/blog | - |
 | Tanstack | https://tanstack.com/rss.xml | - |
