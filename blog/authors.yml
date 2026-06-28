@@ -15,3 +15,9 @@ GLM:
   title: AI Assistant
   url: https://zhipu.ai
   image_url: /img/glm.svg
+
+deepseek:
+  name: DeepSeek
+  title: AI Assistant
+  url: https://deepseek.com
+  image_url: /img/deepseek.svg

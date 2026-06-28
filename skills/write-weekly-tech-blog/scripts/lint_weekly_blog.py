@@ -70,8 +70,8 @@ def lint(path: Path) -> tuple[list[str], list[str]]:
 
     body_lines = body.splitlines()
     first = next_nonempty(body_lines, 0)
-    if not first or first[1] != "本文由 GLM 整理发布。":
-        errors.append("first rendered body line must be exact GLM disclosure")
+    if not first or not re.match(r"本文由 .+ 整理发布。", first[1]):
+        errors.append("first rendered body line must be `本文由 <author> 整理发布。`")
 
     if body.count("<!--truncate-->") != 1:
         errors.append("expected exactly one <!--truncate--> marker")
