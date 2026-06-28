@@ -1,6 +1,6 @@
 ---
 name: write-weekly-tech-blog
-description: Draft, review, or revise Chinese weekly technology blog posts from a fixed set of official sources (React, TypeScript, Shadcn/UI, Tailwind CSS, Ant Design, Vite, webpack, Rspack, Rolldown, Oxlint, Oxfmt, pnpm, npm, Turborepo, SWC, Babel, ESLint, Prettier, Node.js, Bun, Electron, Codex, ChatGPT, Cursor, Web Platform). Use for frontend and AI weekly reports, release-note roundups, changelog summaries, and Codex automations that must turn official updates into selective, evidence-linked, actionable technical writing.
+description: Draft, review, or revise Chinese weekly technology blog posts from a fixed set of official sources (React, TypeScript, Shadcn/UI, Tailwind CSS, Ant Design, Vite, webpack, Rspack, Rolldown, Oxlint, Oxfmt, pnpm, npm, Turborepo, SWC, Babel, ESLint, Prettier, Node.js, Bun, Electron, Codex, ChatGPT, Cursor, Voidzero, Tanstack, Web Platform). Use for frontend and AI weekly reports, release-note roundups, changelog summaries, and Codex automations that must turn official updates into selective, evidence-linked, actionable technical writing.
 ---
 
 # Write Weekly Tech Blog
@@ -19,8 +19,10 @@ Produce a concise engineering briefing, not a changelog dump. Keep only changes 
    - `> 参考来源：[direct primary source](URL)`
    - one sentence stating exact version/date/status and material change
    - one short paragraph stating affected users, risk, or required action
-7. 在正文末尾添加 `## 本周推荐阅读` 章节。从数据源中精选最多 5 个高质量内容（发布说明、RFC、技术文章），或对前端技术有较大影响力的更新。每条格式：
-   - 链接标题与一句话推荐理由
+7. 在正文末尾添加 `## 本周推荐阅读` 章节，从以下重点技术栈中精选最多 5 个高质量内容：
+   - **重点技术栈**：ChatGPT、Codex、Voidzero、React、TypeScript、pnpm、Web Platform、Turborepo、Tanstack、Rolldown
+   - **筛选标准**：主版本发布说明、重大 RFC、深度技术文章、对开发者工作流有显著影响的更新。非大版本更新的常规发布说明不纳入推荐阅读
+   - 每条格式：链接标题与一句话推荐理由
    - 若本周无值得推荐的内容，省略该章节
 8. 不要在 `##` 分类标题下添加 `本分类参考来源：` 汇总行。每条技术栈的参考来源仅出现在各自的 `> 参考来源：` 链接中。
 9. Run `scripts/lint_weekly_blog.py <post.md>`.
@@ -77,8 +79,10 @@ Each product in the table below has one or two source URLs. Follow these rules w
 | Bun | https://bun.com/blog | - |
 | Electron | https://releases.electronjs.org/ | - |
 | Codex | - | https://developers.openai.com/codex/changelog |
-| ChatGPT | - | https://openai.com/products/release-notes/rss.xml |
+| ChatGPT | https://openai.com/zh-Hans-CN/news/ | https://openai.com/products/release-notes/rss.xml |
 | Cursor | - | https://cursor.com/en-US/changelog |
+| Voidzero | https://voidzero.dev/blog | - |
+| Tanstack | https://tanstack.com/rss.xml | - |
 | Web Platform | - | https://developer.chrome.com/blog/feed.xml<br />https://web.dev/blog/feed.xml |
 
 ## Token Budget
