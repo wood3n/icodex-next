@@ -19,10 +19,13 @@ Produce a concise engineering briefing, not a changelog dump. Keep only changes 
    - `> 参考来源：[direct primary source](URL)`
    - one sentence stating exact version/date/status and material change
    - one short paragraph stating affected users, risk, or required action
-7. 不要在 `##` 分类标题下添加 `本分类参考来源：` 汇总行。每条技术栈的参考来源仅出现在各自的 `> 参考来源：` 链接中。
-8. Run `scripts/lint_weekly_blog.py <post.md>`.
-9. Run repository build or content validation.
-10. Recheck only high-risk claims against direct sources.
+7. 在正文末尾添加 `## 本周推荐阅读` 章节。从数据源中精选最多 5 个高质量内容（发布说明、RFC、技术文章），或对前端技术有较大影响力的更新。每条格式：
+   - 链接标题与一句话推荐理由
+   - 若本周无值得推荐的内容，省略该章节
+8. 不要在 `##` 分类标题下添加 `本分类参考来源：` 汇总行。每条技术栈的参考来源仅出现在各自的 `> 参考来源：` 链接中。
+9. Run `scripts/lint_weekly_blog.py <post.md>`.
+10. Run repository build or content validation.
+11. Recheck only high-risk claims against direct sources.
 
 Do not add `本周观察`, `本周总结`, `趋势观察`, `本周未记录`, omitted-product lists, or research-process notes.
 
