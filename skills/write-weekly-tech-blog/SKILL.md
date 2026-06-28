@@ -1,6 +1,6 @@
 ---
 name: write-weekly-tech-blog
-description: Draft, review, or revise Chinese weekly technology blog posts from a fixed set of official sources (React, TypeScript, Shadcn/UI, Tailwind CSS, Ant Design, Vite, webpack, Rspack, Rolldown, Oxlint, Oxfmt, pnpm, npm, Turborepo, SWC, Babel, ESLint, Prettier, Node.js, Bun, Electron, Codex, ChatGPT, Cursor, Web Platform). Use for frontend ecosystem reports, AI product reports, release-note roundups, changelog summaries, and Codex automations that must turn official updates into selective, evidence-linked, actionable technical writing.
+description: Draft, review, or revise Chinese weekly technology blog posts from a fixed set of official sources (React, TypeScript, Shadcn/UI, Tailwind CSS, Ant Design, Vite, webpack, Rspack, Rolldown, Oxlint, Oxfmt, pnpm, npm, Turborepo, SWC, Babel, ESLint, Prettier, Node.js, Bun, Electron, Codex, ChatGPT, Cursor, Web Platform). Use for frontend and AI weekly reports, release-note roundups, changelog summaries, and Codex automations that must turn official updates into selective, evidence-linked, actionable technical writing.
 ---
 
 # Write Weekly Tech Blog
@@ -14,7 +14,7 @@ Produce a concise engineering briefing, not a changelog dump. Keep only changes 
 3. Search from the fixed Data Sources list below. Open only results inside the reporting window that appear material.
 4. Omit routine patches, cosmetic changes, minor performance claims, undated updates, repeated announcements, and releases without concrete engineering impact.
 5. Rank remaining items by security, breaking change, retirement, stable capability, then preview capability.
-6. Draft 1–7 technology subsections. Never add weak items to reach a quota. Use this sequence:
+6. Draft 1–12 technology subsections. Never add weak items to reach a quota. Use this sequence:
    - `### Technology`
    - `> 参考来源：[direct primary source](URL)`
    - one sentence stating exact version/date/status and material change
@@ -49,7 +49,7 @@ Each product in the table below has one or two source URLs. Follow these rules w
    - 无实质进展的讨论（如 RFC 早期讨论、issue 讨论）
    - 对实际开发影响极小的更新
 
-**报告类型与搜索范围**：撰写「前端技术周报」时仅搜索前端相关源（React、TypeScript 至 Electron）；撰写「AI 产品周报」时仅搜索 AI 相关源（Codex、ChatGPT、Cursor）。Web Platform 源在两个场景下均需搜索。
+**报告类型与搜索范围**：博文标题统一为「前端与AI技术周报」，搜索全部数据源（前端 + AI + Web Platform），不再区分报告类型。
 
 **单页 changelog**：`cursor.com/en-US/changelog`、`developers.openai.com/codex/changelog`、`releases.electronjs.org/` 等页面为无分页单页 changelog，直接抓取可能只显示最新若干条目，需使用站点搜索或归档页面定位报告窗口内的内容。
 

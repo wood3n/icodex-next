@@ -80,7 +80,7 @@ def lint(path: Path) -> tuple[list[str], list[str]]:
     intro = body[:intro_end] if intro_end >= 0 else body[:500]
     title_match = re.search(r"^title:\s*(.+)$", frontmatter, re.MULTILINE)
     title = title_match.group(1) if title_match else ""
-    expected_phrase = "AI 产品周报" if "AI" in title else "前端技术周报"
+    expected_phrase = "前端与AI技术周报"
     if expected_phrase not in intro:
         errors.append(f"intro must naturally contain `{expected_phrase}`")
 
@@ -90,9 +90,9 @@ def lint(path: Path) -> tuple[list[str], list[str]]:
         errors.append("no level-2 category sections")
     if not h3_matches:
         errors.append("no level-3 technology subsections")
-    if len(h3_matches) > 7:
+    if len(h3_matches) > 12:
         errors.append(
-            f"too many technology subsections: {len(h3_matches)}; keep at most 7 material items"
+            f"too many technology subsections: {len(h3_matches)}; keep at most 12 material items"
         )
 
     for match in h3_matches:
