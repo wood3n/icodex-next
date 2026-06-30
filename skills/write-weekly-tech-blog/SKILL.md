@@ -37,6 +37,7 @@ Collect information strictly from the following sources. Do not search outside t
 
 Each product in the table below has one or two source URLs. Follow these rules when checking each source:
 
+0. **抓取工具**：抓取网页内容时优先使用 `firecrawl_scrape`（Firecrawl MCP）。若 Firecrawl 报错、超时或返回空内容，则使用 `WebFetch` 作为回退方案。
 1. **优先级**：若 `CHANGELOG.md / Releases` 列有链接，则将其作为首要信息来源；若该列为空（`—` 或空白），则使用 `Official Blog / News` 列的链接。
 2. **日期过滤**：仅读取发布时间（或版本日期）落在本周报告窗口内的条目，忽略窗口外的所有条目。
 3. **无更新则跳过**：若某个产品在本周窗口内没有任何条目，直接跳过该产品，不在博文中提及。
@@ -55,35 +56,35 @@ Each product in the table below has one or two source URLs. Follow these rules w
 
 **单页 changelog**：`cursor.com/en-US/changelog`、`developers.openai.com/codex/changelog`、`releases.electronjs.org/` 等页面为无分页单页 changelog，直接抓取可能只显示最新若干条目，需使用站点搜索或归档页面定位报告窗口内的内容。
 
-| Product | Official Blog / News | CHANGELOG.md / Releases |
-|---|---|---|
-| React | - | https://raw.githubusercontent.com/react/react/refs/heads/main/CHANGELOG.md |
-| TypeScript | - | https://devblogs.microsoft.com/typescript/feed/ |
-| Shadcn/UI | - | https://ui.shadcn.com/rss.xml |
-| Tailwind CSS | https://tailwindcss.com/blog | https://raw.githubusercontent.com/tailwindlabs/tailwindcss/refs/heads/main/CHANGELOG.md |
-| Ant Design | - | https://raw.githubusercontent.com/ant-design/ant-design/refs/heads/main/CHANGELOG.md |
-| Vite | https://vite.dev/blog | https://raw.githubusercontent.com/vitejs/vite/refs/heads/main/packages/vite/CHANGELOG.md |
-| webpack | - | https://raw.githubusercontent.com/webpack/webpack/refs/heads/main/CHANGELOG.md |
-| Rspack | — | https://rspack.rs/blog/index.md |
-| Rolldown | https://voidzero.dev/blog | https://raw.githubusercontent.com/rolldown/rolldown/refs/heads/main/CHANGELOG.md |
-| Oxlint | - | https://raw.githubusercontent.com/oxc-project/oxc/refs/heads/main/crates/oxc_linter/CHANGELOG.md |
-| Oxfmt | - | https://raw.githubusercontent.com/oxc-project/oxc/refs/heads/main/crates/oxc_formatter/CHANGELOG.md |
-| pnpm | https://pnpm.io/blog | - |
-| npm | - | https://raw.githubusercontent.com/npm/cli/refs/heads/latest/CHANGELOG.md |
-| Turborepo | https://turborepo.dev/blog | - |
-| SWC | - | https://raw.githubusercontent.com/swc-project/swc/refs/heads/main/CHANGELOG.md |
-| Babel | https://babeljs.io/blog/ | https://raw.githubusercontent.com/babel/babel/refs/heads/main/CHANGELOG.md |
-| ESLint | https://eslint.org/blog/ | https://raw.githubusercontent.com/eslint/eslint/refs/heads/main/CHANGELOG.md |
-| Prettier | https://prettier.io/blog | https://raw.githubusercontent.com/prettier/prettier/refs/heads/main/CHANGELOG.md |
-| Node.js | - | https://nodejs.org/en/feed/releases.xml |
-| Bun | https://bun.com/blog | - |
-| Electron | https://releases.electronjs.org/ | - |
-| Codex | - | https://developers.openai.com/codex/changelog |
-| ChatGPT | - | https://openai.com/research/index/release/<br />https://openai.com/products/release-notes/rss.xml |
-| Cursor | - | https://cursor.com/en-US/changelog |
-| Voidzero | https://voidzero.dev/blog | - |
-| Tanstack | https://tanstack.com/rss.xml | - |
-| Web Platform | - | https://developer.chrome.com/blog/feed.xml<br />https://web.dev/blog/feed.xml |
+| Product      | Official Blog / News             | CHANGELOG.md / Releases                                                                             |
+| ------------ | -------------------------------- | --------------------------------------------------------------------------------------------------- |
+| React        | https://react.dev/blog           | https://raw.githubusercontent.com/react/react/refs/heads/main/CHANGELOG.md                          |
+| TypeScript   | -                                | https://devblogs.microsoft.com/typescript/feed/                                                     |
+| Shadcn/UI    | -                                | https://ui.shadcn.com/rss.xml                                                                       |
+| Tailwind CSS | https://tailwindcss.com/blog     | https://raw.githubusercontent.com/tailwindlabs/tailwindcss/refs/heads/main/CHANGELOG.md             |
+| Ant Design   | -                                | https://raw.githubusercontent.com/ant-design/ant-design/refs/heads/main/CHANGELOG.md                |
+| Vite         | https://vite.dev/blog            | https://raw.githubusercontent.com/vitejs/vite/refs/heads/main/packages/vite/CHANGELOG.md            |
+| webpack      | -                                | https://raw.githubusercontent.com/webpack/webpack/refs/heads/main/CHANGELOG.md                      |
+| Rspack       | —                                | https://rspack.rs/blog/index.md                                                                     |
+| Rolldown     | https://voidzero.dev/blog        | https://raw.githubusercontent.com/rolldown/rolldown/refs/heads/main/CHANGELOG.md                    |
+| Oxlint       | -                                | https://raw.githubusercontent.com/oxc-project/oxc/refs/heads/main/crates/oxc_linter/CHANGELOG.md    |
+| Oxfmt        | -                                | https://raw.githubusercontent.com/oxc-project/oxc/refs/heads/main/crates/oxc_formatter/CHANGELOG.md |
+| pnpm         | https://pnpm.io/blog             | -                                                                                                   |
+| npm          | -                                | https://raw.githubusercontent.com/npm/cli/refs/heads/latest/CHANGELOG.md                            |
+| Turborepo    | https://turborepo.dev/blog       | -                                                                                                   |
+| SWC          | -                                | https://raw.githubusercontent.com/swc-project/swc/refs/heads/main/CHANGELOG.md                      |
+| Babel        | https://babeljs.io/blog/         | https://raw.githubusercontent.com/babel/babel/refs/heads/main/CHANGELOG.md                          |
+| ESLint       | https://eslint.org/blog/         | https://raw.githubusercontent.com/eslint/eslint/refs/heads/main/CHANGELOG.md                        |
+| Prettier     | https://prettier.io/blog         | https://raw.githubusercontent.com/prettier/prettier/refs/heads/main/CHANGELOG.md                    |
+| Node.js      | -                                | https://nodejs.org/en/feed/releases.xml                                                             |
+| Bun          | https://bun.com/blog             | -                                                                                                   |
+| Electron     | https://releases.electronjs.org/ | -                                                                                                   |
+| Codex        | -                                | https://developers.openai.com/codex/changelog                                                       |
+| ChatGPT      | -                                | https://openai.com/research/index/release/<br />https://openai.com/products/release-notes/rss.xml   |
+| Cursor       | -                                | https://cursor.com/en-US/changelog                                                                  |
+| Voidzero     | https://voidzero.dev/blog        | -                                                                                                   |
+| Tanstack     | https://tanstack.com/rss.xml     | -                                                                                                   |
+| Web Platform | -                                | https://developer.chrome.com/blog/feed.xml<br />https://web.dev/blog/feed.xml                       |
 
 ## Token Budget
 
