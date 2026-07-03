@@ -388,8 +388,6 @@ https://github.com/ant-design/ant-design-cli
 
 ### better-icons
 
-### Better Icons
-
 为 AI 提供语义化图标搜索能力，自动选择并使用正确的图标库，而不是依赖模型猜测图标名称。
 
 **主要能力**
@@ -444,9 +442,7 @@ https://github.com/anthropics/skills/blob/main/skills/webapp-testing/SKILL.md
 
 ## CR
 
-#### code-review
-
-### Code Review
+### code-review
 
 从**代码规范（Standards）**和**需求实现（Spec）**两个维度并行审查代码变更，确保代码质量和功能符合预期。
 
