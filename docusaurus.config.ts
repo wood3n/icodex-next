@@ -132,6 +132,7 @@ const config: Config = {
           type: "search",
           position: "right",
         },
+        { to: "/docs/ai/mcp", label: "AI", position: "right" },
         { to: "/pages/project", label: "项目", position: "right" },
         {
           type: "dropdown",

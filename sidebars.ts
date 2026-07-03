@@ -157,6 +157,30 @@ const sidebars: SidebarsConfig = {
       ],
     },
   ],
+  ai: [
+    {
+      type: "category",
+      label: "AI",
+      link: {
+        type: "doc",
+        id: "ai/mcp",
+      },
+      items: [
+        {
+          type: "doc",
+          id: "ai/mcp",
+        },
+        {
+          type: "doc",
+          id: "ai/skills",
+        },
+        {
+          type: "doc",
+          id: "ai/design",
+        },
+      ],
+    },
+  ],
   interview: [
     {
       type: "category",
