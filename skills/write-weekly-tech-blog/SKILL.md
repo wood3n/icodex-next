@@ -5,16 +5,16 @@ description: Draft, review, or revise Chinese weekly technology blog posts from 
 
 # Write Weekly Tech Blog
 
-Produce a concise engineering briefing, not a changelog dump. Keep only changes that affect code, compatibility, security, cost, availability, or developer workflow.
+Produce a comprehensive engineering briefing. Include all official announcements, releases, events, and updates — including bug fixes and minor changes. Do not filter out routine patches or small feature additions.
 
 ## Workflow
 
 1. Read only repository conventions, automation prompt, and at most one recent post.
 2. Define exact reporting window with absolute dates.
-3. Search from the fixed Data Sources list below. Open only results inside the reporting window that appear material.
-4. Omit routine patches, cosmetic changes, minor performance claims, undated updates, repeated announcements, and releases without concrete engineering impact.
-5. Rank remaining items by security, breaking change, retirement, stable capability, then preview capability.
-6. Draft 1–12 technology subsections. Never add weak items to reach a quota. Use this sequence:
+3. Search from the fixed Data Sources list below. Open ALL results inside the reporting window — include every release, announcement, bug fix, and minor change.
+4. For index pages that only list summaries with links to detail pages (e.g. blog listing with "Read more →", release index with per-version links, changelog with linked entries), follow those secondary links to scrape the full content. Continue following links deeper until the actual update details are obtained — do not stop at surface-level summaries.
+5. Rank items by security, breaking change, retirement, stable capability, then preview capability. Place bug fixes and minor changes after feature-level items but still include them.
+6. Draft technology subsections covering all items found in the window. Use this sequence:
    - `### Technology`
    - `> 参考来源：[direct primary source](URL)`
    - one sentence stating exact version/date/status and material change
@@ -44,58 +44,66 @@ Each product in the table below has one or two source URLs. Follow these rules w
 4. **RSS/XML 源**：部分链接为 RSS 或 XML 格式的 feed（如 `feed.xml`、`releases.xml`、`rss.xml`）。解析 feed 后仅提取 `<item>` 或 `<entry>` 元素中发布日期落在报告窗口内的条目。
 5. **raw CHANGELOG.md**：部分链接为 GitHub raw 文件（`raw.githubusercontent.com/...`），直接读取 Markdown 内容，按发布日期或版本号定位本周窗口内的条目。
 6. **跳过规则**：以下类型的更新即使日期在窗口内也直接跳过，不收录：
-   - Patch 版本（仅修订号 `z` 变动）
-   - 常规 Bug 修复
-   - 文档更新
-   - 依赖升级
-   - 小型功能补充
+   - 文档更新（除非是重大文档改版或迁移指南）
+   - 依赖升级（除非包含安全修复或破坏性变更）
    - 无实质进展的讨论（如 RFC 早期讨论、issue 讨论）
-   - 对实际开发影响极小的更新
+   - 重复公告（已在前期周报中收录过的同一事件）
+
+**重要变更**：Patch 版本、Bug 修复、小型功能补充均须收录。官方宣布的事件（如公测上线、新功能预览、合作伙伴关系）不论规模大小一律收录。
+
+7. **深度链接追踪**：当数据源页面为列表/索引页（如博客列表仅显示摘要、Releases 页仅显示版本号和标题），而非完整的更新内容时，必须继续抓取每个条目的详情页（二级链接），获取完整的更新内容。若详情页内还有链接指向更具体的子页面（如 PR 链接、设计文档链接），也需跟进抓取，直到取得可供撰写的具体信息。此规则特别适用于：
+   - `voidzero.dev/blog` — 文章列表仅显示标题和摘要，需打开 `/posts/...` 详情页
+   - `turborepo.dev/blog` — 博客列表显示摘要，需打开 `/blog/...` 详情页
+   - `tanstack.com/blog` — 文章列表，需打开详情页
+   - `bun.com/blog` — 版本发布文章列表，需打开详情页
+   - `pnpm.io/blog` — 博客列表，需打开详情页
+   - `vite.dev/blog` — 博客列表，需打开详情页
+   - `react.dev/blog` — 博客列表，需打开详情页
+   - GitHub Releases 页面 — 仅显示标题，需打开每个 release 的详情页
 
 **报告类型与搜索范围**：博文标题统一为「前端与AI技术周报」，搜索全部数据源（前端 + AI + Web Platform），不再区分报告类型。
 
 **单页 changelog**：`cursor.com/en-US/changelog`、`developers.openai.com/codex/changelog`、`releases.electronjs.org/` 等页面为无分页单页 changelog，直接抓取可能只显示最新若干条目，需使用站点搜索或归档页面定位报告窗口内的内容。
 
-| Product      | Official Blog / News             | CHANGELOG.md / Releases                                                                             |
-| ------------ | -------------------------------- | --------------------------------------------------------------------------------------------------- |
-| React        | https://react.dev/blog           | https://raw.githubusercontent.com/react/react/refs/heads/main/CHANGELOG.md                          |
-| TypeScript   | -                                | https://devblogs.microsoft.com/typescript/feed/                                                     |
-| Shadcn/UI    | -                                | https://ui.shadcn.com/rss.xml                                                                       |
-| Tailwind CSS | https://tailwindcss.com/blog     | https://raw.githubusercontent.com/tailwindlabs/tailwindcss/refs/heads/main/CHANGELOG.md             |
-| Ant Design   | -                                | https://raw.githubusercontent.com/ant-design/ant-design/refs/heads/main/CHANGELOG.md                |
-| Vite         | https://vite.dev/blog            | https://raw.githubusercontent.com/vitejs/vite/refs/heads/main/packages/vite/CHANGELOG.md            |
-| webpack      | -                                | https://raw.githubusercontent.com/webpack/webpack/refs/heads/main/CHANGELOG.md                      |
-| Rspack       | —                                | https://rspack.rs/blog/index.md                                                                     |
-| Rolldown     | https://voidzero.dev/blog        | https://raw.githubusercontent.com/rolldown/rolldown/refs/heads/main/CHANGELOG.md                    |
-| Oxlint       | -                                | https://raw.githubusercontent.com/oxc-project/oxc/refs/heads/main/crates/oxc_linter/CHANGELOG.md    |
-| Oxfmt        | -                                | https://raw.githubusercontent.com/oxc-project/oxc/refs/heads/main/crates/oxc_formatter/CHANGELOG.md |
-| pnpm         | https://pnpm.io/blog             | -                                                                                                   |
-| npm          | -                                | https://raw.githubusercontent.com/npm/cli/refs/heads/latest/CHANGELOG.md                            |
-| Turborepo    | https://turborepo.dev/blog       | -                                                                                                   |
-| SWC          | -                                | https://raw.githubusercontent.com/swc-project/swc/refs/heads/main/CHANGELOG.md                      |
-| Babel        | https://babeljs.io/blog/         | https://raw.githubusercontent.com/babel/babel/refs/heads/main/CHANGELOG.md                          |
-| ESLint       | https://eslint.org/blog/         | https://raw.githubusercontent.com/eslint/eslint/refs/heads/main/CHANGELOG.md                        |
-| Prettier     | https://prettier.io/blog         | https://raw.githubusercontent.com/prettier/prettier/refs/heads/main/CHANGELOG.md                    |
-| Node.js      | -                                | https://nodejs.org/en/feed/releases.xml                                                             |
-| Bun          | https://bun.com/blog             | -                                                                                                   |
-| Electron     | https://releases.electronjs.org/ | -                                                                                                   |
-| Codex        | -                                | https://developers.openai.com/codex/changelog                                                       |
-| ChatGPT      | -                                | https://openai.com/research/index/release/<br />https://openai.com/products/release-notes/rss.xml   |
-| Cursor       | -                                | https://cursor.com/en-US/changelog                                                                  |
-| Voidzero     | https://voidzero.dev/blog        | -                                                                                                   |
-| Tanstack     | https://tanstack.com/rss.xml     | -                                                                                                   |
-| Web Platform | -                                | https://developer.chrome.com/blog/feed.xml<br />https://web.dev/blog/feed.xml                       |
+| Product      | Official Blog / News                                         | CHANGELOG.md / Releases                                      |
+| ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| React        | https://react.dev/blog                                       | https://raw.githubusercontent.com/react/react/refs/heads/main/CHANGELOG.md |
+| TypeScript   | https://devblogs.microsoft.com/typescript/                   | -                                                            |
+| Shadcn/UI    | -                                                            | https://ui.shadcn.com/docs/changelog                         |
+| Tailwind CSS | https://tailwindcss.com/blog                                 | https://raw.githubusercontent.com/tailwindlabs/tailwindcss/refs/heads/main/CHANGELOG.md |
+| Ant Design   | -                                                            | https://raw.githubusercontent.com/ant-design/ant-design/refs/heads/main/CHANGELOG.md |
+| Vite         | https://vite.dev/blog                                        | https://raw.githubusercontent.com/vitejs/vite/refs/heads/main/packages/vite/CHANGELOG.md |
+| webpack      | -                                                            | https://raw.githubusercontent.com/webpack/webpack/refs/heads/main/CHANGELOG.md |
+| Rspack       | —                                                            | https://rspack.rs/blog/index.md                              |
+| Rolldown     | https://voidzero.dev/blog                                    | https://raw.githubusercontent.com/rolldown/rolldown/refs/heads/main/CHANGELOG.md |
+| Oxlint       | -                                                            | https://raw.githubusercontent.com/oxc-project/oxc/refs/heads/main/crates/oxc_linter/CHANGELOG.md |
+| Oxfmt        | -                                                            | https://raw.githubusercontent.com/oxc-project/oxc/refs/heads/main/crates/oxc_formatter/CHANGELOG.md |
+| pnpm         | https://pnpm.io/blog                                         | -                                                            |
+| npm          | -                                                            | https://raw.githubusercontent.com/npm/cli/refs/heads/latest/CHANGELOG.md |
+| Turborepo    | https://turborepo.dev/blog                                   | -                                                            |
+| SWC          | -                                                            | https://raw.githubusercontent.com/swc-project/swc/refs/heads/main/CHANGELOG.md |
+| Babel        | https://babeljs.io/blog/                                     | https://raw.githubusercontent.com/babel/babel/refs/heads/main/CHANGELOG.md |
+| ESLint       | https://eslint.org/blog/                                     | https://raw.githubusercontent.com/eslint/eslint/refs/heads/main/CHANGELOG.md |
+| Prettier     | https://prettier.io/blog                                     | https://raw.githubusercontent.com/prettier/prettier/refs/heads/main/CHANGELOG.md |
+| Node.js      | https://nodejs.org/en/blog/all                               | -                                                            |
+| Bun          | https://bun.com/blog                                         | -                                                            |
+| Electron     | https://releases.electronjs.org/                             | -                                                            |
+| Codex        | -                                                            | https://developers.openai.com/codex/changelog                |
+| ChatGPT      | https://openai.com/research/index/                           | -                                                            |
+| Cursor       | -                                                            | https://cursor.com/en-US/changelog                           |
+| Voidzero     | https://voidzero.dev/blog                                    | -                                                            |
+| Tanstack     | https://tanstack.com/blog                                    | -                                                            |
+| Web Platform | https://web.dev/blog?hl=zh-cn<br />https://developer.chrome.com/blog | -                                                            |
 
 ## Token Budget
 
 - Reuse one official index page to locate dated entries; do not repeatedly reopen it.
 - Search multiple products in one batch.
 - Use page find or targeted excerpts instead of reading full pages.
-- Stop researching a product after finding one sufficient direct source.
-- Do not collect evidence for items that will be omitted.
+- For index pages, open the primary source, then follow deep links to detail pages only for entries inside the reporting window.
+- Do not collect evidence for items outside the reporting window.
 - Do not copy long release-note lists into context. Extract only date, version, status, changed behavior, constraint, and URL.
 - Draft directly from compact notes. Do not create scoring tables, evidence ledgers, or intermediate prose summaries.
-- Prefer omission over spending tokens proving a marginal update.
 
 ## Evidence Rules
 
@@ -106,7 +114,7 @@ Each product in the table below has one or two source URLs. Follow these rules w
 - State stable, beta, preview, canary, deprecated, and retired status precisely.
 - Verify dates belong to reporting window. Publication date and effective date may differ; state both when relevant.
 - For availability claims, record plan, region, platform, rollout status, and account restrictions.
-- Missing or weak evidence means omit item. Do not explain omission in article.
+- Missing or weak evidence means flag item as unverified; still include it with a note if it falls inside the reporting window.
 
 ## Editorial Rules
 
