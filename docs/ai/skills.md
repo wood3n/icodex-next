@@ -529,6 +529,51 @@ GitHub
 
 https://github.com/github/awesome-copilot/raw/refs/heads/main/skills/prd/SKILL.md
 
+### 文档翻译
+
+宝玉提供的翻译 skill，让 AI 在翻译长文档时，更接近专业译者的工作方式，主要能力如下：
+
+- 三种翻译模式：
+  - Quick：直接翻译，速度最快。
+  - Normal：先分析上下文，再翻译。
+  - Refined：分析 → 翻译 → Review → 润色，适合最终发布版本。
+- 长文自动分块：
+  - 自动按 Markdown 结构拆分文章。
+  - 多个 Agent 可以并行翻译，提高速度。
+  - 最终再合并结果。
+- 术语一致性（最大的亮点）：
+  - 整篇文章共享 Glossary（术语表）。
+  - 保证同一个词不会一会儿翻成 A，一会儿翻成 B。
+  - 特别适合技术文档、API 文档、产品文档。
+- 支持自定义偏好：
+  - 通过 EXTEND.md 配置：
+    - 目标语言
+    - 翻译风格
+    - 目标读者
+    - 专有名词
+    - 自定义术语
+  - 每次翻译都会自动读取这些配置。
+- 保留 Markdown 结构：
+  - 标题、列表、表格、代码块、链接不会被破坏。
+  - 输出仍然是可继续编辑的 Markdown。
+
+主要用于下面这些需求：
+
+- 翻译 GitHub README
+- 翻译官方技术文档（React、Vue、Tailwind 等）
+- 翻译博客文章
+- 翻译电子书
+- 翻译产品文档
+- 翻译 PRD、设计文档
+
+```shell
+npx skills add https://github.com/jimliu/baoyu-skills --skill baoyu-translate
+```
+
+GitHub
+
+https://github.com/JimLiu/baoyu-skills/blob/main/skills/baoyu-translate/SKILL.md
+
 ### pptx
 
 **主要能力**
