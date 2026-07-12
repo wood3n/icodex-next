@@ -1,11 +1,17 @@
 ---
 name: write-weekly-tech-blog
-description: Draft, review, or revise Chinese weekly technology blog posts from a fixed set of official sources (React, TypeScript, Shadcn/UI, Tailwind CSS, Ant Design, Vite, webpack, Rspack, Rolldown, Oxlint, Oxfmt, pnpm, npm, Turborepo, SWC, Babel, ESLint, Prettier, Node.js, Bun, Electron, Codex, ChatGPT, Cursor, Voidzero, Tanstack, Web Platform). Use for frontend and AI weekly reports, release-note roundups, changelog summaries, and Codex automations that must turn official updates into selective, evidence-linked, actionable technical writing.
+description: Draft, review, or revise Chinese frontend and AI technology weekly reports from a fixed set of official sources (React, TypeScript, Shadcn/UI, Tailwind CSS, Ant Design, Vite, webpack, Rspack, Rolldown, Oxlint, Oxfmt, pnpm, npm, Turborepo, SWC, Babel, ESLint, Prettier, Node.js, Bun, Electron, Codex, ChatGPT, Cursor, Voidzero, Tanstack, Web Platform). Use only when the user explicitly asks for a technical weekly report, weekly roundup, or a dated multi-product release/changelog roundup; do not use for standalone technical blog posts, tutorials, explainers, reviews, or release deep-dives.
 ---
 
 # Write Weekly Tech Blog
 
 Produce a comprehensive engineering briefing. Include all official announcements, releases, events, and updates — including bug fixes and minor changes. Do not filter out routine patches or small feature additions.
+
+## Trigger Boundary
+
+Use this skill only when the request clearly asks for a recurring or dated technical weekly report, such as “写本周技术周报”、“整理 7 月 6 日至 12 日的前端更新”, or a multi-product release/changelog roundup for a defined reporting window.
+
+Do not use this skill for a standalone technical blog post, a single technology’s release interpretation, a tutorial, an architecture article, a product comparison, or a prose review—even if the topic is one of the products listed below. Follow the repository’s general writing conventions and any request-specific requirements for those tasks instead.
 
 ## Workflow
 
@@ -127,6 +133,7 @@ Each product in the table below has one or two source URLs. Follow these rules w
 - Delete setup, transitions, rhetorical conclusions, repeated benefits, and generic advice.
 - State action explicitly per item: 每项更新在正文末尾（最后一句）给出具体操作建议——upgrade、migrate、verify 或 wait 择一，明确受影响的用户群体与风险等级。避免使用「建议关注」「值得留意」等模糊表述。
 - Prefer examples, affected configurations, commands, API fields, or failure modes over adjectives.
+- Use tables and images where they improve clarity: performance comparison data → table, architecture or flow changes → diagram, version timelines → timeline chart. Don't use text alone when a visual aid would convey the same information more directly. If using network images, download them to `public/images/` first, then reference with the correct local path in the post.
 - Keep English terms when they are established technical names; write surrounding Chinese naturally.
 - Do not inflate canary work into production guidance.
 - Avoid first-person and second-person wording.

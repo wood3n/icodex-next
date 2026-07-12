@@ -1,0 +1,4 @@
+interface:
+  display_name: "技术博客写作"
+  short_description: "面向资深前端工程师的务实严谨中文技术博客写作规范与验证流程"
+  default_prompt: "Use $write-tech-blog to draft a rigorous Chinese technical blog post for this repository."
