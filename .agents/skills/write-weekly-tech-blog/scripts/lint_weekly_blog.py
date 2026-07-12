@@ -14,7 +14,7 @@ FORBIDDEN_TEXT = (
     "众所周知",
     "值得注意的是",
     "画卷",
-    "框架",
+    "前端框架",
 )
 FORBIDDEN_SECTIONS = (
     "本周观察",
