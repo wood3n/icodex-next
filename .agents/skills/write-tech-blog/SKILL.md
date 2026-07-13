@@ -27,6 +27,9 @@ Produce a publishable Chinese technical article that explains an engineering dec
 
 - Write in Chinese with established English technical terms retained where they improve precision, such as `tsconfig`, `tree-shaking`, `event loop`, and `LSP`.
 - Lead with the result or engineering problem. Use headings that describe mechanisms, constraints, or decisions rather than vague labels such as “背景介绍” or “总结”.
+- **Heading hierarchy**: Organize articles with a 2–3 level heading structure (`##` → `###`, occasionally `####`). Avoid flat single-level outlines that force readers to scan long undifferentiated sections.
+- **Heading conciseness**: Keep headings short enough to stay on one line on a 13-inch laptop screen — typically no more than 10 Chinese characters for H3, and no more than 15 for H2. Drop explanatory colons and subordinate clauses; let the body text do the explaining. For example, prefer `## Go 原生编译器` over `## 性能：Go 原生编译器带来什么`.
+- **Heading fidelity**: Every heading must faithfully represent the section’s core idea. Do not trim a heading to the point where it becomes generic or misaligned with the content that follows. Brevity serves scannability; accuracy preserves meaning.
 - Prefer explicit scope, conditions, inputs, outputs, and failure modes. Qualify conclusions: use “在……条件下”, “官方文档表明”, “本文的建议是”, or “需要通过项目基准验证” when appropriate.
 - Treat performance figures, compatibility claims, browser support, security guidance, release status, and API syntax as evidence-dependent. State the source, version, and date whenever they materially affect the conclusion.
 - Explain trade-offs. Every recommendation that changes architecture, build configuration, deployment, dependency versions, or developer workflow should say who benefits, what can break, and when not to adopt it.
@@ -50,6 +53,7 @@ Choose one of these shapes instead of combining every section into every article
 Before handing off a draft, confirm all of the following:
 
 - The title, description, opening, and section hierarchy all express the same narrowly defined topic.
+- Headings form a clear 2–3 level hierarchy (`##`/`###`), are concise enough to avoid line wrapping on narrow screens, and accurately capture each section's content.
 - Every factual claim that can change over time has a direct, relevant source.
 - Code and configuration snippets use valid syntax and match the stated version or environment.
 - The article distinguishes documented behavior from the author’s interpretation or recommendation.
