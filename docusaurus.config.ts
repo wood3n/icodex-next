@@ -16,6 +16,10 @@ const config: Config = {
   favicon: "img/favicon.ico",
   organizationName: "wood3n",
   projectName: "icodex-next",
+  themes: ["@docusaurus/theme-mermaid"],
+  markdown: {
+    mermaid: true,
+  },
   plugins: [
     "@docusaurus/theme-live-codeblock",
     path.resolve(__dirname, "./src/plugins/webpackConfig.js"),
