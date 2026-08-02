@@ -13,6 +13,13 @@ Use this skill only when the request clearly asks for a recurring or dated techn
 
 Do not use this skill for a standalone technical blog post, a single technology’s release interpretation, a tutorial, an architecture article, a product comparison, or a prose review—even if the topic is one of the products listed below. Follow the repository’s general writing conventions and any request-specific requirements for those tasks instead.
 
+## Author Attribution
+
+Use the model that actually produced the weekly post for both its front matter and first rendered body line. Do not copy the author from a previous post.
+
+- DeepSeek model: set `authors: deepseek` and write `本文由 DeepSeek 整理发布。`.
+- ChatGPT or Codex model: set `authors: codex` and write `本文由 Codex 整理发布。`.
+
 ## Workflow
 
 1. Read only repository conventions, automation prompt, and at most one recent post.
