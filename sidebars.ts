@@ -178,6 +178,10 @@ const sidebars: SidebarsConfig = {
           type: "doc",
           id: "ai/design",
         },
+        {
+          type: "doc",
+          id: "ai/mcp-introduction",
+        },
       ],
     },
   ],
