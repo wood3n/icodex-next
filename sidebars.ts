@@ -168,6 +168,14 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: "doc",
+          id: "ai/mcp-introduction",
+        },
+        {
+          type: "doc",
+          id: "ai/skills-introduction",
+        },
+        {
+          type: "doc",
           id: "ai/mcp",
         },
         {
@@ -177,10 +185,6 @@ const sidebars: SidebarsConfig = {
         {
           type: "doc",
           id: "ai/design",
-        },
-        {
-          type: "doc",
-          id: "ai/mcp-introduction",
         },
       ],
     },

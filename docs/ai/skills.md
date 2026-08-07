@@ -30,6 +30,16 @@ https://github.com/figma/mcp-server-guide/tree/main/skills
 
 ## Skills 聚合网站
 
+### Skills.sh
+
+[skills.sh](https://www.skills.sh/) 是 Vercel 维护的 skills 聚合网站，支持以下功能：
+
+- 搜索 GitHub 开源的 skills；
+- 提供安装命令；
+- 把多个公开或私有 Skill 打成一个包，用一条命令分发给自己或团队；
+- 排行榜与安装量统计；
+- 对 skills 进行安全审查
+
 ### Officialskills.sh
 
 收录各软件厂商发布的官方 Skills，包括 OpenAI、Vercel、Anthropic、Google、Cloudflare、Stripe 等。
