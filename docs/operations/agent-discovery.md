@@ -59,13 +59,24 @@ When an agent service is introduced, publish its DNS-AID records in the domain
 DNS provider and enable DNSSEC for the zone; this is domain infrastructure, not
 a GitHub Pages artifact.
 
-## Authentication, MCP, and WebMCP
+## WebMCP
 
-This site has no protected API, account system, MCP server, or browser-side
-agent actions. `/auth.md` therefore truthfully documents unauthenticated public
-access. Add OAuth/OIDC metadata, protected-resource metadata, an MCP Server
-Card, or WebMCP tools only together with the corresponding real service or user
-action.
+`src/theme/Root.tsx` registers two browser tools when WebMCP is available:
+
+- `search_icodex_articles` opens the existing Algolia search route for a query.
+- `discover_icodex_content` returns the public RSS feed, sitemap, API catalog,
+  and Agent Skills index.
+
+Unsupported browsers continue to render the site normally because registration
+is guarded by feature detection. Tool registrations are removed with an
+`AbortController` when the root component unmounts.
+
+## Authentication and MCP
+
+This site has no protected API, account system, or MCP server. `/auth.md`
+therefore truthfully documents unauthenticated public access. Add OAuth/OIDC
+metadata, protected-resource metadata, or an MCP Server Card only together with
+the corresponding real service.
 
 ## Verify after deployment
 
