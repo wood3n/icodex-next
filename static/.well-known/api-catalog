@@ -1,0 +1,25 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://icodex.me/.well-known/content-api.json",
+      "service-desc": [
+        {
+          "href": "https://icodex.me/.well-known/content-api.openapi.json",
+          "type": "application/vnd.oai.openapi+json;version=3.1"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://icodex.me/.well-known/content-api.md",
+          "type": "text/markdown"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://icodex.me/.well-known/content-api-status.json",
+          "type": "application/json"
+        }
+      ]
+    }
+  ]
+}

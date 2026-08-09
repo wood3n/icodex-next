@@ -1,0 +1,22 @@
+{
+  "name": "icodex content discovery API",
+  "version": "1.0.0",
+  "description": "Read-only discovery links for the public icodex technical blog.",
+  "resources": [
+    {
+      "rel": "feed",
+      "href": "https://icodex.me/rss.xml",
+      "type": "application/rss+xml"
+    },
+    {
+      "rel": "sitemap",
+      "href": "https://icodex.me/sitemap.xml",
+      "type": "application/xml"
+    },
+    {
+      "rel": "robots",
+      "href": "https://icodex.me/robots.txt",
+      "type": "text/plain"
+    }
+  ]
+}

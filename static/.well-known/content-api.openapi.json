@@ -1,0 +1,82 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "icodex Content Discovery API",
+    "version": "1.0.0",
+    "description": "A read-only index of public icodex content discovery resources."
+  },
+  "servers": [
+    {
+      "url": "https://icodex.me"
+    }
+  ],
+  "paths": {
+    "/.well-known/content-api.json": {
+      "get": {
+        "operationId": "getContentDiscovery",
+        "summary": "Get public content discovery resources",
+        "responses": {
+          "200": {
+            "description": "Content discovery resource index",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContentDiscovery"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/.well-known/content-api-status.json": {
+      "get": {
+        "operationId": "getContentDiscoveryStatus",
+        "summary": "Get the content discovery API status",
+        "responses": {
+          "200": {
+            "description": "The static content discovery service is available"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ContentDiscovery": {
+        "type": "object",
+        "required": ["name", "version", "resources"],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "resources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["rel", "href", "type"],
+              "properties": {
+                "rel": {
+                  "type": "string"
+                },
+                "href": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "type": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "icodex-blog",
+      "type": "skill-md",
+      "description": "Discover and retrieve public technical articles from icodex.",
+      "url": "https://icodex.me/.well-known/agent-skills/icodex-blog/SKILL.md",
+      "digest": "sha256:384330903ac99869cb23287aeaf31dfefd138e8bcf7241630be41cb693fe42ae"
+    }
+  ]
+}
