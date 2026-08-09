@@ -1,6 +1,6 @@
 ---
 name: write-weekly-tech-blog
-description: Draft, review, or revise Chinese frontend and AI technology weekly reports from a fixed set of official sources (React, TypeScript, Shadcn/UI, Tailwind CSS, Ant Design, Vite, webpack, Rspack, Rolldown, Oxlint, Oxfmt, pnpm, npm, Turborepo, SWC, Babel, ESLint, Prettier, Node.js, Bun, Electron, Codex, ChatGPT, Cursor, Voidzero, Tanstack, Web Platform). Use only when the user explicitly asks for a technical weekly report, weekly roundup, or a dated multi-product release/changelog roundup; do not use for standalone technical blog posts, tutorials, explainers, reviews, or release deep-dives.
+description: Draft, review, or revise Chinese frontend and AI technology weekly reports from a fixed set of official sources (React, TypeScript, Shadcn/UI, Tailwind CSS, Ant Design, Vite, webpack, Rspack, Rolldown, Oxlint, Oxfmt, pnpm, npm, Turborepo, SWC, Babel, ESLint, Prettier, Node.js, Bun, Electron, OpenAI, DeepSeek, Cursor, Voidzero, Tanstack, Web Platform). Use only when the user explicitly asks for a technical weekly report, weekly roundup, or a dated multi-product release/changelog roundup; do not use for standalone technical blog posts, tutorials, explainers, reviews, or release deep-dives.
 ---
 
 # Write Weekly Tech Blog
@@ -79,7 +79,9 @@ Each product in the table below has one or two source URLs. Follow these rules w
 
 **报告类型与搜索范围**：博文标题统一为「前端与AI技术周报」，搜索全部数据源（前端 + AI + Web Platform），不再区分报告类型。
 
-**单页 changelog**：`cursor.com/en-US/changelog`、`developers.openai.com/codex/changelog`、`releases.electronjs.org/` 等页面为无分页单页 changelog，直接抓取可能只显示最新若干条目，需使用站点搜索或归档页面定位报告窗口内的内容。
+**OpenAI 产品更新**：先解析 `openai.com/products/release-notes/rss.xml`，按日期枚举 ChatGPT 与 Codex 的全部增量；再检查 `openai.com/news/?display=list` 中同窗口的 `Product` 公告。News 列表按时间从新到旧处理：仅在当前页仍可能含有报告窗口条目时加载下一页；一旦当前页最早条目早于报告开始日，立即停止加载，并跟进已命中的详情页；同一事件以日期最新的直接公告为准。
+
+**单页 changelog**：`cursor.com/en-US/changelog`、`api-docs.deepseek.com/updates/`、`releases.electronjs.org/` 等页面为无分页单页 changelog，直接抓取可能只显示最新若干条目，需使用站点搜索或归档页面定位报告窗口内的内容。
 
 | Product      | Official Blog / News                                        | CHANGELOG.md / Releases                                                                             |
 | ------------ | ----------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
@@ -104,8 +106,8 @@ Each product in the table below has one or two source URLs. Follow these rules w
 | Node.js      | https://nodejs.org/en/blog/all                              | -                                                                                                   |
 | Bun          | https://bun.com/blog                                        | -                                                                                                   |
 | Electron     | https://releases.electronjs.org/                            | -                                                                                                   |
-| Codex        | -                                                           | https://openai.com/products/release-notes/                                                          |
-| ChatGPT      | -                                                           | https://openai.com/products/release-notes/                                                          |
+| OpenAI（ChatGPT 与 Codex） | https://openai.com/news/?display=list                   | https://openai.com/products/release-notes/rss.xml                                                    |
+| DeepSeek     | -                                                           | https://api-docs.deepseek.com/updates/                                                              |
 | Cursor       | -                                                           | https://cursor.com/en-US/changelog                                                                  |
 | Voidzero     | https://voidzero.dev/blog                                   | -                                                                                                   |
 | Tanstack     | https://tanstack.com/blog                                   | -                                                                                                   |
