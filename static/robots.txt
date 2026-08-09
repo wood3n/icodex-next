@@ -1,0 +1,28 @@
+# Crawl policy for https://icodex.me/
+#
+# Public articles and documentation may be indexed. Content may be used for
+# search and retrieval, but not for training or fine-tuning AI models.
+
+User-agent: *
+Allow: /
+Disallow: /search
+
+User-agent: GPTBot
+Allow: /
+Disallow: /search
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /search
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /search
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /search
+
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
+Sitemap: https://icodex.me/sitemap.xml
