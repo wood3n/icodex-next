@@ -11,6 +11,12 @@ const config: Config = {
   tagline: "前端不止于界面，更是用户体验的艺术",
   url: "https://icodex.me",
   baseUrl: "/",
+  future: {
+    v4: {
+      removeLegacyPostBuildHeadAttribute: true,
+    },
+    experimental_faster: true,
+  },
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
