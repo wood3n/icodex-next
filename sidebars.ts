@@ -189,36 +189,6 @@ const sidebars: SidebarsConfig = {
       ],
     },
   ],
-  interview: [
-    {
-      type: "category",
-      label: "Interview",
-      link: { type: "doc", id: "interview/index" },
-      collapsible: false,
-      items: [
-        {
-          type: "doc",
-          id: "interview/js",
-        },
-        {
-          type: "doc",
-          id: "interview/css",
-        },
-        {
-          type: "doc",
-          id: "interview/html",
-        },
-        {
-          type: "doc",
-          id: "interview/计算机网络",
-        },
-        {
-          type: "doc",
-          id: "interview/算法",
-        },
-      ],
-    },
-  ],
 };
 
 export default sidebars;
